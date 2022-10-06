@@ -1,0 +1,18 @@
+Header/Title
+
+-drop down menu for themes
+-"Log In" button leads to either a fade in sign up page or redirects to a sign up page
+
+Text Area
+
+-custom scroll wheel
+-character limit shown in a corner
+-saves the notes you have taken
+-ability to toggle points or dashes on the page to organize better
+
+Design
+
+-make a dynamic logo (colours change with themes)
+-add sticky note type designs to the page
+ ex.a folded piece of paper on the corner of buttons and text area
+ 
