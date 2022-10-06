@@ -168,9 +168,15 @@ header {
 
 }
 
-.theme_list {
+.theme_list{
 
     background-color: rgb(0, 0, 0);
-    font-size: 17px;
 
 }
+
+.theme_list a, li{
+
+    background-color: rgb(0, 0, 0);
+
+}
+
