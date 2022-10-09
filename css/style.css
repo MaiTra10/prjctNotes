@@ -87,7 +87,7 @@ nav a:hover{
 
 .textbox {
 
-    background-color: #ffffff;
+    background-color: #777777;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     font-size: 20px;
@@ -98,7 +98,7 @@ nav a:hover{
     height: calc(75vh);
     border-width: 8px;
     border-radius: 4px;
-    border-color: #FF7F11;
+    border-color: #4e4e4e;
     outline: none;
 
 }
@@ -196,9 +196,146 @@ nav a:hover{
 
 }
 
-.log_in > .log_in_a:focus + .bg_blur {
+.log_in_a:focus + .bg_blur {
 
     opacity: 0.5;
     pointer-events: auto;
+
+}
+
+.log_in_block {
+
+    position: fixed;
+    z-index: 2;
+    opacity: 0;
+    top: calc(50vh - 150px);
+    left: calc(50vw - 210px);
+    width: 420px;
+    height: 300px;
+    padding: 15px 25px;
+    border-radius: 10px;
+    background-color: #1f1f1f;
+    pointer-events: auto;
+    transition: opacity 200ms ease-in-out;
+
+}
+
+.log_in_a:focus ~ .log_in_block{
+
+    opacity: 1;
+    pointer-events: auto;
+
+}
+
+.close_btn {
+
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 30px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 5px;
+    background-color: #FF7F11;
+    color: #ffffff;
+    transition: all 200ms ease 0s;
+
+}
+
+.close_btn:hover {
+
+    background-color: #ff8011ac;
+
+}
+
+.close_btn:active {
+
+    background-color: #ff801166;
+
+}
+
+.log_in_block h2 {
+
+    text-align: center;
+    font-size: 30px;
+
+}
+
+.log_in_form {
+
+    margin-top: 10px;
+
+}
+
+.log_in_form div {
+
+    margin: 10px 10px;
+    font-size: 15px;
+
+}
+
+.log_in_form input{
+
+    margin-top: 10px;
+    display: block;
+    width: 100%;
+    height:35px;
+    border-radius: 5px;
+    background-color: #7c7772;
+    font-size: 17px;
+    padding: 0px 10px;
+
+}
+
+.log_in_form a {
+
+    position: absolute;
+    right: 40px;
+    font-size: 10px;
+    margin-top: 10px;
+
+}
+
+.log_in_form a:hover {
+
+    color: #ff8011ac;
+
+}
+
+.log_in_form a:active {
+
+    color: #ff801166;
+
+}
+
+.log_in_form button {
+
+    width: 70px;
+    height: 35px;
+    background-color: #FF7F11;
+    color: #ffffff;
+    font-size: 12px;
+    cursor: pointer;
+    border-width: 0px;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: all 200ms ease 0s;
+
+}
+
+.log_in_form button:hover {
+
+    background-color: #ff8011ac;
+
+}
+
+.log_in_form button:active {
+
+    background-color: #ff801166;
 
 }
