@@ -234,13 +234,13 @@ nav a:hover{
 
 }
 
-.close_btn:hover, .log_in_form button:hover {
+.close_btn:hover, .form button:hover {
 
     background-color: #ff8011ac;
 
 }
 
-.close_btn:active, .log_in_form button:active {
+.close_btn:active, .form button:active {
 
     background-color: #ff801166;
 
@@ -253,20 +253,20 @@ nav a:hover{
 
 }
 
-.log_in_form {
+.form {
 
     margin-top: 10px;
 
 }
 
-.log_in_form div {
+.form div {
 
     margin: 10px 10px;
     font-size: 15px;
 
 }
 
-.log_in_form input{
+.form input{
 
     margin-top: 10px;
     display: block;
@@ -276,6 +276,8 @@ nav a:hover{
     background-color: #7c7772;
     font-size: 17px;
     padding: 0px 10px;
+    border: 2px solid #4e4e4e;
+    outline: none;
 
 }
 
@@ -300,7 +302,7 @@ nav a:hover{
 
 }
 
-.log_in_form button {
+.form button {
 
     width: 70px;
     height: 35px;
@@ -330,6 +332,12 @@ nav a:hover{
 .sign_up_a h3 {
 
     color: #7c7772;
+
+}
+
+.form input {
+
+    caret-color: #1f1f1f;
 
 }
 
