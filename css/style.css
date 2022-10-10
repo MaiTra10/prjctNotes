@@ -85,6 +85,32 @@ nav a:hover{
 
 }
 
+.themes_o, .themes_p {
+
+    width: 100px;
+    transition: all 0.3s ease 0s;
+
+}
+
+.themes_o:hover, .themes_p:hover {
+
+    opacity: 0.8;
+
+}
+
+.log_in_o, .log_in_p {
+
+    width: 100px;
+    transition: all 0.3s ease 0s;
+
+}
+
+.log_in_o:hover, .log_in_p:hover {
+
+    opacity: 0.8;
+
+}
+
 .textbox {
 
     background-color: #777777;
@@ -144,7 +170,7 @@ nav a:hover{
 
 }
 
-.dropdown > .themes_a:focus + .dropdown_items {
+.dropdown > .themes_button:focus + .dropdown_items {
 
     opacity: 1;
     transform: translateY(0);
