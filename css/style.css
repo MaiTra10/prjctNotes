@@ -197,13 +197,6 @@ nav a:hover{
 
 }
 
-.log_in_a:focus + .bg_blur {
-
-    opacity: 0.5;
-    pointer-events: auto;
-
-}
-
 .log_in_block {
 
     position: fixed;
@@ -218,13 +211,6 @@ nav a:hover{
     background-color: #1f1f1f;
     pointer-events: none;
     transition: opacity 200ms ease-in-out;
-
-}
-
-.log_in_a:focus ~ .log_in_block{
-
-    opacity: 1;
-    pointer-events: auto;
 
 }
 
@@ -344,5 +330,19 @@ nav a:hover{
 .sign_up_a h3 {
 
     color: #7c7772;
+
+}
+
+.open-bg-blur {
+
+    opacity: 0.5;
+    pointer-events: auto;
+
+}
+
+.open-login-block {
+
+    opacity: 1;
+    pointer-events: auto;
 
 }
