@@ -60,28 +60,32 @@ body {
 
 }
 
-nav li{
+nav {
 
-    list-style: none;
-    display: inline-block;
-    margin-left: 83px;
-    margin-right: 20px;
+    width: 100%;
 
 }
 
-nav a{
+nav ul {
+
+    text-align: right;
+
+}
+
+nav li{
+
+    display: inline-block;
+
+}
+
+nav li div a{
 
     text-decoration: none;
     font-size: 25px;
     color: #FF7F11;
     transition: all 200ms ease 0s;
     background-color: #1f1f1f;
-
-}
-
-nav a:hover{
-
-    color: #aa44aa;
+    margin-right: calc(5vw);
 
 }
 
@@ -236,6 +240,7 @@ nav a:hover{
     background-color: #1f1f1f;
     pointer-events: none;
     transition: opacity 200ms ease-in-out;
+    text-align: left;
 
 }
 
@@ -308,10 +313,11 @@ nav a:hover{
 
 .forg_pwd a {
 
-    position: absolute;
-    right: 40px;
+    position: relative;
     font-size: 10px;
     margin-top: 10px;
+    float: right;
+    margin-right: 0px;
 
 }
 
