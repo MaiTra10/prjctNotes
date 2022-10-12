@@ -97,7 +97,7 @@ nav li div a{
 
 .themes_o, .log_in_o {
 
-    width: calc(10vw);
+    width: calc(11.5vw);
     max-width: 125px;
     transition: all 0.3s ease 0s;
 
