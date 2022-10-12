@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 :root {
 
@@ -39,7 +39,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
 
 }
 
@@ -280,6 +279,7 @@ nav li div a{
 
     text-align: center;
     font-size: 30px;
+    font-weight: 300;
 
 }
 
