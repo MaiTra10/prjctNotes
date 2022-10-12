@@ -59,6 +59,13 @@ body {
 
 }
 
+.logo {
+
+    width: 40%;
+    max-width: 200px;
+
+}
+
 nav {
 
     width: 100%;
@@ -88,27 +95,15 @@ nav li div a{
 
 }
 
-.themes_o, .themes_p {
+.themes_o, .log_in_o {
 
-    width: 100px;
+    width: calc(10vw);
+    max-width: 125px;
     transition: all 0.3s ease 0s;
 
 }
 
-.themes_o:hover, .themes_p:hover {
-
-    opacity: 0.8;
-
-}
-
-.log_in_o, .log_in_p {
-
-    width: 100px;
-    transition: all 0.3s ease 0s;
-
-}
-
-.log_in_o:hover, .log_in_p:hover {
+.themes_o:hover, .themes_p:hover, .log_in_o:hover, .log_in_p:hover {
 
     opacity: 0.8;
 
@@ -148,7 +143,7 @@ nav li div a{
 
 .footer_icons a:hover {
 
-    color: #aa44aa;
+    color: #a362dc;
 
 }
 
