@@ -225,11 +225,10 @@ nav li div a{
     position: fixed;
     z-index: 2;
     opacity: 0;
-    top: calc(50vh - 162.5px);
+    top: calc(50vh - 165px);
     left: calc(50vw - 210px);
     width: 420px;
-    height: 325px;
-    padding: 15px 25px;
+    height: 330px;
     border-radius: 10px;
     background-color: #1f1f1f;
     pointer-events: none;
@@ -241,6 +240,7 @@ nav li div a{
 .close_btn {
 
     position: absolute;
+    z-index: 1;
     padding: 0;
     margin: 0;
     top: 20px;
@@ -258,19 +258,79 @@ nav li div a{
 
 }
 
-.close_btn:hover, .form button:hover {
+.close_btn:hover, .log_in_block button:hover {
 
     background-color: #ff8011ac;
 
 }
 
-.close_btn:active, .form button:active {
+.close_btn:active, .log_in_block button:active {
 
     background-color: #ff801166;
 
 }
 
-.log_in_block h2 {
+.log_in_block {
+
+    overflow: hidden;
+
+}
+
+.form1, .form2, .form3 {
+
+    position: absolute;
+    height: 280px;
+    width: 370px;
+    transition: all 200ms ease-in-out;
+    
+}
+
+.form1 {
+
+    top: 25px;
+    left: 25px;
+
+}
+
+.form2 {
+
+    top: 25px;
+    left: -395px;
+
+}
+
+.form3 {
+
+    top: 25px;
+    left: 445px;
+
+}
+
+.slide-s-u-right {
+
+    transform: translateX(420px);
+
+}
+
+.slide-l-i-right {
+
+    transform: translateX(420px);
+
+}
+
+.slide-f-p-left {
+
+    transform: translateX(-420px);
+
+}
+
+.slide-l-i-left {
+
+    transform: translateX(-420px);
+
+}
+
+.form1 h2 , .form2 h2, .form3 h2  {
 
     text-align: center;
     font-size: 30px;
@@ -278,20 +338,14 @@ nav li div a{
 
 }
 
-.form {
-
-    margin-top: 10px;
-
-}
-
-.form div {
+.form1 div, .form2 div, .form3 div {
 
     margin: 10px 10px;
     font-size: 15px;
 
 }
 
-.form input{
+.form1 input, .form2 input, .form3 input{
 
     margin-top: 10px;
     display: block;
@@ -328,7 +382,7 @@ nav li div a{
 
 }
 
-.form button {
+.form1 button, .form2 button, .form3 button {
 
     width: 70px;
     height: 35px;
@@ -361,7 +415,7 @@ nav li div a{
 
 }
 
-.form input {
+.form1 input, .form2 input, .form3 input {
 
     caret-color: #1f1f1f;
 
