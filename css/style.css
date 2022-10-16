@@ -279,7 +279,6 @@ nav li div a{
 .form1, .form2, .form3 {
 
     position: absolute;
-    height: 280px;
     width: 370px;
     transition: all 200ms ease-in-out;
     
@@ -287,6 +286,7 @@ nav li div a{
 
 .form1 {
 
+    height: 280px;
     top: 25px;
     left: 25px;
 
@@ -294,14 +294,16 @@ nav li div a{
 
 .form2 {
 
-    top: 25px;
+    height: 250px;
+    top: 40px;
     left: -395px;
 
 }
 
 .form3 {
 
-    top: 25px;
+    height: 210px;
+    top: 60px;
     left: 445px;
 
 }
@@ -363,7 +365,7 @@ nav li div a{
 .forg_pwd a {
 
     position: relative;
-    font-size: 10px;
+    font-size: 12px;
     margin-top: 10px;
     float: right;
     margin-right: 0px;
@@ -403,9 +405,26 @@ nav li div a{
 
 }
 
-.sign_up_a h3, .sign_up_a a {
+.sign_up_a h3, .sign_up_a a, .form2 div h3 a, .form3 div h3 a{
 
-    font-size: 10px;
+    font-size: 12px;
+
+}
+
+.form2 div h3 a {
+
+    position: relative;
+    margin-top: 10px;
+    float: right;
+    margin-right: 0px;
+
+}
+
+.form3 div h3 a {
+
+    position: relative;
+    margin-top: 10px;
+    margin-right: 0px;
 
 }
 

@@ -16,6 +16,12 @@ function closeLoginBlock() {
     loginBlock.classList.remove("open-login-block");
     bgBlur.classList.remove("open-bg-blur");
 
+    formLI.classList.remove("slide-l-i-right");
+    formSU.classList.remove("slide-s-u-right");
+
+    formLI.classList.remove("slide-l-i-left");
+    formFP.classList.remove("slide-f-p-left");
+
 }
 
 function openSignUpBlock() {
