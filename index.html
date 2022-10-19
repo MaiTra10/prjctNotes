@@ -26,15 +26,19 @@
 
                             <div class="dropdown">
 
-                                <a href="#" class="themes_button"><img class="themes_o" src="images/prjctNotes - Themes (Orange).png" alt="themes_o"><!--<img class="themes_p" src="images/prjctNotes - Themes (Purple).png" alt="themes_p">--></a>
+                                <a href="#" class="themes_button" onclick="openDropdownBlock()"><img class="themes_o" src="images/prjctNotes - Themes (Orange).png" alt="themes_o"><!--<img class="themes_p" src="images/prjctNotes - Themes (Purple).png" alt="themes_p">--></a>
 
-                                <div class="dropdown_items">
+                                <div class="dropdown_block" id="dropdownBlock">
 
-                                    <ul>
-                                        <li><a href="#">Theme 1</a></li>
-                                        <li><a href="#">Theme 2</a></li>
-                                        <li><a href="#">Theme 3</a></li>
-                                    </ul>
+                                    <div class="close_btn_theme_dropdown" onclick="closeDropdownBlock()"><div class="x">&times;</div></div>
+
+                                    <div class="theme_container">
+
+                                        <div class="theme_1"><a href="#"></a></div>
+                                        <div class="theme_2"><a href="#"></a></div>
+                                        <div class="theme_3"><a href="#"></a></div>
+
+                                    </div>
 
                                 </div>
 
@@ -54,7 +58,7 @@
 
                                     <div class="close_btn" onclick="closeLoginBlock()">&times;</div>
 
-                                    <form class="form">
+                                    <form class="form1" id="formLI">
 
                                         <h2>Log In</h2>
 
@@ -68,19 +72,19 @@
                                             <input type="password" id="pwd" name="pwd">
                                         </div>
 
-                                        <div class="forg_pwd"><a href="#">Forgot Password?</a></div>
+                                        <div class="forg_pwd"><a href="#" class="forg_pwd_a" onclick="openFrgPwdBlock()">Forgot Password?</a></div>
 
                                         <div><button>Sign In</button></div>
 
                                         <div class="sign_up_a">
 
-                                            <h3>Don't have an account? <a href="#">Sign Up!</a></h3>
+                                            <h3>Don't have an account? <a href="#" class="sign_up_a" onclick="openSignUpBlock()">Sign Up!</a></h3>
 
                                         </div>
 
                                     </form>
 
-                                    <!--<form class="form">
+                                    <form class="form2" id="formSU">
 
                                         <h2>Sign Up</h2>
 
@@ -90,15 +94,17 @@
                                         </div>
 
                                         <div>
-                                            <label for="pwd">Password</label>
+                                            <label for="pwdSu">Password</label>
                                             <input type="password" id="pwdSu" name="pwd">
                                         </div>
+
+                                        <div><h3><a href="#" class="back_to_log_in" onclick="closeSignUpBlock()">Go back to Log In&RightArrow;</a></h3></div>
 
                                         <div><button>Sign Up</button></div>
 
                                     </form>
 
-                                    <form class="form">
+                                    <form class="form3" id="formFP">
 
                                         <h2>Forgot Password?</h2>
 
@@ -109,7 +115,9 @@
 
                                         <div><button>Submit</button></div>
 
-                                    </form>-->
+                                        <div><h3><a href="#" class="back_to_log_in" onclick="closeFrgPwdBlock()">&LeftArrow;Go back to Log In</a></h3></div>
+
+                                    </form>
 
                                 </div>
 
