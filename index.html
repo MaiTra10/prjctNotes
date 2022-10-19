@@ -26,15 +26,19 @@
 
                             <div class="dropdown">
 
-                                <a href="#" class="themes_button"><img class="themes_o" src="images/prjctNotes - Themes (Orange).png" alt="themes_o"><!--<img class="themes_p" src="images/prjctNotes - Themes (Purple).png" alt="themes_p">--></a>
+                                <a href="#" class="themes_button" onclick="openDropdownBlock()"><img class="themes_o" src="images/prjctNotes - Themes (Orange).png" alt="themes_o"><!--<img class="themes_p" src="images/prjctNotes - Themes (Purple).png" alt="themes_p">--></a>
 
-                                <div class="dropdown_items">
+                                <div class="dropdown_block" id="dropdownBlock">
 
-                                    <ul>
-                                        <li><a href="#">Theme 1</a></li>
-                                        <li><a href="#">Theme 2</a></li>
-                                        <li><a href="#">Theme 3</a></li>
-                                    </ul>
+                                    <div class="close_btn_theme_dropdown" onclick="closeDropdownBlock()"><div class="x">&times;</div></div>
+
+                                    <div class="theme_container">
+
+                                        <div class="theme_1"><a href="#"></a></div>
+                                        <div class="theme_2"><a href="#"></a></div>
+                                        <div class="theme_3"><a href="#"></a></div>
+
+                                    </div>
 
                                 </div>
 
@@ -94,7 +98,7 @@
                                             <input type="password" id="pwdSu" name="pwd">
                                         </div>
 
-                                        <div><h3><a href="#" class="back_to_log_in_f_p" onclick="closeSignUpBlock()">Go back to Log In&RightArrow;</a></h3></div>
+                                        <div><h3><a href="#" class="back_to_log_in" onclick="closeSignUpBlock()">Go back to Log In&RightArrow;</a></h3></div>
 
                                         <div><button>Sign Up</button></div>
 
@@ -111,7 +115,7 @@
 
                                         <div><button>Submit</button></div>
 
-                                        <div><h3><a href="#" class="back_to_log_in_f_p" onclick="closeFrgPwdBlock()">&LeftArrow;Go back to Log In</a></h3></div>
+                                        <div><h3><a href="#" class="back_to_log_in" onclick="closeFrgPwdBlock()">&LeftArrow;Go back to Log In</a></h3></div>
 
                                     </form>
 
