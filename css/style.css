@@ -2,7 +2,7 @@
 
 :root {
 
-    --width: 130px;
+    --theme_def_main: #1f1f1f;
 
 }
 
@@ -44,7 +44,7 @@
 
 body {
 
-    background-color: #1f1f1f;
+    background-color: var(--theme_def_main);
 
 }
 
@@ -84,10 +84,9 @@ nav li{
 
 }
 
-nav li div a{
+nav li div a div {
 
     text-decoration: none;
-    font-size: 25px;
     color: #FF7F11;
     transition: all 200ms ease 0s;
     background-color: #1f1f1f;
@@ -95,7 +94,7 @@ nav li div a{
 
 }
 
-.themes_o, .log_in_o {
+.themes_o, .log_in_o, .themes_p, .log_in_p {
 
     width: calc(11.5vw);
     max-width: 125px;
@@ -106,6 +105,22 @@ nav li div a{
 .themes_o:hover, .themes_p:hover, .log_in_o:hover, .log_in_p:hover {
 
     opacity: 0.8;
+
+}
+
+.themes_p, .log_in_p {
+
+    position: relative;
+    opacity: 0;
+    bottom: calc((min(11.5vw, 125px) / 3.013605443) + 3px);
+
+}
+
+.themes_button div, .log_in_button div {
+
+    position: relative;
+    width: min(11.5vw, 125px);
+    height: calc(min(11.5vw, 125px) / 3.013605443);
 
 }
 
