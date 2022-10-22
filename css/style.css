@@ -39,6 +39,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
 
 }
 
@@ -84,13 +85,29 @@ nav li{
 
 }
 
-nav li div a div {
+nav li div .theme_button_o, nav li div .log_in_button_o {
 
     text-decoration: none;
     color: #FF7F11;
     transition: all 200ms ease 0s;
     background-color: #1f1f1f;
-    margin-right: calc(5vw);
+    margin-right: calc(-5vw);
+
+}
+
+.dropdown, .log_in {
+
+    font-size: 0;
+
+}
+
+.theme_button_p, .log_in_button_p {
+
+    position: relative;
+    right: calc(min(11.5vw, 125px) - 5vw);
+    pointer-events: none;
+    opacity: 0;
+    transition: all 200ms ease 0s;
 
 }
 
@@ -102,25 +119,9 @@ nav li div a div {
 
 }
 
-.themes_o:hover, .themes_p:hover, .log_in_o:hover, .log_in_p:hover {
+.theme_button_o:hover + .theme_button_p, .log_in_button_o:hover + .log_in_button_p {
 
-    opacity: 0.8;
-
-}
-
-.themes_p, .log_in_p {
-
-    position: relative;
-    opacity: 0;
-    bottom: calc((min(11.5vw, 125px) / 3.013605443) + 3px);
-
-}
-
-.themes_button div, .log_in_button div {
-
-    position: relative;
-    width: min(11.5vw, 125px);
-    height: calc(min(11.5vw, 125px) / 3.013605443);
+    opacity: 1;
 
 }
 
@@ -179,6 +180,7 @@ nav li div a div {
     max-width: 125px;
     height: 175px;
     background-color: #000000;
+    margin-top: 10px;
     /*border-radius: 10px;*/
     opacity: 0;
     pointer-events: none;
