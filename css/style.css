@@ -2,9 +2,22 @@
 
 :root {
 
-    --theme_def_main: #1f1f1f;
+    --bg: #1F1F1F;
+    --txtbox_bg: #777777;
+    --txtbox_border: #4E4E4E;
+    --main: #FF7F11;
+    --main_dark: #C76715;
+    --main_darkest: #8F4F18;
+    --accent: #A362DC;
+    --accent_dark: #8252AD;
+    --accent_darkest: #61417E;
+    --scrollbar_thumb: #5C5C5C;
+    --scrollbar_thumb_active: #696969;
+    --theme_dropdown_bg: #000000;
+    --msc: #ffffff;
 
 }
+
 
 ::-webkit-scrollbar {
 
@@ -14,7 +27,7 @@
 
 ::-webkit-scrollbar-track {
 
-    background-color: #1f1f1f;
+    background-color: var(--bg);
     border-radius: 100vw;
     margin-block: 0.2em;
 
@@ -22,14 +35,14 @@
 
 ::-webkit-scrollbar-thumb {
 
-    background-color: #5c5c5c;
+    background-color: var(--scrollbar_thumb);
     border-radius: 100vw;
 
 }
 
 ::-webkit-scrollbar-thumb:active {
 
-    background-color: #6d6965;
+    background-color: var(--scrollbar_thumb_active);
 
 }
 
@@ -40,23 +53,24 @@
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
+    transition: all 750ms ease 0s;
 
 }
 
 body {
 
-    background-color: var(--theme_def_main);
+    background-color: var(--bg);
 
 }
 
 .container {
 
-    background-color: #1f1f1f;
+    background-color: var(--bg);
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0px 17.5%;
-    color: #FF7F11;
+    color: var(--main);
 
 }
 
@@ -88,9 +102,9 @@ nav li{
 nav li div .theme_button_o, nav li div .log_in_button_o {
 
     text-decoration: none;
-    color: #FF7F11;
+    color: var(--main);
     transition: all 200ms ease 0s;
-    background-color: #1f1f1f;
+    background-color: var(--bg);
     margin-right: calc(-5vw);
 
 }
@@ -107,7 +121,7 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
     right: calc(min(11.5vw, 125px) - 5vw);
     pointer-events: none;
     opacity: 0;
-    transition: all 200ms ease 0s;
+    transition: opacity 200ms ease 0s;
 
 }
 
@@ -115,7 +129,7 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
 
     width: calc(11.5vw);
     max-width: 125px;
-    transition: all 0.3s ease 0s;
+    transition: opacity 200ms ease 0s;
 
 }
 
@@ -127,7 +141,7 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
 
 .textbox {
 
-    background-color: #777777;
+    background-color: var(--txtbox_bg);
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     font-size: 20px;
@@ -138,7 +152,7 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
     height: calc(75vh);
     border-width: 8px;
     border-radius: 4px;
-    border-color: #4e4e4e;
+    border-color: var(--txtbox_border);
     outline: none;
 
 }
@@ -152,14 +166,20 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
 
 .footer_icons a, a:visited {
 
-    color: #FF7F11;
-    transition: all 0.3s ease 0s;
+    color: var(--main);
+    transition: all 200ms ease 0ms;
 
 }
 
 .footer_icons a:hover {
 
-    color: #a362dc;
+    color: var(--accent);
+
+}
+
+.footer_icons a:active {
+
+    color: var(--accent_darkest);
 
 }
 
@@ -179,7 +199,7 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
     width: calc(11.5vw);
     max-width: 125px;
     height: 175px;
-    background-color: #000000;
+    background-color: var(--theme_dropdown_bg);
     margin-top: 10px;
     /*border-radius: 10px;*/
     opacity: 0;
@@ -205,7 +225,7 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
     margin-left: 10px;
     height: calc(100% - 40px);
     margin-top: 5px;
-    background-color: #000000;
+    background-color: var(--theme_dropdown_bg);
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -220,7 +240,7 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
     top: 0;
     cursor: pointer;
     width: 100%;
-    background-color: #a362dc;
+    background-color: var(--accent);
     color: white;
     text-align: center;
     vertical-align: center;
@@ -242,13 +262,13 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
 
 .close_btn_theme_dropdown:hover {
 
-    background-color: #a362dcdd;
+    background-color: var(--accent_dark);
 
 }
 
 .close_btn_theme_dropdown:active {
 
-    background-color: #a362dcb3;
+    background-color: var(--accent_darkest);
 
 }
 
@@ -260,7 +280,7 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
     height: 25px;
     cursor: pointer;
     border:0px solid #4cc75e;
-    transition: border 100ms ease-in-out;
+    transition: border 300ms ease-in-out;
 
 }
 
@@ -295,7 +315,7 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
     width: 420px;
     height: 330px;
     border-radius: 10px;
-    background-color: #1f1f1f;
+    background-color: var(--bg);
     pointer-events: none;
     transition: opacity 200ms ease-in-out;
     text-align: left;
@@ -317,33 +337,33 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
     text-align: center;
     line-height: 20px;
     border-radius: 5px;
-    background-color: #1f1f1f;
-    color: #ffffff;
+    background-color: var(--bg);
+    color: var(--msc);
     transition: all 200ms ease 0s;
 
 }
 
 .close_btn:hover {
 
-    background-color: #FF7F11;
+    background-color: var(--main);
 
 }
 
 .close_btn:active {
 
-    background-color: #ff8011ac;
+    background-color: var(--main_darkest);
 
 }
 
 .log_in_block button:hover {
 
-    background-color: #ff8011ac;
+    background-color: var(--main_dark);
 
 }
 
 .log_in_block button:active {
 
-    background-color: #ff801166;
+    background-color: var(--main_darkest);
 
 }
 
@@ -431,10 +451,10 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
     width: 100%;
     height:35px;
     border-radius: 5px;
-    background-color: #777777;
+    background-color: var(--txtbox_bg);
     font-size: 17px;
     padding: 0px 10px;
-    border: 2px solid #4e4e4e;
+    border: 2px solid var(--txtbox_border);
     outline: none;
 
 }
@@ -451,13 +471,13 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
 
 .forg_pwd a:hover, .sign_up_a a:hover, .back_to_log_in:hover {
 
-    color: #ff8011ac;
+    color: var(--main_dark);
 
 }
 
 .forg_pwd a:active, .sign_up_a a:active, .back_to_log_in:active {
 
-    color: #ff801166;
+    color: var(--main_darkest);
 
 }
 
@@ -465,8 +485,8 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
 
     width: 70px;
     height: 35px;
-    background-color: #FF7F11;
-    color: #ffffff;
+    background-color: var(--main);
+    color: var(--msc);
     font-size: 12px;
     cursor: pointer;
     border-width: 0px;
@@ -507,13 +527,13 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
 
 .sign_up_a h3 {
 
-    color: #777777;
+    color: var(--txtbox_bg);
 
 }
 
 .form1 input, .form2 input, .form3 input {
 
-    caret-color: #1f1f1f;
+    caret-color: var(--bg);
 
 }
 

@@ -65,3 +65,21 @@ function closeFrgPwdBlock() {
     formFP.classList.remove("slide-f-p-left");
 
 }
+
+var css_var = document.querySelector(':root');
+
+function currentTheme() {
+
+    css_var.style.setProperty('--bg', '#1F1F1F');
+    css_var.style.setProperty('--main', '#FF7F11');
+    css_var.style.setProperty('--txtbox_bg', '#777777');
+
+}
+
+function setVar() {
+
+    css_var.style.setProperty('--bg', 'white');
+    css_var.style.setProperty('--main', 'green');
+    css_var.style.setProperty('--txtbox_bg', 'black');
+
+}
