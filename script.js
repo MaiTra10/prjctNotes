@@ -68,18 +68,58 @@ function closeFrgPwdBlock() {
 
 var css_var = document.querySelector(':root');
 
-function currentTheme() {
+function themeDef() {
 
     css_var.style.setProperty('--bg', '#1F1F1F');
-    css_var.style.setProperty('--main', '#FF7F11');
     css_var.style.setProperty('--txtbox_bg', '#777777');
+    css_var.style.setProperty('--txtbox_border', '#4E4E4E');
+    css_var.style.setProperty('--main', '#FF7F11');
+    css_var.style.setProperty('--main_two', '#C76715');
+    css_var.style.setProperty('--main_three', '#8F4F18');
+    css_var.style.setProperty('--accent', '#A362DC');
+    css_var.style.setProperty('--accent_two', '#8252AD');
+    css_var.style.setProperty('--accent_three', '#61417E');
+    css_var.style.setProperty('--scrollbar_thumb', '#5C5C5C');
+    css_var.style.setProperty('--scrollbar_thumb_active', '#696969');
+    css_var.style.setProperty('--theme_dropdown_bg', '#000000');
+    css_var.style.setProperty('--msc', '#ffffff');
+    document.getElementById("logo").src="images/prjctNotes.png";
 
 }
 
-function setVar() {
+function themeOne() {
 
-    css_var.style.setProperty('--bg', 'white');
-    css_var.style.setProperty('--main', 'green');
-    css_var.style.setProperty('--txtbox_bg', 'black');
+    css_var.style.setProperty('--bg', '#FAFAFA');
+    css_var.style.setProperty('--txtbox_bg', '#E2F3EF');
+    css_var.style.setProperty('--txtbox_border', '#80DCC3');
+    css_var.style.setProperty('--main', '#FF7878');
+    css_var.style.setProperty('--main_two', '#C0AA9E');
+    css_var.style.setProperty('--main_three', '#B0B7A8');
+    css_var.style.setProperty('--accent', '#80DCC3');
+    css_var.style.setProperty('--accent_two', '#9FE4D1');
+    css_var.style.setProperty('--accent_three', '#BDEBDF');
+    css_var.style.setProperty('--scrollbar_thumb', '#9FE4D1');
+    css_var.style.setProperty('--scrollbar_thumb_active', '#BDEBDF');
+    css_var.style.setProperty('--theme_dropdown_bg', '#CCCCCC');
+    css_var.style.setProperty('--msc', '#000000');
+    document.getElementById("logo").src="images/prjctNotes (Theme 1).png";
+
+}
+
+function themeTwo() {
+
+    css_var.style.setProperty('--bg', '');
+    css_var.style.setProperty('--txtbox_bg', '');
+    css_var.style.setProperty('--txtbox_border', '');
+    css_var.style.setProperty('--main', '');
+    css_var.style.setProperty('--main_two', '');
+    css_var.style.setProperty('--main_three', '');
+    css_var.style.setProperty('--accent', '');
+    css_var.style.setProperty('--accent_two', '');
+    css_var.style.setProperty('--accent_three', '');
+    css_var.style.setProperty('--scrollbar_thumb', '');
+    css_var.style.setProperty('--scrollbar_thumb_active', '');
+    css_var.style.setProperty('--theme_dropdown_bg', '');
+    css_var.style.setProperty('--msc', '');
 
 }

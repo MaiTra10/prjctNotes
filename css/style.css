@@ -6,11 +6,11 @@
     --txtbox_bg: #777777;
     --txtbox_border: #4E4E4E;
     --main: #FF7F11;
-    --main_dark: #C76715;
-    --main_darkest: #8F4F18;
+    --main_two: #C76715;
+    --main_three: #8F4F18;
     --accent: #A362DC;
-    --accent_dark: #8252AD;
-    --accent_darkest: #61417E;
+    --accent_two: #8252AD;
+    --accent_three: #61417E;
     --scrollbar_thumb: #5C5C5C;
     --scrollbar_thumb_active: #696969;
     --theme_dropdown_bg: #000000;
@@ -53,7 +53,7 @@
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
-    transition: all 750ms ease 0s;
+    transition: all 1000ms ease-in-out;
 
 }
 
@@ -103,7 +103,7 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
 
     text-decoration: none;
     color: var(--main);
-    transition: all 200ms ease 0s;
+    transition: all 1000ms ease-in-out;
     background-color: var(--bg);
     margin-right: calc(-5vw);
 
@@ -121,7 +121,7 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
     right: calc(min(11.5vw, 125px) - 5vw);
     pointer-events: none;
     opacity: 0;
-    transition: opacity 200ms ease 0s;
+    transition: opacity 1000ms ease-in-out;
 
 }
 
@@ -129,7 +129,7 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
 
     width: calc(11.5vw);
     max-width: 125px;
-    transition: opacity 200ms ease 0s;
+    transition: opacity 1000ms ease-in-out;
 
 }
 
@@ -167,7 +167,7 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
 .footer_icons a, a:visited {
 
     color: var(--main);
-    transition: all 200ms ease 0ms;
+    transition: all 1000ms ease-in-out;
 
 }
 
@@ -179,7 +179,7 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
 
 .footer_icons a:active {
 
-    color: var(--accent_darkest);
+    color: var(--accent_three);
 
 }
 
@@ -207,7 +207,7 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
     transform: translateY(-5px);
     overflow:hidden;
     clip-path: polygon(0 0, 85% 0, 100% 20px, 100% 100%, 100% 100%, 15% 100%, 0 155px, 0 0);
-    transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
+    transition: all 1000ms ease-in-out;
 
 }
 
@@ -247,7 +247,7 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
     /*border-radius: 10px;*/
     height: 20px;
     cursor: pointer;
-    transition: all 200ms ease-in-out;
+    transition: all 1000ms ease-in-out;
 
 }
 
@@ -262,13 +262,13 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
 
 .close_btn_theme_dropdown:hover {
 
-    background-color: var(--accent_dark);
+    background-color: var(--accent_two);
 
 }
 
 .close_btn_theme_dropdown:active {
 
-    background-color: var(--accent_darkest);
+    background-color: var(--accent_three);
 
 }
 
@@ -280,7 +280,7 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
     height: 25px;
     cursor: pointer;
     border:0px solid #4cc75e;
-    transition: border 300ms ease-in-out;
+    transition: border 1000ms ease-in-out;
 
 }
 
@@ -301,7 +301,7 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
     opacity: 0;
     z-index: 1;
     pointer-events: none;
-    transition: opacity 200ms ease-in-out;
+    transition: opacity 1000ms ease-in-out;
 
 }
 
@@ -317,7 +317,7 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
     border-radius: 10px;
     background-color: var(--bg);
     pointer-events: none;
-    transition: opacity 200ms ease-in-out;
+    transition: opacity 1000ms ease-in-out;
     text-align: left;
 
 }
@@ -339,7 +339,7 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
     border-radius: 5px;
     background-color: var(--bg);
     color: var(--msc);
-    transition: all 200ms ease 0s;
+    transition: all 1000ms ease-in-out;
 
 }
 
@@ -351,19 +351,19 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
 
 .close_btn:active {
 
-    background-color: var(--main_darkest);
+    background-color: var(--main_three);
 
 }
 
 .log_in_block button:hover {
 
-    background-color: var(--main_dark);
+    background-color: var(--main_two);
 
 }
 
 .log_in_block button:active {
 
-    background-color: var(--main_darkest);
+    background-color: var(--main_three);
 
 }
 
@@ -377,7 +377,7 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
 
     position: absolute;
     width: 370px;
-    transition: all 200ms ease-in-out;
+    transition: all 1000ms ease-in-out;
     
 }
 
@@ -471,13 +471,13 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
 
 .forg_pwd a:hover, .sign_up_a a:hover, .back_to_log_in:hover {
 
-    color: var(--main_dark);
+    color: var(--main_two);
 
 }
 
 .forg_pwd a:active, .sign_up_a a:active, .back_to_log_in:active {
 
-    color: var(--main_darkest);
+    color: var(--main_three);
 
 }
 
@@ -492,7 +492,7 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
     border-width: 0px;
     border-radius: 5px;
     margin-top: 10px;
-    transition: all 200ms ease 0s;
+    transition: all 1000ms ease-in-out;
 
 }
 
