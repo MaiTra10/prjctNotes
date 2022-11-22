@@ -4,6 +4,9 @@ let bgBlur = document.getElementById("bgBlur");
 let formLI = document.getElementById("formLI");
 let formSU = document.getElementById("formSU");
 let formFP = document.getElementById("formFP");
+let logo_def = document.getElementById("logo_def");
+let logo_1 = document.getElementById("logo_1");
+let logo_2 = document.getElementById("logo_2");
 
 function openDropdownBlock() {
 
@@ -83,7 +86,10 @@ function themeDef() {
     css_var.style.setProperty('--scrollbar_thumb_active', '#696969');
     css_var.style.setProperty('--theme_dropdown_bg', '#000000');
     css_var.style.setProperty('--msc', '#ffffff');
-    document.getElementById("logo").src="images/prjctNotes.png";
+
+    logo_def.classList.remove("dim-logo-def");
+    logo_1.classList.remove("brighten-logo-1");
+    logo_2.classList.remove("brighten-logo-2");
 
 }
 
@@ -102,24 +108,31 @@ function themeOne() {
     css_var.style.setProperty('--scrollbar_thumb_active', '#BDEBDF');
     css_var.style.setProperty('--theme_dropdown_bg', '#CCCCCC');
     css_var.style.setProperty('--msc', '#000000');
-    document.getElementById("logo").src="images/prjctNotes (Theme 1).png";
+
+    logo_def.classList.add("dim-logo-def");
+    logo_1.classList.add("brighten-logo-1");
+    logo_2.classList.remove("brighten-logo-2");
 
 }
 
 function themeTwo() {
 
-    css_var.style.setProperty('--bg', '');
-    css_var.style.setProperty('--txtbox_bg', '');
-    css_var.style.setProperty('--txtbox_border', '');
-    css_var.style.setProperty('--main', '');
-    css_var.style.setProperty('--main_two', '');
-    css_var.style.setProperty('--main_three', '');
-    css_var.style.setProperty('--accent', '');
-    css_var.style.setProperty('--accent_two', '');
-    css_var.style.setProperty('--accent_three', '');
-    css_var.style.setProperty('--scrollbar_thumb', '');
-    css_var.style.setProperty('--scrollbar_thumb_active', '');
-    css_var.style.setProperty('--theme_dropdown_bg', '');
-    css_var.style.setProperty('--msc', '');
+    css_var.style.setProperty('--bg', '#101834');
+    css_var.style.setProperty('--txtbox_bg', '#7AF2F9');
+    css_var.style.setProperty('--txtbox_border', '#45818E');
+    css_var.style.setProperty('--main', '#7AF2F9');
+    css_var.style.setProperty('--main_two', '#62C1CD');
+    css_var.style.setProperty('--main_three', '#47899A');
+    css_var.style.setProperty('--accent', '#45818E');
+    css_var.style.setProperty('--accent_two', '#679DA9');
+    css_var.style.setProperty('--accent_three', '#77ACB8');
+    css_var.style.setProperty('--scrollbar_thumb', 'white');
+    css_var.style.setProperty('--scrollbar_thumb_active', 'white');
+    css_var.style.setProperty('--theme_dropdown_bg', 'white');
+    css_var.style.setProperty('--msc', 'white');
+
+    logo_def.classList.add("dim-logo-def");
+    logo_1.classList.remove("brighten-logo-1");
+    logo_2.classList.add("brighten-logo-2");
 
 }

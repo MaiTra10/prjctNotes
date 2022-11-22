@@ -53,7 +53,7 @@
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
-    transition: all 1000ms ease-in-out;
+    transition: all 250ms ease-in-out;
 
 }
 
@@ -74,10 +74,44 @@ body {
 
 }
 
-.logo {
+.logo_def, .logo_1, .logo_2 {
 
+    position: relative;
     width: 40%;
     max-width: 200px;
+    pointer-events: none;
+
+}
+
+.logo_1 {
+
+    right: calc(min(40%, 200px));
+    opacity: 0;
+
+}
+
+.logo_2 {
+
+    right: calc(2 * min(40%, 200px));
+    opacity: 0;
+
+}
+
+.dim-logo-def {
+
+    opacity: 0;
+
+}
+
+.brighten-logo-1 {
+
+    opacity: 1;
+
+}
+
+.brighten-logo-2 {
+
+    opacity: 1;
 
 }
 
@@ -103,7 +137,7 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
 
     text-decoration: none;
     color: var(--main);
-    transition: all 1000ms ease-in-out;
+    transition: all 250ms ease-in-out;
     background-color: var(--bg);
     margin-right: calc(-5vw);
 
@@ -121,7 +155,7 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
     right: calc(min(11.5vw, 125px) - 5vw);
     pointer-events: none;
     opacity: 0;
-    transition: opacity 1000ms ease-in-out;
+    transition: opacity 250ms ease-in-out;
 
 }
 
@@ -129,7 +163,7 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
 
     width: calc(11.5vw);
     max-width: 125px;
-    transition: opacity 1000ms ease-in-out;
+    transition: opacity 250ms ease-in-out;
 
 }
 
@@ -167,7 +201,7 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
 .footer_icons a, a:visited {
 
     color: var(--main);
-    transition: all 1000ms ease-in-out;
+    transition: all 250ms ease-in-out;
 
 }
 
@@ -207,7 +241,7 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
     transform: translateY(-5px);
     overflow:hidden;
     clip-path: polygon(0 0, 85% 0, 100% 20px, 100% 100%, 100% 100%, 15% 100%, 0 155px, 0 0);
-    transition: all 1000ms ease-in-out;
+    transition: all 250ms ease-in-out;
 
 }
 
@@ -247,7 +281,7 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
     /*border-radius: 10px;*/
     height: 20px;
     cursor: pointer;
-    transition: all 1000ms ease-in-out;
+    transition: all 250ms ease-in-out;
 
 }
 
@@ -280,7 +314,7 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
     height: 25px;
     cursor: pointer;
     border:0px solid #4cc75e;
-    transition: border 1000ms ease-in-out;
+    transition: border 250ms ease-in-out;
 
 }
 
@@ -301,7 +335,7 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
     opacity: 0;
     z-index: 1;
     pointer-events: none;
-    transition: opacity 1000ms ease-in-out;
+    transition: opacity 250ms ease-in-out;
 
 }
 
@@ -317,7 +351,7 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
     border-radius: 10px;
     background-color: var(--bg);
     pointer-events: none;
-    transition: opacity 1000ms ease-in-out;
+    transition: opacity 250ms ease-in-out;
     text-align: left;
 
 }
@@ -339,7 +373,7 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
     border-radius: 5px;
     background-color: var(--bg);
     color: var(--msc);
-    transition: all 1000ms ease-in-out;
+    transition: all 250ms ease-in-out;
 
 }
 
@@ -377,7 +411,7 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
 
     position: absolute;
     width: 370px;
-    transition: all 1000ms ease-in-out;
+    transition: all 250ms ease-in-out;
     
 }
 
@@ -492,7 +526,7 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
     border-width: 0px;
     border-radius: 5px;
     margin-top: 10px;
-    transition: all 1000ms ease-in-out;
+    transition: all 250ms ease-in-out;
 
 }
 
