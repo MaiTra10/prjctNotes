@@ -105,43 +105,26 @@ nav li{
 
 }
 
-nav li div .theme_button_o, nav li div .log_in_button_o {
+.themes_img, .log_in_img {
 
-    text-decoration: none;
-    color: var(--main);
-    transition: all 250ms ease-in-out;
-    background-color: var(--bg);
-    margin-right: calc(-5vw);
-
-}
-
-.container, .dropdown, .log_in {
-
-    font-size: 0;
+    width: min(11.5vw, 125px);
+    height: min(3.84vw, 41.5px);
+    margin-right: 5vw;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
 
 }
 
-.theme_button_p, .log_in_button_p {
+.themes_img {
 
-    position: relative;
-    right: calc(min(11.5vw, 125px) - 5vw);
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 250ms ease-in-out;
+    background-image: url(../images/ThemesOrange.png);
 
 }
 
-.themes_o, .log_in_o, .themes_p, .log_in_p {
+.log_in_img {
 
-    width: calc(11.5vw);
-    max-width: 125px;
-    transition: opacity 250ms ease-in-out;
-
-}
-
-.theme_button_o:hover + .theme_button_p, .log_in_button_o:hover + .log_in_button_p {
-
-    opacity: 1;
+    background-image: url(../images/LogInOrange.png);
 
 }
 
@@ -281,18 +264,56 @@ nav li div .theme_button_o, nav li div .log_in_button_o {
 .theme_container div{
 
     width: 100%;
-    background-color: #ffffff;
     border-radius: 12.5px;
     height: 25px;
     cursor: pointer;
-    border:0px solid #4cc75e;
+    border:3px solid var(--msc);
     transition: border 250ms ease-in-out;
 
 }
 
 .theme_1:hover, .theme_3:hover, .theme_2:hover {
 
-    border-width: 3px;
+    border-color: #4cc75e;
+
+}
+
+.theme_1 {
+
+    background: linear-gradient(
+
+    -45deg,
+    #A362DC 33%,
+    #FF7F11 33% 66%,
+    #1F1F1F 66%
+    
+    );
+
+}
+
+.theme_2 {
+
+    background: linear-gradient(
+
+    -45deg,
+    #80DCC3 33%,
+    #FF7878 33% 66%,
+    #FAFAFA 66%
+    
+    );
+
+}
+
+.theme_3 {
+
+    background: linear-gradient(
+
+    -45deg,
+    #45818E 33%,
+    #7AF2F9 33% 66%,
+    #101834 66%
+    
+    );
 
 }
 

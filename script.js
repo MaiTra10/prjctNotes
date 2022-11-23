@@ -68,6 +68,32 @@ function closeFrgPwdBlock() {
 }
 
 var css_var = document.querySelector(':root');
+let themesImg = document.getElementById("themes_img");
+let logInImg = document.getElementById("log_in_img");
+
+themesImg.addEventListener("mouseover", function () {
+
+    themesImg.style.backgroundImage = "url('images/ThemesPurple.png')";
+
+}, false);
+
+themesImg.addEventListener("mouseout", function () {
+
+    themesImg.style.backgroundImage = "url('images/ThemesOrange.png')";
+
+}, false);
+
+logInImg.addEventListener("mouseover", function () {
+
+    logInImg.style.backgroundImage = "url('images/LogInPurple.png')";
+
+}, false);
+
+logInImg.addEventListener("mouseout", function () {
+
+    logInImg.style.backgroundImage = "url('images/LogInOrange.png')";
+
+}, false);
 
 function themeDef() {
 
@@ -86,6 +112,32 @@ function themeDef() {
     css_var.style.setProperty('--msc', '#ffffff');
 
     logo.style.backgroundImage = "url('images/prjctNotes.png')";
+    themesImg.style.backgroundImage = "url('images/ThemesOrange.png')";
+    logInImg.style.backgroundImage = "url('images/LogInOrange.png')";
+
+    themesImg.addEventListener("mouseover", function () {
+
+        themesImg.style.backgroundImage = "url('images/ThemesPurple.png')";
+
+    }, false);
+
+    themesImg.addEventListener("mouseout", function () {
+
+        themesImg.style.backgroundImage = "url('images/ThemesOrange.png')";
+
+    }, false);
+
+    logInImg.addEventListener("mouseover", function () {
+
+        logInImg.style.backgroundImage = "url('images/LogInPurple.png')";
+
+    }, false);
+
+    logInImg.addEventListener("mouseout", function () {
+
+        logInImg.style.backgroundImage = "url('images/LogInOrange.png')";
+
+    }, false);
 
 }
 
@@ -106,6 +158,32 @@ function themeOne() {
     css_var.style.setProperty('--msc', '#000000');
 
     logo.style.backgroundImage = "url('images/prjctNotesTheme1.png')";
+    themesImg.style.backgroundImage = "url('images/ThemesTeal.png')";
+    logInImg.style.backgroundImage = "url('images/LogInTeal.png')";
+
+    themesImg.addEventListener("mouseover", function () {
+
+        themesImg.style.backgroundImage = "url('images/ThemesWatermelonPink.png')";
+
+    }, false);
+
+    themesImg.addEventListener("mouseout", function () {
+
+        themesImg.style.backgroundImage = "url('images/ThemesTeal.png')";
+
+    }, false);
+
+    logInImg.addEventListener("mouseover", function () {
+
+        logInImg.style.backgroundImage = "url('images/LogInWatermelonPink.png')";
+
+    }, false);
+
+    logInImg.addEventListener("mouseout", function () {
+
+        logInImg.style.backgroundImage = "url('images/LogInTeal.png')";
+
+    }, false);
 
 }
 
@@ -126,5 +204,31 @@ function themeTwo() {
     css_var.style.setProperty('--msc', 'white');
 
     logo.style.backgroundImage = "url('images/prjctNotesTheme2.png')";
+    themesImg.style.backgroundImage = "url('images/ThemesElectricBlue.png')";
+    logInImg.style.backgroundImage = "url('images/LogInElectricBlue.png')";
+
+    themesImg.addEventListener("mouseover", function () {
+
+        themesImg.style.backgroundImage = "url('images/ThemesDarkCyan.png')";
+
+    }, false);
+
+    themesImg.addEventListener("mouseout", function () {
+
+        themesImg.style.backgroundImage = "url('images/ThemesElectricBlue.png')";
+
+    }, false);
+
+    logInImg.addEventListener("mouseover", function () {
+
+        logInImg.style.backgroundImage = "url('images/LogInDarkCyan.png')";
+
+    }, false);
+
+    logInImg.addEventListener("mouseout", function () {
+
+        logInImg.style.backgroundImage = "url('images/LogInElectricBlue.png')";
+
+    }, false);
 
 }
