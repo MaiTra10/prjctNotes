@@ -74,44 +74,16 @@ body {
 
 }
 
-.logo_def, .logo_1, .logo_2 {
+.logo {
 
-    position: relative;
+    height: 12.638vw;
+    max-height: 136px;
     width: 40%;
     max-width: 200px;
-    pointer-events: none;
 
-}
-
-.logo_1 {
-
-    right: calc(min(40%, 200px));
-    opacity: 0;
-
-}
-
-.logo_2 {
-
-    right: calc(2 * min(40%, 200px));
-    opacity: 0;
-
-}
-
-.dim-logo-def {
-
-    opacity: 0;
-
-}
-
-.brighten-logo-1 {
-
-    opacity: 1;
-
-}
-
-.brighten-logo-2 {
-
-    opacity: 1;
+    background-image: url(../images/prjctNotes.png);
+    background-repeat: no-repeat;
+    background-size: contain;
 
 }
 
