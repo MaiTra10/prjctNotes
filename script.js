@@ -4,6 +4,7 @@ let bgBlur = document.getElementById("bgBlur");
 let formLI = document.getElementById("formLI");
 let formSU = document.getElementById("formSU");
 let formFP = document.getElementById("formFP");
+let logo = document.getElementById("logo");
 
 function openDropdownBlock() {
 
@@ -63,5 +64,171 @@ function closeFrgPwdBlock() {
 
     formLI.classList.remove("slide-l-i-left");
     formFP.classList.remove("slide-f-p-left");
+
+}
+
+var css_var = document.querySelector(':root');
+let themesImg = document.getElementById("themes_img");
+let logInImg = document.getElementById("log_in_img");
+
+themesImg.addEventListener("mouseover", function () {
+
+    themesImg.style.backgroundImage = "url('images/ThemesPurple.png')";
+
+}, false);
+
+themesImg.addEventListener("mouseout", function () {
+
+    themesImg.style.backgroundImage = "url('images/ThemesOrange.png')";
+
+}, false);
+
+logInImg.addEventListener("mouseover", function () {
+
+    logInImg.style.backgroundImage = "url('images/LogInPurple.png')";
+
+}, false);
+
+logInImg.addEventListener("mouseout", function () {
+
+    logInImg.style.backgroundImage = "url('images/LogInOrange.png')";
+
+}, false);
+
+function themeDef() {
+
+    css_var.style.setProperty('--bg', '#1F1F1F');
+    css_var.style.setProperty('--txtbox_bg', '#777777');
+    css_var.style.setProperty('--txtbox_border', '#4E4E4E');
+    css_var.style.setProperty('--main', '#FF7F11');
+    css_var.style.setProperty('--main_two', '#C76715');
+    css_var.style.setProperty('--main_three', '#8F4F18');
+    css_var.style.setProperty('--accent', '#A362DC');
+    css_var.style.setProperty('--accent_two', '#8252AD');
+    css_var.style.setProperty('--accent_three', '#61417E');
+    css_var.style.setProperty('--scrollbar_thumb', '#5C5C5C');
+    css_var.style.setProperty('--scrollbar_thumb_active', '#696969');
+    css_var.style.setProperty('--theme_dropdown_bg', '#000000');
+    css_var.style.setProperty('--msc', '#ffffff');
+
+    logo.style.backgroundImage = "url('images/prjctNotes.png')";
+    themesImg.style.backgroundImage = "url('images/ThemesOrange.png')";
+    logInImg.style.backgroundImage = "url('images/LogInOrange.png')";
+
+    themesImg.addEventListener("mouseover", function () {
+
+        themesImg.style.backgroundImage = "url('images/ThemesPurple.png')";
+
+    }, false);
+
+    themesImg.addEventListener("mouseout", function () {
+
+        themesImg.style.backgroundImage = "url('images/ThemesOrange.png')";
+
+    }, false);
+
+    logInImg.addEventListener("mouseover", function () {
+
+        logInImg.style.backgroundImage = "url('images/LogInPurple.png')";
+
+    }, false);
+
+    logInImg.addEventListener("mouseout", function () {
+
+        logInImg.style.backgroundImage = "url('images/LogInOrange.png')";
+
+    }, false);
+
+}
+
+function themeOne() {
+
+    css_var.style.setProperty('--bg', '#FAFAFA');
+    css_var.style.setProperty('--txtbox_bg', '#E2F3EF');
+    css_var.style.setProperty('--txtbox_border', '#80DCC3');
+    css_var.style.setProperty('--main', '#FF7878');
+    css_var.style.setProperty('--main_two', '#C0AA9E');
+    css_var.style.setProperty('--main_three', '#B0B7A8');
+    css_var.style.setProperty('--accent', '#80DCC3');
+    css_var.style.setProperty('--accent_two', '#9FE4D1');
+    css_var.style.setProperty('--accent_three', '#BDEBDF');
+    css_var.style.setProperty('--scrollbar_thumb', '#9FE4D1');
+    css_var.style.setProperty('--scrollbar_thumb_active', '#BDEBDF');
+    css_var.style.setProperty('--theme_dropdown_bg', '#CCCCCC');
+    css_var.style.setProperty('--msc', '#000000');
+
+    logo.style.backgroundImage = "url('images/prjctNotesTheme1.png')";
+    themesImg.style.backgroundImage = "url('images/ThemesTeal.png')";
+    logInImg.style.backgroundImage = "url('images/LogInTeal.png')";
+
+    themesImg.addEventListener("mouseover", function () {
+
+        themesImg.style.backgroundImage = "url('images/ThemesWatermelonPink.png')";
+
+    }, false);
+
+    themesImg.addEventListener("mouseout", function () {
+
+        themesImg.style.backgroundImage = "url('images/ThemesTeal.png')";
+
+    }, false);
+
+    logInImg.addEventListener("mouseover", function () {
+
+        logInImg.style.backgroundImage = "url('images/LogInWatermelonPink.png')";
+
+    }, false);
+
+    logInImg.addEventListener("mouseout", function () {
+
+        logInImg.style.backgroundImage = "url('images/LogInTeal.png')";
+
+    }, false);
+
+}
+
+function themeTwo() {
+
+    css_var.style.setProperty('--bg', '#101834');
+    css_var.style.setProperty('--txtbox_bg', '#7AF2F9');
+    css_var.style.setProperty('--txtbox_border', '#45818E');
+    css_var.style.setProperty('--main', '#7AF2F9');
+    css_var.style.setProperty('--main_two', '#62C1CD');
+    css_var.style.setProperty('--main_three', '#47899A');
+    css_var.style.setProperty('--accent', '#45818E');
+    css_var.style.setProperty('--accent_two', '#679DA9');
+    css_var.style.setProperty('--accent_three', '#77ACB8');
+    css_var.style.setProperty('--scrollbar_thumb', 'white');
+    css_var.style.setProperty('--scrollbar_thumb_active', 'white');
+    css_var.style.setProperty('--theme_dropdown_bg', 'white');
+    css_var.style.setProperty('--msc', 'white');
+
+    logo.style.backgroundImage = "url('images/prjctNotesTheme2.png')";
+    themesImg.style.backgroundImage = "url('images/ThemesElectricBlue.png')";
+    logInImg.style.backgroundImage = "url('images/LogInElectricBlue.png')";
+
+    themesImg.addEventListener("mouseover", function () {
+
+        themesImg.style.backgroundImage = "url('images/ThemesDarkCyan.png')";
+
+    }, false);
+
+    themesImg.addEventListener("mouseout", function () {
+
+        themesImg.style.backgroundImage = "url('images/ThemesElectricBlue.png')";
+
+    }, false);
+
+    logInImg.addEventListener("mouseover", function () {
+
+        logInImg.style.backgroundImage = "url('images/LogInDarkCyan.png')";
+
+    }, false);
+
+    logInImg.addEventListener("mouseout", function () {
+
+        logInImg.style.backgroundImage = "url('images/LogInElectricBlue.png')";
+
+    }, false);
 
 }

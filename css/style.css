@@ -2,9 +2,22 @@
 
 :root {
 
-    --width: 130px;
+    --bg: #1F1F1F;
+    --txtbox_bg: #777777;
+    --txtbox_border: #4E4E4E;
+    --main: #FF7F11;
+    --main_two: #C76715;
+    --main_three: #8F4F18;
+    --accent: #A362DC;
+    --accent_two: #8252AD;
+    --accent_three: #61417E;
+    --scrollbar_thumb: #5C5C5C;
+    --scrollbar_thumb_active: #696969;
+    --theme_dropdown_bg: #000000;
+    --msc: #ffffff;
 
 }
+
 
 ::-webkit-scrollbar {
 
@@ -14,7 +27,7 @@
 
 ::-webkit-scrollbar-track {
 
-    background-color: #1f1f1f;
+    background-color: var(--bg);
     border-radius: 100vw;
     margin-block: 0.2em;
 
@@ -22,14 +35,14 @@
 
 ::-webkit-scrollbar-thumb {
 
-    background-color: #7c7772;
+    background-color: var(--scrollbar_thumb);
     border-radius: 100vw;
 
 }
 
 ::-webkit-scrollbar-thumb:active {
 
-    background-color: #6d6965;
+    background-color: var(--scrollbar_thumb_active);
 
 }
 
@@ -39,30 +52,38 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    transition: all 250ms ease-in-out;
 
 }
 
 body {
 
-    background-color: #1f1f1f;
+    background-color: var(--bg);
 
 }
 
 .container {
 
-    background-color: #1f1f1f;
+    background-color: var(--bg);
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0px 17.5%;
-    color: #FF7F11;
+    color: var(--main);
 
 }
 
 .logo {
 
+    height: 12.638vw;
+    max-height: 136px;
     width: 40%;
     max-width: 200px;
+
+    background-image: url(../images/prjctNotes.png);
+    background-repeat: no-repeat;
+    background-size: contain;
 
 }
 
@@ -84,34 +105,32 @@ nav li{
 
 }
 
-nav li div a{
+.themes_img, .log_in_img {
 
-    text-decoration: none;
-    font-size: 25px;
-    color: #FF7F11;
-    transition: all 200ms ease 0s;
-    background-color: #1f1f1f;
-    margin-right: calc(5vw);
-
-}
-
-.themes_o, .log_in_o {
-
-    width: calc(11.5vw);
-    max-width: 125px;
-    transition: all 0.3s ease 0s;
+    width: min(11.5vw, 125px);
+    height: min(3.84vw, 41.5px);
+    margin-right: 5vw;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
 
 }
 
-.themes_o:hover, .themes_p:hover, .log_in_o:hover, .log_in_p:hover {
+.themes_img {
 
-    opacity: 0.8;
+    background-image: url(../images/ThemesOrange.png);
+
+}
+
+.log_in_img {
+
+    background-image: url(../images/LogInOrange.png);
 
 }
 
 .textbox {
 
-    background-color: #777777;
+    background-color: var(--txtbox_bg);
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     font-size: 20px;
@@ -122,7 +141,7 @@ nav li div a{
     height: calc(75vh);
     border-width: 8px;
     border-radius: 4px;
-    border-color: #4e4e4e;
+    border-color: var(--txtbox_border);
     outline: none;
 
 }
@@ -136,14 +155,20 @@ nav li div a{
 
 .footer_icons a, a:visited {
 
-    color: #FF7F11;
-    transition: all 0.3s ease 0s;
+    color: var(--main);
+    transition: all 250ms ease-in-out;
 
 }
 
 .footer_icons a:hover {
 
-    color: #a362dc;
+    color: var(--accent);
+
+}
+
+.footer_icons a:active {
+
+    color: var(--accent_three);
 
 }
 
@@ -163,14 +188,15 @@ nav li div a{
     width: calc(11.5vw);
     max-width: 125px;
     height: 175px;
-    background-color: #000000;
+    background-color: var(--theme_dropdown_bg);
+    margin-top: 10px;
     /*border-radius: 10px;*/
     opacity: 0;
     pointer-events: none;
     transform: translateY(-5px);
     overflow:hidden;
-    clip-path: polygon(0 0, 90px 0, 100% 20px, 100% 100%, 100% 100%, 20px 100%, 0 155px, 0 0);
-    transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
+    clip-path: polygon(0 0, 85% 0, 100% 20px, 100% 100%, 100% 100%, 15% 100%, 0 155px, 0 0);
+    transition: all 250ms ease-in-out;
 
 }
 
@@ -188,7 +214,7 @@ nav li div a{
     margin-left: 10px;
     height: calc(100% - 40px);
     margin-top: 5px;
-    background-color: #000000;
+    background-color: var(--theme_dropdown_bg);
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -203,14 +229,14 @@ nav li div a{
     top: 0;
     cursor: pointer;
     width: 100%;
-    background-color: #a362dc;
+    background-color: var(--accent);
     color: white;
     text-align: center;
     vertical-align: center;
     /*border-radius: 10px;*/
     height: 20px;
     cursor: pointer;
-    transition: all 200ms ease-in-out;
+    transition: all 250ms ease-in-out;
 
 }
 
@@ -225,31 +251,69 @@ nav li div a{
 
 .close_btn_theme_dropdown:hover {
 
-    background-color: #a362dcdd;
+    background-color: var(--accent_two);
 
 }
 
 .close_btn_theme_dropdown:active {
 
-    background-color: #a362dcb3;
+    background-color: var(--accent_three);
 
 }
 
 .theme_container div{
 
     width: 100%;
-    background-color: #ffffff;
     border-radius: 12.5px;
     height: 25px;
     cursor: pointer;
-    border:0px solid #4cc75e;
-    transition: border 100ms ease-in-out;
+    border:3px solid var(--msc);
+    transition: border 250ms ease-in-out;
 
 }
 
 .theme_1:hover, .theme_3:hover, .theme_2:hover {
 
-    border-width: 3px;
+    border-color: #4cc75e;
+
+}
+
+.theme_1 {
+
+    background: linear-gradient(
+
+    -45deg,
+    #A362DC 33%,
+    #FF7F11 33% 66%,
+    #1F1F1F 66%
+    
+    );
+
+}
+
+.theme_2 {
+
+    background: linear-gradient(
+
+    -45deg,
+    #80DCC3 33%,
+    #FF7878 33% 66%,
+    #FAFAFA 66%
+    
+    );
+
+}
+
+.theme_3 {
+
+    background: linear-gradient(
+
+    -45deg,
+    #45818E 33%,
+    #7AF2F9 33% 66%,
+    #101834 66%
+    
+    );
 
 }
 
@@ -264,7 +328,7 @@ nav li div a{
     opacity: 0;
     z-index: 1;
     pointer-events: none;
-    transition: opacity 200ms ease-in-out;
+    transition: opacity 250ms ease-in-out;
 
 }
 
@@ -278,9 +342,9 @@ nav li div a{
     width: 420px;
     height: 330px;
     border-radius: 10px;
-    background-color: #1f1f1f;
+    background-color: var(--bg);
     pointer-events: none;
-    transition: opacity 200ms ease-in-out;
+    transition: opacity 250ms ease-in-out;
     text-align: left;
 
 }
@@ -300,33 +364,33 @@ nav li div a{
     text-align: center;
     line-height: 20px;
     border-radius: 5px;
-    background-color: #a362dc;
-    color: #ffffff;
-    transition: all 200ms ease 0s;
+    background-color: var(--bg);
+    color: var(--msc);
+    transition: all 250ms ease-in-out;
 
 }
 
 .close_btn:hover {
 
-    background-color: #a362dcdd;
+    background-color: var(--main);
 
 }
 
 .close_btn:active {
 
-    background-color: #a362dcb3;
+    background-color: var(--main_three);
 
 }
 
 .log_in_block button:hover {
 
-    background-color: #ff8011ac;
+    background-color: var(--main_two);
 
 }
 
 .log_in_block button:active {
 
-    background-color: #ff801166;
+    background-color: var(--main_three);
 
 }
 
@@ -340,7 +404,7 @@ nav li div a{
 
     position: absolute;
     width: 370px;
-    transition: all 200ms ease-in-out;
+    transition: all 250ms ease-in-out;
     
 }
 
@@ -414,10 +478,10 @@ nav li div a{
     width: 100%;
     height:35px;
     border-radius: 5px;
-    background-color: #7c7772;
+    background-color: var(--txtbox_bg);
     font-size: 17px;
     padding: 0px 10px;
-    border: 2px solid #4e4e4e;
+    border: 2px solid var(--txtbox_border);
     outline: none;
 
 }
@@ -434,13 +498,13 @@ nav li div a{
 
 .forg_pwd a:hover, .sign_up_a a:hover, .back_to_log_in:hover {
 
-    color: #ff8011ac;
+    color: var(--main_two);
 
 }
 
 .forg_pwd a:active, .sign_up_a a:active, .back_to_log_in:active {
 
-    color: #ff801166;
+    color: var(--main_three);
 
 }
 
@@ -448,14 +512,14 @@ nav li div a{
 
     width: 70px;
     height: 35px;
-    background-color: #FF7F11;
-    color: #ffffff;
+    background-color: var(--main);
+    color: var(--msc);
     font-size: 12px;
     cursor: pointer;
     border-width: 0px;
     border-radius: 5px;
     margin-top: 10px;
-    transition: all 200ms ease 0s;
+    transition: all 250ms ease-in-out;
 
 }
 
@@ -490,13 +554,13 @@ nav li div a{
 
 .sign_up_a h3 {
 
-    color: #7c7772;
+    color: var(--txtbox_bg);
 
 }
 
 .form1 input, .form2 input, .form3 input {
 
-    caret-color: #1f1f1f;
+    caret-color: var(--bg);
 
 }
 

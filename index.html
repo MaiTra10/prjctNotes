@@ -7,6 +7,7 @@
         <meta name="description" content="A website to take notes...">
         <title>prjctNotes</title>
         <link href="css/style.css" rel="stylesheet" type="text/css">
+        <script src="https://kit.fontawesome.com/3fabf18804.js" crossorigin="anonymous"></script>
 
     </head>
 
@@ -16,7 +17,7 @@
 
             <div class="container">
 
-                <img class="logo" src="images/prjctNotes.png" alt="logo">
+                <div class="logo" id="logo"></div>
             
                 <nav>
         
@@ -26,7 +27,8 @@
 
                             <div class="dropdown">
 
-                                <a href="#" class="themes_button" onclick="openDropdownBlock()"><img class="themes_o" src="images/prjctNotes - Themes (Orange).png" alt="themes_o"><!--<img class="themes_p" src="images/prjctNotes - Themes (Purple).png" alt="themes_p">--></a>
+                                <div class="themes_img" id="themes_img" onclick="openDropdownBlock()"></div>
+                                <!--<a href="#" class="theme_button_p" onclick="openDropdownBlock()"><img class="themes_p" src="images/ThemesPurple.png" alt="themes_p"></a>-->
 
                                 <div class="dropdown_block" id="dropdownBlock">
 
@@ -34,9 +36,9 @@
 
                                     <div class="theme_container">
 
-                                        <div class="theme_1"><a href="#"></a></div>
-                                        <div class="theme_2"><a href="#"></a></div>
-                                        <div class="theme_3"><a href="#"></a></div>
+                                        <div class="theme_1" onclick="themeDef()"><a href="#"></a></div>
+                                        <div class="theme_2" onclick="themeOne()"><a href="#"></a></div>
+                                        <div class="theme_3" onclick="themeTwo()"><a href="#"></a></div>
 
                                     </div>
 
@@ -50,7 +52,8 @@
 
                             <div class="log_in">
 
-                                <a href="#" class="log_in_button" onclick="openLoginBlock()"><img class="log_in_o" src="images/prjctNotes - Log In (Orange).png" alt="log_in_o"><!--<img class="log_in_p" src="images/prjctNotes - Log In (Purple).png" alt="log_in_p">--></a>
+                                <div class="log_in_img" id="log_in_img" onclick="openLoginBlock()"></div>
+                                <!--<a href="#" class="log_in_button_p" onclick="openLoginBlock()"><img class="log_in_p" src="images/LogInPurple.png" alt="log_in_p"></a>-->
 
                                 <div class="bg_blur" id="bgBlur"></div>
 
@@ -139,14 +142,11 @@
 
         </div>
 
-        <footer class="footer_icons">
+        <div class="footer_icons">
 
-            <a href="https://github.com/MaiTra10" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
-
-        </footer>
-
-        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+            <a href="https://github.com/MaiTra10" target="_blank"><i class="fa-brands fa-github"></i></a>
+    
+        </div>
 
         <script src="script.js"></script>
 
