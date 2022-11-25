@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-
+/*variables*/
 :root {
 
     --bg: #1F1F1F;
@@ -17,8 +17,7 @@
     --msc: #ffffff;
 
 }
-
-
+/*scrollbar*/
 ::-webkit-scrollbar {
 
     width: 0.85em;
@@ -45,7 +44,7 @@
     background-color: var(--scrollbar_thumb_active);
 
 }
-
+/*default styles*/
 *{
 
     margin: 0;
@@ -56,13 +55,19 @@
     transition: all 250ms ease-in-out;
 
 }
+/*fixes the icons having a delayed transition*/
+i {
 
+    transition: none;
+
+}
+/*background colour*/
 body {
 
     background-color: var(--bg);
 
 }
-
+/*container (everything) class styles*/
 .container {
 
     background-color: var(--bg);
@@ -73,7 +78,7 @@ body {
     color: var(--main);
 
 }
-
+/*logo styles*/
 .logo {
 
     height: 12.638vw;
@@ -86,7 +91,7 @@ body {
     background-size: contain;
 
 }
-
+/*nav bar and its list tags' styles*/
 nav {
 
     width: 100%;
@@ -104,7 +109,7 @@ nav li{
     display: inline-block;
 
 }
-
+/*themes and log in button styles*/
 .themes_img, .log_in_img {
 
     width: min(11.5vw, 125px);
@@ -127,7 +132,7 @@ nav li{
     background-image: url(../images/LogInOrange.png);
 
 }
-
+/*textbox styles*/
 .textbox {
 
     background-color: var(--txtbox_bg);
@@ -145,7 +150,7 @@ nav li{
     outline: none;
 
 }
-
+/*footer and its a tag styles*/
 .footer_icons {
 
     margin: 1% 17.5%;
@@ -171,7 +176,7 @@ nav li{
     color: var(--accent_three);
 
 }
-
+/*dropdown that is on 'themes' buttons's styles*/
 .dropdown {
 
     position: relative;
@@ -207,7 +212,7 @@ nav li{
     pointer-events: auto;
 
 }
-
+/*for what is inside the dropdown*/
 .theme_container {
 
     width: calc(100% - 20px);
@@ -260,7 +265,7 @@ nav li{
     background-color: var(--accent_three);
 
 }
-
+/*for the buttons in the dropdown*/
 .theme_container div{
 
     width: 100%;
@@ -316,8 +321,8 @@ nav li{
     );
 
 }
-
-.bg_blur {
+/*darken effect added to the background when the 'log in' block is active*/
+.bg_darken {
 
     position: fixed;
     width: 100%;
@@ -331,7 +336,7 @@ nav li{
     transition: opacity 250ms ease-in-out;
 
 }
-
+/*the block that opens when you click 'log in'*/
 .log_in_block {
 
     position: fixed;
@@ -344,41 +349,35 @@ nav li{
     border-radius: 10px;
     background-color: var(--bg);
     pointer-events: none;
-    transition: opacity 250ms ease-in-out;
+    transition: all 250ms ease-in-out;
     text-align: left;
 
 }
-
+/*close button in the 'log in' block*/
 .close_btn {
 
     position: absolute;
     z-index: 1;
     padding: 0;
     margin: 0;
-    top: 20px;
-    right: 20px;
+    top: 25px;
+    right: 35px;
     cursor: pointer;
-    font-size: 30px;
-    width: 20px;
-    height: 20px;
-    text-align: center;
-    line-height: 20px;
-    border-radius: 5px;
-    background-color: var(--bg);
-    color: var(--msc);
+    font-size: 24px;
+    color: var(--main);
     transition: all 250ms ease-in-out;
 
 }
 
 .close_btn:hover {
 
-    background-color: var(--main);
+    color: var(--main_two);
 
 }
 
 .close_btn:active {
 
-    background-color: var(--main_three);
+    color: var(--main_three);
 
 }
 
@@ -393,7 +392,7 @@ nav li{
     background-color: var(--main_three);
 
 }
-
+/*the forms in the 'log in' block*/
 .log_in_block {
 
     overflow: hidden;
@@ -419,40 +418,40 @@ nav li{
 .form2 {
 
     height: 250px;
-    top: 40px;
+    top: 25px;
     left: -395px;
 
 }
 
 .form3 {
 
-    height: 210px;
-    top: 60px;
+    height: 220px;
+    top: 25px;
     left: 445px;
 
 }
-
-.slide-s-u-right {
-
-    transform: translateX(420px);
-
-}
-
-.slide-l-i-right {
+/*animations to the forms*/
+.slide-right {
 
     transform: translateX(420px);
 
 }
 
-.slide-f-p-left {
+.slide-left {
 
     transform: translateX(-420px);
 
 }
 
-.slide-l-i-left {
+.s-u-resize {
 
-    transform: translateX(-420px);
+    height: 300px;
+
+}
+
+.f-p-resize {
+
+    height: 270px;
 
 }
 
@@ -485,7 +484,7 @@ nav li{
     outline: none;
 
 }
-
+/*forgot password form*/
 .forg_pwd a {
 
     position: relative;
@@ -522,33 +521,38 @@ nav li{
     transition: all 250ms ease-in-out;
 
 }
-
+/*sign up form*/
 .sign_up_a {
 
     padding-top: 10px;
 
 }
 
-.sign_up_a h3, .sign_up_a a, .form2 div h3 a, .form3 div h3 a{
+.sign_up_a h3, .sign_up_a a{
 
     font-size: 12px;
 
 }
 
-.form2 div h3 a {
+.form2 div a, .form3 div a {
+
+    font-size: 24px;
+
+}
+
+.form2 div a {
 
     position: relative;
-    margin-top: 10px;
+    margin-top: 14px;
     float: right;
     margin-right: 0px;
 
 }
-
-.form3 div h3 a {
+/*other form styles*/
+.form3 div a {
 
     position: relative;
-    margin-top: 10px;
-    margin-right: 0px;
+    top: 8px;
 
 }
 
@@ -563,14 +567,14 @@ nav li{
     caret-color: var(--bg);
 
 }
-
-.open-bg-blur {
+/*animation for background darken effect to be used in JavaScript*/
+.open-bg-darken {
 
     opacity: 0.5;
     pointer-events: auto;
 
 }
-
+/*animation for opening the 'log in' to be used in JavaScript*/
 .open-login-block {
 
     opacity: 1;

@@ -1,6 +1,6 @@
 let dropdownBlock = document.getElementById("dropdownBlock");
 let loginBlock = document.getElementById("loginBlock");
-let bgBlur = document.getElementById("bgBlur");
+let bgDarken = document.getElementById("bgDarken");
 let formLI = document.getElementById("formLI");
 let formSU = document.getElementById("formSU");
 let formFP = document.getElementById("formFP");
@@ -21,7 +21,7 @@ function closeDropdownBlock() {
 function openLoginBlock() {
 
     loginBlock.classList.add("open-login-block");
-    bgBlur.classList.add("open-bg-blur");
+    bgDarken.classList.add("open-bg-darken");
     dropdownBlock.classList.remove("open-dropdown-block");
 
 }
@@ -29,41 +29,53 @@ function openLoginBlock() {
 function closeLoginBlock() {
 
     loginBlock.classList.remove("open-login-block");
-    bgBlur.classList.remove("open-bg-blur");
+    bgDarken.classList.remove("open-bg-darken");
 
-    formLI.classList.remove("slide-l-i-right");
-    formSU.classList.remove("slide-s-u-right");
+    formLI.classList.remove("slide-right");
+    formSU.classList.remove("slide-right");
 
-    formLI.classList.remove("slide-l-i-left");
-    formFP.classList.remove("slide-f-p-left");
+    formLI.classList.remove("slide-left");
+    formFP.classList.remove("slide-left");
+
+    loginBlock.classList.remove("s-u-resize");
+    loginBlock.classList.remove("f-p-resize");
+    
 
 }
 
 function openSignUpBlock() {
 
-    formLI.classList.add("slide-l-i-right");
-    formSU.classList.add("slide-s-u-right");
+    formLI.classList.add("slide-right");
+    formSU.classList.add("slide-right");
+
+    loginBlock.classList.add("s-u-resize");
 
 }
 
 function closeSignUpBlock() {
 
-    formLI.classList.remove("slide-l-i-right");
-    formSU.classList.remove("slide-s-u-right");
+    formLI.classList.remove("slide-right");
+    formSU.classList.remove("slide-right");
+
+    loginBlock.classList.remove("s-u-resize");
 
 }
 
 function openFrgPwdBlock() {
 
-    formLI.classList.add("slide-l-i-left");
-    formFP.classList.add("slide-f-p-left");
+    formLI.classList.add("slide-left");
+    formFP.classList.add("slide-left");
+
+    loginBlock.classList.add("f-p-resize");
 
 }
 
 function closeFrgPwdBlock() {
 
-    formLI.classList.remove("slide-l-i-left");
-    formFP.classList.remove("slide-f-p-left");
+    formLI.classList.remove("slide-left");
+    formFP.classList.remove("slide-left");
+
+    loginBlock.classList.remove("f-p-resize");
 
 }
 
@@ -201,7 +213,7 @@ function themeTwo() {
     css_var.style.setProperty('--scrollbar_thumb', 'white');
     css_var.style.setProperty('--scrollbar_thumb_active', 'white');
     css_var.style.setProperty('--theme_dropdown_bg', 'white');
-    css_var.style.setProperty('--msc', 'white');
+    css_var.style.setProperty('--msc', '#101834');
 
     logo.style.backgroundImage = "url('images/prjctNotesTheme2.png')";
     themesImg.style.backgroundImage = "url('images/ThemesElectricBlue.png')";
