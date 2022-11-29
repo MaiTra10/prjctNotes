@@ -83,29 +83,19 @@ var css_var = document.querySelector(':root');
 let themesImg = document.getElementById("themes_img");
 let logInImg = document.getElementById("log_in_img");
 
-themesImg.addEventListener("mouseover", function () {
+if(localStorage.getItem('theme') == 'themeDef' || localStorage.getItem('theme') == null) {
 
-    themesImg.style.backgroundImage = "url('images/ThemesPurple.png')";
+    themeDef();
 
-}, false);
+} else if (localStorage.getItem('theme') == 'themeOne') {
 
-themesImg.addEventListener("mouseout", function () {
+    themeOne();
+    
+} else {
 
-    themesImg.style.backgroundImage = "url('images/ThemesOrange.png')";
+    themeTwo();
 
-}, false);
-
-logInImg.addEventListener("mouseover", function () {
-
-    logInImg.style.backgroundImage = "url('images/LogInPurple.png')";
-
-}, false);
-
-logInImg.addEventListener("mouseout", function () {
-
-    logInImg.style.backgroundImage = "url('images/LogInOrange.png')";
-
-}, false);
+}
 
 function themeDef() {
 
@@ -150,6 +140,8 @@ function themeDef() {
         logInImg.style.backgroundImage = "url('images/LogInOrange.png')";
 
     }, false);
+
+    localStorage.setItem('theme', 'themeDef');
 
 }
 
@@ -197,6 +189,8 @@ function themeOne() {
 
     }, false);
 
+    localStorage.setItem('theme', 'themeOne');
+
 }
 
 function themeTwo() {
@@ -242,5 +236,7 @@ function themeTwo() {
         logInImg.style.backgroundImage = "url('images/LogInElectricBlue.png')";
 
     }, false);
+
+    localStorage.setItem('theme', 'themeTwo');
 
 }
