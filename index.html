@@ -8,6 +8,7 @@
         <title>prjctNotes</title>
         <link href="css/style.css" rel="stylesheet" type="text/css">
         <script src="https://kit.fontawesome.com/3fabf18804.js" crossorigin="anonymous"></script>
+        <script type="module" src="database.js"></script>
 
     </head>
 
@@ -21,7 +22,6 @@
                         <li>
                             <div class="dropdown">
                                 <div class="themes_img" id="themes_img" onclick="openDropdownBlock()"></div>
-                                <!--<a href="#" class="theme_button_p" onclick="openDropdownBlock()"><img class="themes_p" src="images/ThemesPurple.png" alt="themes_p"></a>-->
                                 <div class="dropdown_block" id="dropdownBlock">
                                     <div class="close_btn_theme_dropdown" onclick="closeDropdownBlock()"><div class="x">&times;</div></div>
                                     <div class="theme_container">
@@ -35,7 +35,6 @@
                         <li>
                             <div class="log_in">
                                 <div class="log_in_img" id="log_in_img" onclick="openLoginBlock()"></div>
-                                <!--<a href="#" class="log_in_button_p" onclick="openLoginBlock()"><img class="log_in_p" src="images/LogInPurple.png" alt="log_in_p"></a>-->
                                 <div class="bg_darken" id="bgDarken"></div>
                                 <div class="log_in_block" id="loginBlock">
                                     <div class="close_btn" onclick="closeLoginBlock()"><i class="fa-sharp fa-solid fa-xmark"></i></div>
@@ -93,5 +92,5 @@
         <script src="script.js"></script>
 
     </body>
-    
+
 </html>
