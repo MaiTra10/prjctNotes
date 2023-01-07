@@ -11,6 +11,7 @@
     --accent: #A362DC;
     --accent_two: #8252AD;
     --accent_three: #61417E;
+    --scrollbar_track: #2c2c2c;
     --scrollbar_thumb: #5C5C5C;
     --scrollbar_thumb_active: #696969;
     --theme_dropdown_bg: #000000;
@@ -20,15 +21,15 @@
 /*scrollbar*/
 ::-webkit-scrollbar {
 
-    width: 0.85em;
+    width: 1.25vw;
+    max-width: 12.5px;
 
 }
 
 ::-webkit-scrollbar-track {
 
     background-color: var(--bg);
-    border-radius: 100vw;
-    margin-block: 0.2em;
+    margin-block: 0.5vw;
 
 }
 
@@ -74,7 +75,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0px 17.5%;
+    margin: 0px 10%;
     color: var(--main);
 
 }
@@ -83,7 +84,7 @@ body {
 
     height: 12.638vw;
     max-height: 136px;
-    width: 40%;
+    width: 40vw;
     max-width: 200px;
 
     background-image: url(../images/prjctNotes.png);
@@ -114,7 +115,6 @@ nav li{
 
     width: min(11.5vw, 125px);
     height: min(3.84vw, 41.5px);
-    margin-right: 5vw;
     background-repeat: no-repeat;
     background-size: contain;
     cursor: pointer;
@@ -124,15 +124,17 @@ nav li{
 .themes_img {
 
     background-image: url(../images/ThemesOrange.png);
+    margin-right: 5vw;
 
 }
 
 .log_in_img {
 
+    margin-right: 1vw;
     background-image: url(../images/LogInOrange.png);
 
 }
-/*textbox styles*/
+/*textbox styles
 .textbox {
 
     background-color: var(--txtbox_bg);
@@ -149,12 +151,50 @@ nav li{
     border-color: var(--txtbox_border);
     outline: none;
 
+}*/
+
+.workspace {
+
+    width: calc(100% - 20%);
+    height: calc(75vh);
+    border-radius: 0.75vw;
+    margin: 0% 10%;
+    background-color: var(--scrollbar_track);
+
 }
-/*footer and its a tag styles*/
+
+.content {
+
+    overflow-y: scroll;
+    height: 100%;
+    width: calc(100% - 0.5vw);
+
+}
+
+.content::-webkit-scrollbar-track {
+
+    background-color: var(--scrollbar_track);
+    margin-block: 0.5vw;
+
+}
+
+.notes {
+
+    height: 1000px;
+
+}
+
+/*footer and its 'a' tag styles*/
 .footer_icons {
 
-    margin: 1% 17.5%;
+    margin: 1% 10%;
     font-size: 25px;
+
+}
+
+.footer_icons a {
+
+    margin-left: 1vw;
 
 }
 
