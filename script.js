@@ -108,7 +108,7 @@ function themeDef() {
     css_var.style.setProperty('--accent', '#A362DC');
     css_var.style.setProperty('--accent_two', '#8252AD');
     css_var.style.setProperty('--accent_three', '#61417E');
-    css_var.style.setProperty('--scrollbar_thumb', '#5C5C5C');
+    css_var.style.setProperty('--scrollbar_thumb', '#525252');
     css_var.style.setProperty('--scrollbar_thumb_active', '#696969');
     css_var.style.setProperty('--theme_dropdown_bg', '#000000');
     css_var.style.setProperty('--msc', '#ffffff');
