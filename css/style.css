@@ -169,12 +169,12 @@ nav li{
     overflow-y: scroll;
     height: 100%;
     width: calc(100%);
-    padding: 0.75vw;
+    padding: 1.5vw;
     border-radius: 0.75vw;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: 15vw;
-    grid-gap: 20px;
+    grid-gap: 5vw;
     /*grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: 20px;
     grid-auto-rows: 200px;*/
@@ -187,20 +187,107 @@ nav li{
 
 }
 
-.notes {
+.note {
 
     background-color: var(--main);
+    padding: 5%;
+    border-radius: 0.75vw;
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    grid-auto-rows: 20%;
+    align-items: center;
     /*width: 200px;
     height: 200px;
     margin: auto;*/
 
 }
 
+.note_title {
+
+    height: 100%;
+    width: 100%;
+    font-size: 2vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+    outline: none;
+
+    grid-column-start: 1;
+    grid-column-end: 5;
+
+}
+
+.note_close {
+
+    height: 100%;
+    padding-left: 77%;
+    padding-top: 5%;
+    /*font-size: 3vw;
+    line-height: 20px;
+    padding-bottom: 0.75vw;
+    text-align: end;
+    margin-left: 2.54vw;
+    cursor: pointer;*/
+
+}
+
+.note_close > i {
+
+    color: var(--bg);
+    font-size: 1.5vw;
+    line-height: 80%;
+    cursor: pointer;
+
+}
+
+.note_content {
+
+    height: 100%;
+    width: 100%;
+    font-size: 1.25vw;
+    overflow-y: scroll;
+    outline: none;
+
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 2;
+    grid-row-end: 6;
+
+}
+
+.note_content::-webkit-scrollbar-track {
+
+    background-color: var(--main_two);
+
+}
+
+.note_content::-webkit-scrollbar-thumb {
+
+    background-color: var(--bg);
+
+}
+
+.note_title[placeholder]:empty:before {
+
+    content: attr(placeholder);
+    color: rgba(0, 0, 0, 0.75); 
+
+}
+
+.note_content[placeholder]:empty:before {
+    content: attr(placeholder);
+    color: rgba(0, 0, 0, 0.5); 
+}
+
+.note_title[placeholder]:empty:focus::before, .note_content[placeholder]:empty:focus::before {
+    content: "";
+}
+
 /*footer and its 'a' tag styles*/
 .footer_icons {
 
     margin: 1% 10%;
-    font-size: 25px;
+    font-size: min(3vw, 30px);
 
 }
 
@@ -284,7 +371,6 @@ nav li{
 
     position: absolute;
     top: 0;
-    cursor: pointer;
     width: 100%;
     background-color: var(--accent);
     color: white;
