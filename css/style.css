@@ -211,6 +211,7 @@ nav li{
     overflow: hidden;
     text-overflow: clip;
     outline: none;
+    border-bottom: 0.125vw solid var(--bg);
 
     grid-column-start: 1;
     grid-column-end: 5;
@@ -244,6 +245,7 @@ nav li{
 
     height: 100%;
     width: 100%;
+    margin-top: 5%;
     font-size: 1.25vw;
     overflow-y: scroll;
     outline: none;
