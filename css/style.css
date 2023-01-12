@@ -11,7 +11,9 @@
     --accent: #A362DC;
     --accent_two: #8252AD;
     --accent_three: #61417E;
-    --scrollbar_thumb: #5C5C5C;
+    --workspace_bg: #2c2c2c;
+    --scrollbar_track: #393939;
+    --scrollbar_thumb: #525252;
     --scrollbar_thumb_active: #696969;
     --theme_dropdown_bg: #000000;
     --msc: #ffffff;
@@ -20,22 +22,21 @@
 /*scrollbar*/
 ::-webkit-scrollbar {
 
-    width: 0.85em;
+    width: 0.75vw;
 
 }
 
 ::-webkit-scrollbar-track {
 
-    background-color: var(--bg);
-    border-radius: 100vw;
-    margin-block: 0.2em;
+    background-color: transparent;
+    border-radius: 0.75vw;
 
 }
 
 ::-webkit-scrollbar-thumb {
 
     background-color: var(--scrollbar_thumb);
-    border-radius: 100vw;
+    border-radius: 0.75vw;
 
 }
 
@@ -74,7 +75,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0px 17.5%;
+    margin: 0px 10%;
     color: var(--main);
 
 }
@@ -83,7 +84,7 @@ body {
 
     height: 12.638vw;
     max-height: 136px;
-    width: 40%;
+    width: 40vw;
     max-width: 200px;
 
     background-image: url(../images/prjctNotes.png);
@@ -114,7 +115,6 @@ nav li{
 
     width: min(11.5vw, 125px);
     height: min(3.84vw, 41.5px);
-    margin-right: 5vw;
     background-repeat: no-repeat;
     background-size: contain;
     cursor: pointer;
@@ -124,15 +124,17 @@ nav li{
 .themes_img {
 
     background-image: url(../images/ThemesOrange.png);
+    margin-right: 5vw;
 
 }
 
 .log_in_img {
 
+    margin-right: 1vw;
     background-image: url(../images/LogInOrange.png);
 
 }
-/*textbox styles*/
+/*textbox styles
 .textbox {
 
     background-color: var(--txtbox_bg);
@@ -149,12 +151,151 @@ nav li{
     border-color: var(--txtbox_border);
     outline: none;
 
+}*/
+
+.workspace {
+
+    width: calc(100% - 20%);
+    height: calc(75vh);
+    border-radius: 0.75vw;
+    margin: 0% 10%;
+    background-color: var(--workspace_bg);
+    padding: 0.75vw;
+
 }
-/*footer and its a tag styles*/
+
+.content {
+
+    overflow-y: scroll;
+    height: 100%;
+    width: calc(100%);
+    padding: 1.5vw;
+    border-radius: 0.75vw;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 15vw;
+    grid-gap: 5vw;
+    /*grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+    grid-auto-rows: 200px;*/
+
+}
+
+.content::-webkit-scrollbar-track {
+
+    background-color: var(--scrollbar_track);
+
+}
+
+.note {
+
+    background-color: var(--main);
+    padding: 5%;
+    border-radius: 0.75vw;
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    grid-auto-rows: 20%;
+    align-items: center;
+    /*width: 200px;
+    height: 200px;
+    margin: auto;*/
+
+}
+
+.note_title {
+
+    height: 100%;
+    width: 100%;
+    font-size: 2vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+    outline: none;
+    border-bottom: 0.125vw solid var(--bg);
+
+    grid-column-start: 1;
+    grid-column-end: 5;
+
+}
+
+.note_close {
+
+    height: 100%;
+    padding-left: 77%;
+    padding-top: 5%;
+    /*font-size: 3vw;
+    line-height: 20px;
+    padding-bottom: 0.75vw;
+    text-align: end;
+    margin-left: 2.54vw;
+    cursor: pointer;*/
+
+}
+
+.note_close > i {
+
+    color: var(--bg);
+    font-size: 1.5vw;
+    line-height: 80%;
+    cursor: pointer;
+
+}
+
+.note_content {
+
+    height: 100%;
+    width: 100%;
+    margin-top: 5%;
+    font-size: 1.25vw;
+    overflow-y: scroll;
+    outline: none;
+
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 2;
+    grid-row-end: 6;
+
+}
+
+.note_content::-webkit-scrollbar-track {
+
+    background-color: var(--main_two);
+
+}
+
+.note_content::-webkit-scrollbar-thumb {
+
+    background-color: var(--bg);
+
+}
+
+.note_title[placeholder]:empty:before {
+
+    content: attr(placeholder);
+    color: rgba(0, 0, 0, 0.75); 
+
+}
+
+.note_content[placeholder]:empty:before {
+    content: attr(placeholder);
+    color: rgba(0, 0, 0, 0.5); 
+}
+
+.note_title[placeholder]:empty:focus::before, .note_content[placeholder]:empty:focus::before {
+    content: "";
+}
+
+/*footer and its 'a' tag styles*/
 .footer_icons {
 
-    margin: 1% 17.5%;
-    font-size: 25px;
+    margin: 1% 10%;
+    font-size: min(3vw, 30px);
+
+}
+
+.footer_icons a {
+
+    margin-left: 0.75vw;
 
 }
 
@@ -232,7 +373,6 @@ nav li{
 
     position: absolute;
     top: 0;
-    cursor: pointer;
     width: 100%;
     background-color: var(--accent);
     color: white;
