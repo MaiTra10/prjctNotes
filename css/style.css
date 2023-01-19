@@ -237,7 +237,7 @@ nav li{
     padding: 10% 30%;
     height: fit-content;
     width: max-content;
-    border-radius: calc(5% + 10px);
+    border-radius: calc(5vw + 10px);
     transform: translateY(-100%);
     color: var(--text_colour);
     background-color: var(--msc);
