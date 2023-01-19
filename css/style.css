@@ -285,6 +285,22 @@ nav li{
     content: "";
 }
 
+.add_note_btn {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.add_note_btn i {
+
+    cursor: pointer;
+    font-size: 5vw;
+    color: var(--scrollbar_thumb);
+
+}
+
 /*footer and its 'a' tag styles*/
 .footer_icons {
 
