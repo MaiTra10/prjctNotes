@@ -243,15 +243,15 @@ function themeTwo() {
 
 function addHtml() {
 
-    const note = document.getElementById("note");
+    const content = document.getElementById("content");
 
     let html = `<div class="note">
                     <div class="note_title" contenteditable="True" placeholder="Title" spellcheck="False"></div>
-                    <div class="note_close"><i class="fa-sharp fa-solid fa-xmark"></i></div>
+                    <div class="note_close"><i class="fa-sharp fa-solid fa-xmark" onclick="removeNote(this)"></i></div>
                     <div class="note_content" contenteditable="True" placeholder="Take notes here..." spellcheck="False"></div>
                 </div>`;
 
-    note.insertAdjacentHTML('afterend', html);
+    content.insertAdjacentHTML('afterbegin', html);
 
 }
 
@@ -259,4 +259,10 @@ function addNote() {
 
     addHtml();
 
+}
+
+function removeNote(e) {
+
+    e.parentElement.parentElement.remove();
+    
 }

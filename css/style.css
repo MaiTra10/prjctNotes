@@ -161,6 +161,68 @@ nav li{
     margin: 0% 10%;
     background-color: var(--workspace_bg);
     padding: 0.75vw;
+    display: flex;
+
+}
+
+.workspace_sidebar {
+
+    position: relative;
+    top: -0.75vw;
+    left: -0.75vw;
+    background-color: var(--scrollbar_track);
+    width: 5%;
+    height: calc(100% + 1.5vw);
+    padding: 0.75vw;
+    border-radius: 0.75vw;
+    display: flex;
+    justify-content: center;
+
+}
+
+.add_note_btn {
+
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.add_note_btn i {
+
+    font-size: 2vw;
+    cursor: pointer;
+    color: var(--main);
+
+}
+
+.github_icon {
+
+    position: absolute;
+    bottom: 0.75vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.github_icon a i {
+
+    font-size: 2vw;
+
+}
+
+.github_icon a, a:visited {
+
+    color: var(--main);
+    transition: all 250ms ease-in-out;
+
+}
+
+.github_icon a:hover {
+
+    color: var(--accent);
 
 }
 
@@ -168,7 +230,7 @@ nav li{
 
     overflow-y: scroll;
     height: 100%;
-    width: calc(100%);
+    width: 100%;
     padding: 1.5vw;
     border-radius: 0.75vw;
     display: grid;
@@ -285,54 +347,6 @@ nav li{
     content: "";
 }
 
-.add_note_btn {
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
-
-.add_note_btn i {
-
-    cursor: pointer;
-    font-size: 5vw;
-    color: var(--scrollbar_thumb);
-
-}
-
-/*footer and its 'a' tag styles*/
-.footer_icons {
-
-    margin: 1% 10%;
-    font-size: min(3vw, 30px);
-
-}
-
-.footer_icons a {
-
-    margin-left: 0.75vw;
-
-}
-
-.footer_icons a, a:visited {
-
-    color: var(--main);
-    transition: all 250ms ease-in-out;
-
-}
-
-.footer_icons a:hover {
-
-    color: var(--accent);
-
-}
-
-.footer_icons a:active {
-
-    color: var(--accent_three);
-
-}
 /*dropdown that is on 'themes' buttons's styles*/
 .dropdown {
 

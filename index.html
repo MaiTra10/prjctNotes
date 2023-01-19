@@ -83,19 +83,21 @@
             </div>
         </header>
         <div class="workspace">
-            <div class="content" id="content">
-                <div class="note" id="note">
-                    <div class="note_title" contenteditable="True" placeholder="Title" spellcheck="False"></div>
-                    <div class="note_close"><i class="fa-sharp fa-solid fa-xmark"></i></div>
-                    <div class="note_content" contenteditable="True" placeholder="Take notes here..." spellcheck="False"></div>
-                </div>
+            <div class="workspace_sidebar">
                 <div class="add_note_btn">
                     <i class="fa-solid fa-circle-plus" onclick="addNote()"></i>
                 </div>
+                <div class="github_icon">
+                    <a href="https://github.com/MaiTra10" target="_blank"><i class="fa-brands fa-github"></i></a>
+                </div>
             </div>
-        </div>
-        <div class="footer_icons">
-            <a href="https://github.com/MaiTra10" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <div class="content" id="content">
+                <div class="note" id="note">
+                    <div class="note_title" contenteditable="True" placeholder="Title" spellcheck="False"></div>
+                    <div class="note_close"><i class="fa-sharp fa-solid fa-xmark" onclick="removeNote(this)"></i></div>
+                    <div class="note_content" contenteditable="True" placeholder="Take notes here..." spellcheck="False"></div>
+                </div>
+            </div>
         </div>
         <script src="script.js"></script>
 
