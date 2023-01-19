@@ -12,11 +12,14 @@
     --accent_two: #8252AD;
     --accent_three: #61417E;
     --workspace_bg: #2c2c2c;
+    --text_colour: #000000;
+    --text_placeholder_colour: rgba(0, 0, 0, 0.5);
     --scrollbar_track: #393939;
     --scrollbar_thumb: #525252;
     --scrollbar_thumb_active: #696969;
     --theme_dropdown_bg: #000000;
-    --msc: #ffffff;
+    --msc: #8a8a8a;
+
 
 }
 /*scrollbar*/
@@ -221,9 +224,45 @@ nav li{
 
 }
 
-.github_icon a:hover {
+.github_icon::before, .add_note_btn::before {
 
-    color: var(--accent);
+    --scale: 0;
+
+    content: attr(data-tooltip);
+    font-size: 1vw;
+    font-weight: bolder;
+    text-align: center;
+    white-space: nowrap;
+    position: absolute;
+    padding: 10% 30%;
+    height: fit-content;
+    width: max-content;
+    border-radius: calc(5% + 10px);
+    transform: translateY(-100%);
+    color: var(--text_colour);
+    background-color: var(--msc);
+
+    transform: scale(var(--scale));
+    transition: all 250ms ease-in-out;
+    transform-origin: bottom center;
+
+}
+
+.add_note_btn::before {
+
+    bottom: calc(99.5%);
+
+}
+
+.github_icon::before {
+
+    bottom: 115%;
+
+}
+
+.github_icon:hover::before, .add_note_btn:hover::before{
+
+    --scale: 1;
 
 }
 
@@ -253,6 +292,7 @@ nav li{
 .note {
 
     background-color: var(--main);
+    color: var(--text_colour);
     padding: 5%;
     border-radius: 0.75vw;
     display: grid;
@@ -335,13 +375,13 @@ nav li{
 .note_title[placeholder]:empty:before {
 
     content: attr(placeholder);
-    color: rgba(0, 0, 0, 0.75); 
+    color: var(--text_placeholder_colour); 
 
 }
 
 .note_content[placeholder]:empty:before {
     content: attr(placeholder);
-    color: rgba(0, 0, 0, 0.5); 
+    color: var(--text_placeholder_colour); 
 }
 
 .note_title[placeholder]:empty:focus::before, .note_content[placeholder]:empty:focus::before {
@@ -683,8 +723,9 @@ nav li{
     width: 70px;
     height: 35px;
     background-color: var(--main);
-    color: var(--msc);
+    color: var(--bg);
     font-size: 12px;
+    font-weight: bold;
     cursor: pointer;
     border-width: 0px;
     border-radius: 5px;
@@ -729,7 +770,7 @@ nav li{
 
 .sign_up_a h3 {
 
-    color: var(--txtbox_bg);
+    color: var(--txtbox_border);
 
 }
 

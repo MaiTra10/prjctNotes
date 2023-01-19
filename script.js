@@ -108,6 +108,10 @@ function themeDef() {
     css_var.style.setProperty('--accent', '#A362DC');
     css_var.style.setProperty('--accent_two', '#8252AD');
     css_var.style.setProperty('--accent_three', '#61417E');
+    css_var.style.setProperty('--workspace_bg', '#2c2c2c');
+    css_var.style.setProperty('--text_colour', '#000000');
+    css_var.style.setProperty('--text_placeholder_colour', 'rgba(0, 0, 0, 0.5)');
+    css_var.style.setProperty('--scrollbar_track', '#393939');
     css_var.style.setProperty('--scrollbar_thumb', '#525252');
     css_var.style.setProperty('--scrollbar_thumb_active', '#696969');
     css_var.style.setProperty('--theme_dropdown_bg', '#000000');
@@ -147,45 +151,49 @@ function themeDef() {
 
 function themeOne() {
 
-    css_var.style.setProperty('--bg', '#FAFAFA');
-    css_var.style.setProperty('--txtbox_bg', '#E2F3EF');
-    css_var.style.setProperty('--txtbox_border', '#80DCC3');
+    css_var.style.setProperty('--bg', '#FFFFFF');
+    css_var.style.setProperty('--txtbox_bg', '#ffcfcf');
+    css_var.style.setProperty('--txtbox_border', '#c29e9e');
     css_var.style.setProperty('--main', '#FF7878');
-    css_var.style.setProperty('--main_two', '#C0AA9E');
-    css_var.style.setProperty('--main_three', '#B0B7A8');
-    css_var.style.setProperty('--accent', '#80DCC3');
-    css_var.style.setProperty('--accent_two', '#9FE4D1');
-    css_var.style.setProperty('--accent_three', '#BDEBDF');
-    css_var.style.setProperty('--scrollbar_thumb', '#9FE4D1');
-    css_var.style.setProperty('--scrollbar_thumb_active', '#BDEBDF');
-    css_var.style.setProperty('--theme_dropdown_bg', '#CCCCCC');
-    css_var.style.setProperty('--msc', '#000000');
+    css_var.style.setProperty('--main_two', '#FF9999');
+    css_var.style.setProperty('--main_three', '#FFADAD');
+    css_var.style.setProperty('--accent', '#FF7878');
+    css_var.style.setProperty('--accent_two', '#FF9999');
+    css_var.style.setProperty('--accent_three', '#FFADAD');
+    css_var.style.setProperty('--workspace_bg', '#C2C2C2');
+    css_var.style.setProperty('--text_colour', '#FFFFFF');
+    css_var.style.setProperty('--text_placeholder_colour', 'rgba(255, 255, 255, 0.5)');
+    css_var.style.setProperty('--scrollbar_track', '#D6D6D6');
+    css_var.style.setProperty('--scrollbar_thumb', '#818181');
+    css_var.style.setProperty('--scrollbar_thumb_active', '#4D4D4D');
+    css_var.style.setProperty('--theme_dropdown_bg', '#818181');
+    css_var.style.setProperty('--msc', '#A2A2A2');
 
     logo.style.backgroundImage = "url('images/prjctNotesTheme1.png')";
-    themesImg.style.backgroundImage = "url('images/ThemesTeal.png')";
-    logInImg.style.backgroundImage = "url('images/LogInTeal.png')";
+    themesImg.style.backgroundImage = "url('images/ThemesWatermelonPink.png')";
+    logInImg.style.backgroundImage = "url('images/LogInWatermelonPink.png')";
 
     themesImg.addEventListener("mouseover", function () {
-
-        themesImg.style.backgroundImage = "url('images/ThemesWatermelonPink.png')";
-
-    }, false);
-
-    themesImg.addEventListener("mouseout", function () {
 
         themesImg.style.backgroundImage = "url('images/ThemesTeal.png')";
 
     }, false);
 
+    themesImg.addEventListener("mouseout", function () {
+
+        themesImg.style.backgroundImage = "url('images/ThemesWatermelonPink.png')";
+
+    }, false);
+
     logInImg.addEventListener("mouseover", function () {
 
-        logInImg.style.backgroundImage = "url('images/LogInWatermelonPink.png')";
+        logInImg.style.backgroundImage = "url('images/LogInTeal.png')";
 
     }, false);
 
     logInImg.addEventListener("mouseout", function () {
 
-        logInImg.style.backgroundImage = "url('images/LogInTeal.png')";
+        logInImg.style.backgroundImage = "url('images/LogInWatermelonPink.png')";
 
     }, false);
 
@@ -204,10 +212,14 @@ function themeTwo() {
     css_var.style.setProperty('--accent', '#45818E');
     css_var.style.setProperty('--accent_two', '#679DA9');
     css_var.style.setProperty('--accent_three', '#77ACB8');
+    css_var.style.setProperty('--workspace_bg', '#1F2741');
+    css_var.style.setProperty('--text_colour', '#000000');
+    css_var.style.setProperty('--text_placeholder_colour', 'rgba(0, 0, 0, 0.5)');
+    css_var.style.setProperty('--scrollbar_track', '#2D354D');
     css_var.style.setProperty('--scrollbar_thumb', 'white');
-    css_var.style.setProperty('--scrollbar_thumb_active', 'white');
+    css_var.style.setProperty('--scrollbar_thumb_active', 'rgba(255, 255, 255, 0.5)');
     css_var.style.setProperty('--theme_dropdown_bg', 'white');
-    css_var.style.setProperty('--msc', '#101834');
+    css_var.style.setProperty('--msc', '#6E7387');
 
     logo.style.backgroundImage = "url('images/prjctNotesTheme2.png')";
     themesImg.style.backgroundImage = "url('images/ThemesElectricBlue.png')";
