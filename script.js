@@ -279,7 +279,7 @@ function removeNote(e) {
     
 }
 
-const elements = document.querySelectorAll('.bold')
+const elements = document.querySelectorAll('.format');
 
 elements.forEach(element => {
 
