@@ -172,11 +172,9 @@ nav li{
 .workspace_sidebar {
 
     position: relative;
-    top: -0.75vw;
-    left: -0.75vw;
     background-color: var(--scrollbar_track);
     width: 5%;
-    height: calc(100% + 1.5vw);
+    height: calc(100%);
     padding: 0.75vw;
     border-radius: 0.75vw;
     display: flex;
@@ -197,6 +195,9 @@ nav li{
 
     font-size: 2vw;
     cursor: pointer;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     color: var(--main);
 
 }

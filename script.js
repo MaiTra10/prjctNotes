@@ -278,3 +278,17 @@ function removeNote(e) {
     e.parentElement.parentElement.remove();
     
 }
+
+const elements = document.querySelectorAll('.bold')
+
+elements.forEach(element => {
+
+    element.addEventListener('click', () => {
+
+        let command = element.dataset['element'];
+
+        document.execCommand(command, false, null);
+
+    });
+
+});
