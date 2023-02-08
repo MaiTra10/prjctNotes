@@ -55,8 +55,13 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
-    text-decoration: none;
     transition: all 250ms ease-in-out;
+
+}
+
+a{
+
+    text-decoration: none;
 
 }
 /*fixes the icons having a delayed transition*/
@@ -169,20 +174,112 @@ nav li{
 
 }
 
-.workspace_sidebar {
+.sidebar {
 
     position: relative;
     background-color: var(--scrollbar_track);
     width: 5%;
     height: calc(100%);
-    padding: 0.75vw;
+    padding-inline: 0.75vw;
     border-radius: 0.75vw;
-    display: flex;
-    justify-content: center;
+    display: block;
 
 }
 
-.add_note_btn {
+.sidebar_buttons_top > div:first-child {
+
+    font-size: 2vw;
+
+}
+
+.sidebar_buttons_top > div, .github_icon {
+
+    display: flex;
+    justify-content: center;
+    font-size: 2.5vw;
+    color: var(--main);
+
+    transition: all 0ms;
+
+}
+
+.sidebar_buttons_top > div:not(:first-child) {
+
+    margin-top: 1.5vw;
+
+}
+
+.sidebar_buttons_top > div > i {
+
+    margin-top: 0.75vw;
+    cursor: pointer;
+    display: flex;
+
+}
+
+.sidebar_buttons_bottom {
+
+    position: absolute;
+    bottom: calc(0px + 0.75vw);
+    
+}
+
+.sidebar_buttons_bottom > div > a > i{
+
+    display: flex;
+    justify-content: center;
+    font-size: 2.4vw;
+    margin-top: 0.75vw;
+
+}
+
+.github_icon > a > i {
+
+    display: flex;
+    color: var(--main);
+
+}
+
+.sidebar_buttons_top > div::before, .github_icon::before {
+
+    content: attr(data-tooltip);
+
+    font-size: 1vw;
+    position: absolute;
+    font-weight: bolder;
+    text-align: center;
+    white-space: nowrap;
+    position: absolute;
+    padding: 10% 30%;
+    margin-bottom: 0px;
+    height: fit-content;
+    width: max-content;
+    border-radius: calc(5vw + 10px);
+    transform: translateY(-100%);
+    color: var(--text_colour);
+    background-color: var(--msc);
+    pointer-events: none;
+    opacity: 0;
+    transition: all 250ms ease-in-out;
+    transition-delay: 0.5s;
+
+
+}
+
+.sidebar_buttons_top > div:hover::before, .github_icon:hover::before {
+
+    opacity: 1;
+
+}
+
+.sidebar_buttons_top > div:not(:hover):before, .github_icon:not(:hover)::before {
+
+    transition-delay: 0s;
+    opacity: 0;
+
+}
+
+/*.add_note_btn {
 
     height: fit-content;
     display: flex;
@@ -251,7 +348,7 @@ nav li{
 
 .add_note_btn::before {
 
-    bottom: calc(99.5%);
+    bottom: 100%;
 
 }
 
@@ -265,7 +362,7 @@ nav li{
 
     --scale: 1;
 
-}
+}*/
 
 .content {
 
@@ -549,6 +646,13 @@ nav li{
 
 }
 /*the block that opens when you click 'log in'*/
+
+.log_in_block a {
+
+    color: var(--main);
+
+}
+
 .log_in_block {
 
     position: fixed;

@@ -85,17 +85,33 @@
             </div>
         </header>
         <div class="workspace">
-            <div class="workspace_sidebar">
-                <div class="add_note_btn" data-tooltip="Create New Notepad">
-                    <i class="bi bi-file-earmark-plus" onclick="addNote()"></i>
+            <div class="sidebar">
+                <div class="sidebar_buttons_top">
+                    <div class="add_note_btn" data-tooltip="Create New Notepad">
+                        <i class="bi bi-sticky-fill" onclick="addNote()"></i>
+                    </div>
+                    <div class="format" data-tooltip="Bold" data-element="bold">
+                        <i class="bi bi-type-bold" onmousedown="event.preventDefault();"></i>
+                    </div>
+                    <div class="format" data-tooltip="Italicize" data-element="italic">
+                        <i class="bi bi-type-italic" onmousedown="event.preventDefault();"></i>
+                    </div>
+                    <div class="format" data-tooltip="Underline" data-element="underline">
+                        <i class="bi bi-type-underline" onmousedown="event.preventDefault();"></i>
+                    </div>
+                    <div class="format" data-tooltip="Strikthrough" data-element="strikethrough">
+                        <i class="bi bi-type-strikethrough" onmousedown="event.preventDefault();"></i>
+                    </div>
                 </div>
-                <div class="github_icon" data-tooltip="My Github!">
-                    <a href="https://github.com/MaiTra10" target="_blank"><i class="bi bi-github"></i></a>
+                <div class="sidebar_buttons_bottom">
+                    <div class="github_icon" data-tooltip="My Github!">
+                        <a href="https://github.com/MaiTra10" target="_blank"><i class="bi bi-github"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="content" id="content">
                 <div class="note" id="note">
-                    <div class="note_title" contenteditable="True" placeholder="Title" spellcheck="False"></div>
+                    <div class="note_title" contenteditable="True" placeholder="Title" spellcheck="False" onclick="caretEnd(this)"></div>
                     <div class="note_close"><i class="fa-sharp fa-solid fa-xmark" onclick="removeNote(this)"></i></div>
                     <div class="note_content" contenteditable="True" placeholder="Take notes here..." spellcheck="False"></div>
                 </div>
