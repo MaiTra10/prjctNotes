@@ -198,7 +198,6 @@ nav li{
     justify-content: center;
     font-size: 2.5vw;
     color: var(--main);
-    cursor: pointer;
 
     transition: all 0ms;
 
@@ -213,6 +212,7 @@ nav li{
 .sidebar_buttons_top > div > i {
 
     margin-top: 0.75vw;
+    cursor: pointer;
     display: flex;
 
 }
@@ -221,6 +221,15 @@ nav li{
 
     position: absolute;
     bottom: calc(0px + 0.75vw);
+    
+}
+
+.sidebar_buttons_bottom > div > a > i{
+
+    display: flex;
+    justify-content: center;
+    font-size: 2.4vw;
+    margin-top: 0.75vw;
 
 }
 
@@ -242,7 +251,7 @@ nav li{
     white-space: nowrap;
     position: absolute;
     padding: 10% 30%;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
     height: fit-content;
     width: max-content;
     border-radius: calc(5vw + 10px);
