@@ -377,7 +377,7 @@ nav li{
     padding: 0.65vw 2vw;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: min(15vw, 235px);
+    grid-auto-rows: min(15vw, 200px);
     grid-gap: 2vw;
     /*grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: 20px;
