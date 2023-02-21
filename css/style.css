@@ -240,6 +240,7 @@ nav li{
 
 .github_icon > a > i {
 
+    margin-top: min(0.75vw, 8px);
     display: flex;
     color: var(--main);
 
