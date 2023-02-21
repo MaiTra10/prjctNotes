@@ -210,6 +210,12 @@ nav li{
 
 }
 
+.sidebar_buttons_top > div:nth-child(2) {
+
+    border-top: 2px solid var(--main_three);
+
+}
+
 .sidebar_buttons_top > div > i {
 
     margin-top: min(0.75vw, 8px);
