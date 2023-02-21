@@ -164,7 +164,7 @@ nav li{
 .workspace {
 
     width: calc(100% - 20%);
-    height: calc(75vh);
+    height: max(75vh, 340px);
     border-radius: 0.75vw;
     margin: 0% 10%;
     margin-bottom: calc(8vh);
@@ -178,17 +178,18 @@ nav li{
 
     position: relative;
     background-color: var(--scrollbar_track);
-    width: 5%;
+    width: min(5%, 36px);
     height: calc(100%);
-    padding-inline: 0.75vw;
-    border-radius: 0.75vw;
-    display: block;
+    border-radius: min(0.75vw, 8px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
 }
 
 .sidebar_buttons_top > div:first-child {
 
-    font-size: 2vw;
+    font-size: min(2.2vw, 20px);
 
 }
 
@@ -196,7 +197,7 @@ nav li{
 
     display: flex;
     justify-content: center;
-    font-size: 2.5vw;
+    font-size: min(2.2vw, 24px);
     color: var(--main);
 
     transition: all 0ms;
@@ -205,13 +206,13 @@ nav li{
 
 .sidebar_buttons_top > div:not(:first-child) {
 
-    margin-top: 1.5vw;
+    margin-top: min(0.75vw, 8px);
 
 }
 
 .sidebar_buttons_top > div > i {
 
-    margin-top: 0.75vw;
+    margin-top: min(0.75vw, 8px);
     cursor: pointer;
     display: flex;
 
@@ -219,17 +220,15 @@ nav li{
 
 .sidebar_buttons_bottom {
 
-    position: absolute;
-    bottom: calc(0px + 0.75vw);
-    
+    margin-bottom: min(0.75vw, 8px);
+
 }
 
 .sidebar_buttons_bottom > div > a > i{
 
     display: flex;
     justify-content: center;
-    font-size: 2.4vw;
-    margin-top: 0.75vw;
+    font-size: min(2.2vw, 22px);
 
 }
 
@@ -369,15 +368,24 @@ nav li{
     overflow-y: scroll;
     height: 100%;
     width: 100%;
-    padding: 1.5vw;
-    border-radius: 0.75vw;
+    padding: 0.65vw 2vw;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 15vw;
-    grid-gap: 5vw;
+    grid-auto-rows: min(15vw, 235px);
+    grid-gap: 2vw;
     /*grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: 20px;
     grid-auto-rows: 200px;*/
+
+}
+
+@media only screen and (min-width: 1500px) {
+
+    .content {
+
+        grid-template-columns: repeat(4, 1fr);
+
+    }
 
 }
 
@@ -392,7 +400,7 @@ nav li{
     background-color: var(--main);
     color: var(--text_colour);
     padding: 5%;
-    border-radius: 0.75vw;
+    border-radius: min(0.75vw, 8px);
     display: grid;
     grid-template-columns: repeat(5, 20%);
     grid-auto-rows: 20%;
@@ -407,7 +415,7 @@ nav li{
 
     height: 100%;
     width: 100%;
-    font-size: 2vw;
+    font-size: min(2vw, 24px);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: clip;
@@ -419,11 +427,11 @@ nav li{
 
 }
 
-.note_close {
-
+.note_close{
+    
+    padding-left: 82.5%;
     height: 100%;
-    padding-left: 77%;
-    padding-top: 5%;
+    width: calc(100% + 5%);
     /*font-size: 3vw;
     line-height: 20px;
     padding-bottom: 0.75vw;
@@ -436,7 +444,7 @@ nav li{
 .note_close > i {
 
     color: var(--bg);
-    font-size: 1.5vw;
+    font-size: min(1.5vw, 18px);
     line-height: 80%;
     cursor: pointer;
 
@@ -447,7 +455,7 @@ nav li{
     height: 100%;
     width: 100%;
     margin-top: 5%;
-    font-size: 1.25vw;
+    font-size: min(1.25vw, 16px);
     overflow-y: scroll;
     outline: none;
 
@@ -455,6 +463,12 @@ nav li{
     grid-column-end: 6;
     grid-row-start: 2;
     grid-row-end: 6;
+
+}
+
+.note_content::-webkit-scrollbar {
+
+    width: 0.5vw;
 
 }
 
