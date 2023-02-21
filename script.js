@@ -6,6 +6,24 @@ let formSU = document.getElementById("formSU");
 let formFP = document.getElementById("formFP");
 let logo = document.getElementById("logo");
 
+window.onload = function() {
+
+    const defaultContent = `<div class="note" id="note">
+                                <div class="note_title" contenteditable="True" placeholder="Title" spellcheck="False" onclick="caretEnd(this)"></div>
+                                <div class="note_close"><i class="fa-sharp fa-solid fa-xmark" onclick="removeNote(this)"></i></div>
+                                <div class="note_content" contenteditable="True" placeholder="Take notes here..." spellcheck="False"></div>
+                            </div>`;
+
+    if(localStorage.getItem("saved") != null) {
+
+        console.log("Successfully Updated Notes!");
+        const content_to_update = document.getElementById("content");
+        content_to_update.innerHTML = localStorage.getItem("saved");
+
+    }
+
+}
+
 function openDropdownBlock() {
 
     dropdownBlock.classList.add("open-dropdown-block");
@@ -292,3 +310,11 @@ elements.forEach(element => {
     });
 
 });
+
+window.onbeforeunload = function() {
+
+    const finalContent = document.getElementById("content");
+
+    localStorage.setItem("saved", finalContent.innerHTML);
+
+}
