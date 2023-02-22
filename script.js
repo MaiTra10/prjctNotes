@@ -1,3 +1,7 @@
+import supabase from "/supabase.js";
+
+console.log(supabase);
+
 let dropdownBlock = document.getElementById("dropdownBlock");
 let loginBlock = document.getElementById("loginBlock");
 let bgDarken = document.getElementById("bgDarken");
