@@ -1,6 +1,25 @@
 import supabase from "/supabase.js";
 
-console.log(supabase);
+const fetchTheme = async () => {
+
+    const {data, error} = await supabase
+        .from("theme")
+        .select()
+
+        if(error) {
+
+            console.log("Error fetching current theme!");
+
+        }
+        if(data) {
+
+            console.log(data[2].theme);
+
+        }
+
+}
+
+fetchTheme();
 
 let dropdownBlock = document.getElementById("dropdownBlock");
 let loginBlock = document.getElementById("loginBlock");
