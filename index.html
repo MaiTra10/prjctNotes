@@ -18,23 +18,23 @@
                     <ul>
                         <li>
                             <div class="dropdown">
-                                <div class="themes_img" id="themes_img" onclick="openDropdownBlock()"></div>
+                                <div class="themes_img" id="themesImg"></div>
                                 <div class="dropdown_block" id="dropdownBlock">
-                                    <div class="close_btn_theme_dropdown" onclick="closeDropdownBlock()"><div class="x">&times;</div></div>
+                                    <div class="close_btn_theme_dropdown" id="closeDropdownBlock"><div class="x">&times;</div></div>
                                     <div class="theme_container">
-                                        <div class="theme_1" onclick="themeDef()"><a href="#"></a></div>
-                                        <div class="theme_2" onclick="themeOne()"><a href="#"></a></div>
-                                        <div class="theme_3" onclick="themeTwo()"><a href="#"></a></div>
+                                        <div class="theme_1" id="themeDef"><a href="#"></a></div>
+                                        <div class="theme_2" id="themeOne"><a href="#"></a></div>
+                                        <div class="theme_3" id="themeTwo"><a href="#"></a></div>
                                     </div>
                                 </div>
                             </div>
                         </li>
                         <li>
                             <div class="log_in">
-                                <div class="log_in_img" id="log_in_img" onclick="openLoginBlock()"></div>
+                                <div class="log_in_img" id="logInImg"></div>
                                 <div class="bg_darken" id="bgDarken"></div>
                                 <div class="log_in_block" id="loginBlock">
-                                    <div class="close_btn" onclick="closeLoginBlock()"><i class="fa-sharp fa-solid fa-xmark"></i></div>
+                                    <div class="close_btn" id="closeBtn"><i class="fa-sharp fa-solid fa-xmark"></i></div>
                                     <form class="form1" id="formLI">
                                         <h2>Log In</h2>
                                         <div>
@@ -45,10 +45,10 @@
                                             <label for="pwd">Password</label>
                                             <input type="password" id="pwd" name="pwd">
                                         </div>
-                                        <div class="forg_pwd"><a href="#" class="forg_pwd_a" onclick="openFrgPwdBlock()">Forgot Password?</a></div>
+                                        <div class="forg_pwd"><a href="#" class="forg_pwd_a" id="forgPwdA">Forgot Password?</a></div>
                                         <div><button>Sign In</button></div>
                                         <div class="sign_up_a">
-                                            <h3>Don't have an account? <a href="#" class="sign_up_a" onclick="openSignUpBlock()">Sign Up!</a></h3>
+                                            <h3>Don't have an account? <a href="#" class="sign_up_a" id="signUpA">Sign Up!</a></h3>
                                         </div>
                                     </form>
                                     <form class="form2" id="formSU">
@@ -61,7 +61,7 @@
                                             <label for="pwdSu">Password</label>
                                             <input type="password" id="pwdSu" name="pwd">
                                         </div>
-                                        <div><a href="#" class="back_to_log_in" onclick="closeSignUpBlock()"><i class="fas fa-arrow-alt-circle-right"></i></a></div>
+                                        <div><a href="#" class="back_to_log_in" id="backToLogInSU"><i class="fas fa-arrow-alt-circle-right"></i></a></div>
                                         <div><button>Sign Up</button></div>
                                     </form>
                                     <form class="form3" id="formFP">
@@ -71,7 +71,7 @@
                                             <input type="email" id="eMailLg" name="e-mail">
                                         </div>
                                         <div><button>Submit</button></div>
-                                        <div><a href="#" class="back_to_log_in" onclick="closeFrgPwdBlock()"><i class="fas fa-arrow-alt-circle-left"></i></a></div>
+                                        <div><a href="#" class="back_to_log_in" id="backToLogInFP"><i class="fas fa-arrow-alt-circle-left"></i></a></div>
                                     </form>
                                 </div>
                             </div>
@@ -84,19 +84,19 @@
             <div class="sidebar">
                 <div class="sidebar_buttons_top">
                     <div class="add_note_btn" data-tooltip="Create New Notepad">
-                        <i class="bi bi-sticky-fill" onclick="addNote()"></i>
+                        <i class="bi bi-sticky-fill" id="addNote"></i>
                     </div>
                     <div class="format" data-tooltip="Bold" data-element="bold">
-                        <i class="bi bi-type-bold" onmousedown="event.preventDefault();"></i>
+                        <i class="bi bi-type-bold" id="bold" onmousedown="event.preventDefault();"></i>
                     </div>
                     <div class="format" data-tooltip="Italicize" data-element="italic">
-                        <i class="bi bi-type-italic" onmousedown="event.preventDefault();"></i>
+                        <i class="bi bi-type-italic" id="italic" onmousedown="event.preventDefault();"></i>
                     </div>
                     <div class="format" data-tooltip="Underline" data-element="underline">
-                        <i class="bi bi-type-underline" onmousedown="event.preventDefault();"></i>
+                        <i class="bi bi-type-underline" id="underline" onmousedown="event.preventDefault();"></i>
                     </div>
                     <div class="format" data-tooltip="Strikthrough" data-element="strikethrough">
-                        <i class="bi bi-type-strikethrough" onmousedown="event.preventDefault();"></i>
+                        <i class="bi bi-type-strikethrough" id="strike" onmousedown="event.preventDefault();"></i>
                     </div>
                 </div>
                 <div class="sidebar_buttons_bottom">
@@ -107,12 +107,12 @@
             </div>
             <div class="content" id="content">
                 <div class="note" id="note">
-                    <div class="note_title" contenteditable="True" placeholder="Title" spellcheck="False" onclick="caretEnd(this)"></div>
+                    <div class="note_title" contenteditable="True" placeholder="Title" spellcheck="False"></div>
                     <div class="note_close"><i class="fa-sharp fa-solid fa-xmark" onclick="removeNote(this)"></i></div>
                     <div class="note_content" contenteditable="True" placeholder="Take notes here..." spellcheck="False"></div>
                 </div>
             </div>
         </div>
-        <script type="module" src="script.js"></script>
+        <script src="script.js"></script>
     </body>
 </html>

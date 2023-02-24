@@ -1,26 +1,3 @@
-import supabase from "/supabase.js";
-
-const fetchTheme = async () => {
-
-    const {data, error} = await supabase
-        .from("theme")
-        .select()
-
-        if(error) {
-
-            console.log("Error fetching current theme!");
-
-        }
-        if(data) {
-
-            console.log(data[2].theme);
-
-        }
-
-}
-
-fetchTheme();
-
 let dropdownBlock = document.getElementById("dropdownBlock");
 let loginBlock = document.getElementById("loginBlock");
 let bgDarken = document.getElementById("bgDarken");
@@ -30,12 +7,6 @@ let formFP = document.getElementById("formFP");
 let logo = document.getElementById("logo");
 
 window.onload = function() {
-
-    const defaultContent = `<div class="note" id="note">
-                                <div class="note_title" contenteditable="True" placeholder="Title" spellcheck="False" onclick="caretEnd(this)"></div>
-                                <div class="note_close"><i class="fa-sharp fa-solid fa-xmark" onclick="removeNote(this)"></i></div>
-                                <div class="note_content" contenteditable="True" placeholder="Take notes here..." spellcheck="False"></div>
-                            </div>`;
 
     if(localStorage.getItem("saved") != null) {
 
@@ -121,8 +92,8 @@ function closeFrgPwdBlock() {
 }
 
 var css_var = document.querySelector(':root');
-let themesImg = document.getElementById("themes_img");
-let logInImg = document.getElementById("log_in_img");
+let themesImg = document.getElementById("themesImg");
+let logInImg = document.getElementById("logInImg");
 
 if(localStorage.getItem('theme') == 'themeDef' || localStorage.getItem('theme') == null) {
 
@@ -319,6 +290,19 @@ function removeNote(e) {
     e.parentElement.parentElement.remove();
     
 }
+//Setup Click Events
+document.getElementById("themesImg").addEventListener("click", openDropdownBlock);
+document.getElementById("closeDropdownBlock").addEventListener("click", closeDropdownBlock);
+document.getElementById("themeDef").addEventListener("click", themeDef);
+document.getElementById("themeOne").addEventListener("click", themeOne);
+document.getElementById("themeTwo").addEventListener("click", themeTwo);
+document.getElementById("logInImg").addEventListener("click", openLoginBlock);
+document.getElementById("closeBtn").addEventListener("click", closeLoginBlock);
+document.getElementById("forgPwdA").addEventListener("click", openFrgPwdBlock);
+document.getElementById("signUpA").addEventListener("click", openSignUpBlock);
+document.getElementById("backToLogInSU").addEventListener("click", closeSignUpBlock);
+document.getElementById("backToLogInFP").addEventListener("click", closeFrgPwdBlock);
+document.getElementById("addNote").addEventListener("click", addNote);
 
 const elements = document.querySelectorAll('.format');
 
