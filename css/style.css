@@ -717,18 +717,6 @@ nav li{
     color: var(--main_three);
 
 }
-
-.log_in_block button:hover {
-
-    background-color: var(--main_two);
-
-}
-
-.log_in_block button:active {
-
-    background-color: var(--main_three);
-
-}
 /*the forms in the 'log in' block*/
 .log_in_block {
 
@@ -800,7 +788,7 @@ nav li{
 
 }
 
-.form1 div, .form2 div, .form3 div {
+.form1 div:not(.button), .form2 div:not(.button), .form3 div:not(.button) {
 
     margin: 10px 10px;
     font-size: 15px;
@@ -844,19 +832,35 @@ nav li{
 
 }
 
-.form1 button, .form2 button, .form3 button {
+.button {
 
+    text-align: center;
+    margin: 10px 10px;
     width: 70px;
     height: 35px;
+    line-height: 35px;
     background-color: var(--main);
     color: var(--bg);
-    font-size: 12px;
     font-weight: bold;
     cursor: pointer;
     border-width: 0px;
     border-radius: 5px;
-    margin-top: 10px;
     transition: all 250ms ease-in-out;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+}
+
+.button:hover {
+
+    background-color: var(--main_two);
+
+}
+
+.button:active {
+
+    background-color: var(--main_three);
 
 }
 /*sign up form*/
