@@ -923,3 +923,60 @@ nav li{
     pointer-events: auto;
 
 }
+
+.message {
+
+    position: absolute;
+    left: calc(50% - min(14.5vw, 250px)/2);
+    top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: fit-content;
+    height: min(3vw, 38px);
+    border-radius: 1vw;
+    padding-inline: 1vw;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-20px);
+    transition: all 250ms ease-in-out;
+
+}
+
+.message-transition {
+
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+
+}
+
+.fail_msg {
+
+    background-color: #ff4a4a;
+    color: #ffa9a9;
+    
+}
+
+.success_msg {
+
+    background-color: #4cc75e;
+    color: #2f473c;
+    
+}
+
+.message > i {
+
+    font-size: min(1.5vw, 22px);
+    margin-right: 1vw;
+    line-height: 0px;
+
+}
+
+.message > p {
+
+    font-size: min(1vw, 22px);
+    line-height: 0px;
+
+}
