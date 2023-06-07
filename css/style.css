@@ -957,16 +957,9 @@ nav li{
     padding-inline: 1vw;
     opacity: 0;
     pointer-events: none;
+    z-index: 3;
     transform: translateY(-20px);
     transition: all 250ms ease-in-out;
-
-}
-
-.message-transition {
-
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
 
 }
 
@@ -996,5 +989,13 @@ nav li{
 
     font-size: min(1vw, 22px);
     line-height: 0px;
+
+}
+
+.message-transition {
+
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
 
 }

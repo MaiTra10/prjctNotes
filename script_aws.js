@@ -1,3 +1,32 @@
+let successMsg = document.getElementById("success");
+let failMsg = document.getElementById("fail");
+
+function displayFailMsg(msg) {
+
+    failMsg.getElementsByTagName("p")[0].innerHTML = msg;
+    failMsg.classList.add("message-transition");
+
+    setTimeout(function() {
+
+        failMsg.classList.remove("message-transition");
+
+    }, 4000);
+
+}
+
+function displaySuccessMsg(msg) {
+
+    successMsg.getElementsByTagName("p")[0].innerHTML = msg;
+    successMsg.classList.add("message-transition");
+
+    setTimeout(function() {
+
+        successMsg.classList.remove("message-transition");
+
+    }, 4000);
+
+}
+
 async function sign_in_btn(e) {
 
     const form = e.parentElement.parentElement.elements;
@@ -12,6 +41,8 @@ async function sign_up_btn(e) {
     if(emailValid == false || passValid == false) {
 
         console.log("E-mail or Password Format is Invalid!");
+
+        displayFailMsg("E-mail or Password Format is Invalid!");
 
     } else {
 
@@ -38,11 +69,12 @@ async function sign_up_btn(e) {
                 if(html["Status Code"] == 409){
     
                     console.log("Account Already Exists!");
-                    //Add proper fail and success messages
+                    displayFailMsg("Account Already Exists!");
     
                 } else {
     
                     console.log("Account Created!");
+                    displaySuccessMsg("Account Created!");
                 
                     formLI.classList.remove("slide-right");
                     formSU.classList.remove("slide-right");
