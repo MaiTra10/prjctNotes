@@ -58,6 +58,9 @@ function closeLoginBlock() {
     loginBlock.classList.remove("s-u-resize");
     loginBlock.classList.remove("f-p-resize");
     
+    formLI.reset();
+    formSU.reset();
+    formFP.reset();
 
 }
 
@@ -94,6 +97,60 @@ function closeFrgPwdBlock() {
     formFP.classList.remove("slide-left");
 
     loginBlock.classList.remove("f-p-resize");
+
+}
+
+let emailValid = false;
+let passValid = false;
+
+function checkEmailValid(input) {
+
+    let text = input.value;
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    if(!emailRegex.test(text)) {
+
+        input.classList.add("input-border-red");
+        input.classList.remove("input-border-green");
+        emailValid = false;
+
+
+    } else {
+
+        input.classList.add("input-border-green");
+        input.classList.remove("input-border-red");
+        emailValid = true;
+
+    }
+
+}
+
+function checkPassValid(input) {
+
+    let text = input.value;
+    const passRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])[a-zA-Z\d!@#$%^&*()]+$/;
+
+    if(!passRegex.test(text) || text.length < 8) {
+
+        input.classList.add("input-border-red");
+        input.classList.remove("input-border-green");
+        passValid = false;
+
+    } else {
+
+        input.classList.add("input-border-green");
+        input.classList.remove("input-border-red");
+        passValid = true;
+
+    }
+
+}
+
+function revertBorder(input) {
+
+    input.classList.remove("input-border-green");
+    input.classList.remove("input-border-red");
+
 
 }
 
