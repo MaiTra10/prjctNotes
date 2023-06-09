@@ -928,6 +928,7 @@ nav li{
     bottom: 70px;
     left: 110px;
     opacity: 0;
+    pointer-events: none;
 
 }
 
@@ -980,7 +981,7 @@ nav li{
 .message {
 
     position: absolute;
-    left: calc(50% - min(14.5vw, 250px)/2);
+    left: 50%;
     top: 5%;
     display: flex;
     justify-content: center;
@@ -993,7 +994,7 @@ nav li{
     opacity: 0;
     pointer-events: none;
     z-index: 3;
-    transform: translateY(-20px);
+    transform: translateX(-50%);
     transition: all 250ms ease-in-out;
 
 }
@@ -1031,6 +1032,5 @@ nav li{
 
     opacity: 1;
     pointer-events: auto;
-    transform: translateY(0);
 
 }

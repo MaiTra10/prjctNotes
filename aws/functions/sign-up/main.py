@@ -13,7 +13,7 @@ def lambda_sign_up(event, ctx):
         
         data = json.loads(event["body"])
         
-        email = data["email"]
+        email = data["email"].lower()
         
         password = data["password"]
 

@@ -129,7 +129,7 @@ resource "aws_lambda_function_url" "si-url-prjctNotes" {
     
     allow_credentials = true
     allow_origins = ["*"]
-    allow_methods = ["GET"]
+    allow_methods = ["POST"]
     allow_headers = ["*"]
     expose_headers = ["keep-alive", "date"]
 
