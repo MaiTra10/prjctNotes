@@ -100,6 +100,20 @@ function closeFrgPwdBlock() {
 
 }
 
+let passReq = document.getElementById("passReq");
+
+function showReq() {
+
+    passReq.classList.add("pass-req-show");
+
+}
+
+function hideReq() {
+
+    passReq.classList.remove("pass-req-show");
+
+}
+
 let emailValid = false;
 let passValid = false;
 

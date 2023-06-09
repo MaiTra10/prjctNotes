@@ -60,7 +60,8 @@
                                             <input type="email" id="eMailSu" name="email" class="input" oninput="checkEmailValid(this)" onfocusout="revertBorder(this)">
                                         </div>
                                         <div>
-                                            <label for="pwdSu">Password</label>
+                                            <label for="pwdSu">Password<i class="bi bi-info-circle" onmouseover="showReq()" onmouseout="hideReq()"></i></label>
+                                            <div class="pass_req" id="passReq"><p>Password must contain at least 8 characters, one capital letter, one number and one special character(!, @, etc.)</p></div>
                                             <input type="password" id="pwdSu" name="pwd" class="input" oninput="checkPassValid(this)" onfocusout="revertBorder(this)">
                                         </div>
                                         <div><a href="#" class="back_to_log_in" onclick="closeSignUpBlock()"><i class="fas fa-arrow-alt-circle-right"></i></a></div>

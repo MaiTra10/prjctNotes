@@ -1,14 +1,34 @@
 let successMsg = document.getElementById("success");
 let failMsg = document.getElementById("fail");
 
+function closeFailMsg() {
+
+    failMsg.classList.remove("message-transition");
+
+}
+
+function closeSuccessMsg() {
+
+    successMsg.classList.remove("message-transition");
+
+}
+
+function resetMsg() {
+
+    closeFailMsg();
+    closeSuccessMsg();
+
+}
+
 function displayFailMsg(msg) {
 
+    resetMsg();
     failMsg.getElementsByTagName("p")[0].innerHTML = msg;
     failMsg.classList.add("message-transition");
 
     setTimeout(function() {
 
-        failMsg.classList.remove("message-transition");
+        closeFailMsg();
 
     }, 4000);
 
@@ -16,12 +36,13 @@ function displayFailMsg(msg) {
 
 function displaySuccessMsg(msg) {
 
+    resetMsg();
     successMsg.getElementsByTagName("p")[0].innerHTML = msg;
     successMsg.classList.add("message-transition");
 
     setTimeout(function() {
 
-        successMsg.classList.remove("message-transition");
+        closeSuccessMsg();
 
     }, 4000);
 
@@ -41,7 +62,6 @@ async function sign_up_btn(e) {
     if(emailValid == false || passValid == false) {
 
         console.log("E-mail or Password Format is Invalid!");
-
         displayFailMsg("E-mail or Password Format is Invalid!");
 
     } else {
