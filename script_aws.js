@@ -139,7 +139,7 @@ async function sign_in_btn(e) {
         ).then(
             function(html) {
 
-                if(html["Status Code"] == 401){
+                if(html["Status Code"] == 401) {
 
                     console.log("E-mail or Password is Incorrect!");
                     displayFailMsg("E-mail or Password is Incorrect!");
@@ -192,18 +192,23 @@ async function sign_up_btn(e) {
         ).then(
             function(html) {
     
-                if(html["Status Code"] == 409){
+                if(html["Status Code"] == 409) {
     
                     console.log("Account Already Exists!");
                     displayFailMsg("Account Already Exists!");
     
-                } else {
+                } else if(html["Status Code"] == 200) {
     
                     console.log("Account Created!");
                     displaySuccessMsg("Account Created!");
                 
                     closeSignUpBlock();
     
+                } else {
+
+                    console.log("Something Went Wrong! Try Again Later.");
+                    displayFailMsg("Something Went Wrong! Try Again Later.");
+
                 }
             }
         );
@@ -212,8 +217,102 @@ async function sign_up_btn(e) {
 
 async function forgot_pass_btn(e) {
 
-    const form = e.parentElement.parentElement.elements;
-    const email = form.email.value;
+    if(emailValid == false) {
 
+        console.log("E-mail Format is Invalid!");
+        displayFailMsg("E-mail Format is Invalid!");
 
+    } else {
+
+        const form = e.parentElement.elements;
+        const email = form.email.value;
+        const data = {
+            email: email
+        };
+
+        fetch("https://i26cwybd5pv544hw3swn2g74za0hcsag.lambda-url.us-west-2.on.aws/", {
+    
+            method : "POST",
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            },
+            body : JSON.stringify(data)
+    
+        }).then(
+            response => response.json()
+        ).then(
+            function(html) {
+    
+                if(html["Status Code"] == 404) {
+    
+                    console.log("Account With That E-mail Does Not Exist!");
+                    displayFailMsg("Account With That E-mail Does Not Exist!");
+    
+                } else if(html["Status Code"] == 200) {
+    
+                    console.log(`An E-mail Has Been Sent to ${email} about your password!`);
+                    displaySuccessMsg(`An E-mail Has Been Sent to ${email} about your password! <b>Make sure to check your spam folder</b>.`);
+                
+                    closeFrgPwdBlock();
+    
+                } else {
+
+                    console.log("Something Went Wrong! Try Again Later.");
+                    displayFailMsg("Something Went Wrong! Try Again Later.");
+
+                }
+            }
+        );
+    }
 }
+
+/** Sample Python code in case I need it
+ *     body_html = """<html>
+    <head></head>
+    <body>
+    <h1>Hey Hi...</h1>
+    <p>This email was sent with
+        <a href='https://aws.amazon.com/ses/'>Amazon SES CQPOCS</a> using the
+        <a href='https://aws.amazon.com/sdk-for-python/'>
+        AWS SDK for Python (Boto)</a>.</p>
+    </body>
+    </html>"""
+    
+    body_text = ("Body Text Test")
+    
+    subject = "Test"
+    
+    sender = "prjctnotes@gmail.com"
+    
+    try:
+        
+        resp = ses.send_email(
+            Destination={
+                "ToAddresses": [
+                    sender,
+                    ],
+            },
+            Message={
+                "Body": {
+                    "Html": {
+                        "Charset": "UTF-8",
+                        "Data": body_html,
+                    },
+                    "Text": {
+                        "Charset": "UTF-8",
+                        "Data": body_text,
+                    }
+                },
+                "Subject": {
+                    "Charset": "UTF-8",
+                    "Data": subject,
+                }
+            },
+            Source=sender
+        )
+    except ClientError as e:
+        print(e)
+    else:
+        return {"Status Code": 200}
+ * 
+ */

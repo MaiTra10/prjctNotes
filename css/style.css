@@ -988,6 +988,7 @@ nav li{
     align-items: center;
     text-align: center;
     width: fit-content;
+    white-space: nowrap;
     height: min(3vw, 38px);
     border-radius: 1vw;
     padding-inline: 1vw;

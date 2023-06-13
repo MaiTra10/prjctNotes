@@ -73,7 +73,7 @@ resource "aws_iam_policy" "lambda-policy-prjctNotes" {
       {
         "Effect" : "Allow",
         "Action" : "ssm:GetParameters",
-        "Resource" : "arn:aws:ssm:us-west-2:850985080824:parameter/prjctNotesLambdaPassword"
+        "Resource" : "arn:aws:ssm:us-west-2:850985080824:parameter/prjctNotes_app_password"
       }
     ]
   })
