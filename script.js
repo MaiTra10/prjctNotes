@@ -271,13 +271,13 @@ function themeOne() {
 
         logInImg.addEventListener("mouseover", function () {
 
-            logInImg.style.backgroundImage = "url('images/LogInWatermelonPink.png')";
+            logInImg.style.backgroundImage = "url('images/LogInTeal.png')";
     
         }, false);
     
         logInImg.addEventListener("mouseout", function () {
     
-            logInImg.style.backgroundImage = "url('images/LogInTeal.png')";
+            logInImg.style.backgroundImage = "url('images/LogInWatermelonPink.png')";
     
         }, false);
 
