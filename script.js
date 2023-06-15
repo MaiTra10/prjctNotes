@@ -7,18 +7,18 @@ let formFP = document.getElementById("formFP");
 let logo = document.getElementById("logo");
 
 window.onload = function() {
+    //!localStorage.getItem("isLoggedIn") for when 'isLoggedIn' has not been created yet
+    //localStorage.getItem("isLoggedIn") === "false" for when 'isLoggedIn' has been created but user has logged out
+    if(!localStorage.getItem("isLoggedIn") || localStorage.getItem("isLoggedIn") === "false") {
 
-    const defaultContent = `<div class="note" id="note">
-                                <div class="note_title" contenteditable="True" placeholder="Title" spellcheck="False" onclick="caretEnd(this)"></div>
-                                <div class="note_close"><i class="fa-sharp fa-solid fa-xmark" onclick="removeNote(this)"></i></div>
-                                <div class="note_content" contenteditable="True" placeholder="Take notes here..." spellcheck="False"></div>
-                            </div>`;
+        if(localStorage.getItem("saved") != null) {
 
-    if(localStorage.getItem("saved") != null) {
-
-        console.log("Successfully Updated Notes!");
-        const content_to_update = document.getElementById("content");
-        content_to_update.innerHTML = localStorage.getItem("saved");
+            const content_to_update = document.getElementById("content");
+            content_to_update.innerHTML = localStorage.getItem("saved");
+            console.log("Successfully Updated Notes!");
+            displaySuccessMsg("Successfully updated notes from local storage!");
+    
+        }
 
     }
 
@@ -38,10 +38,19 @@ function closeDropdownBlock() {
 
 function openLoginBlock() {
 
-    loginBlock.classList.add("open-login-block");
-    bgDarken.classList.add("open-bg-darken");
-    dropdownBlock.classList.remove("open-dropdown-block");
+    if(!localStorage.getItem("isLoggedIn") || localStorage.getItem("isLoggedIn") === "false") {
 
+        loginBlock.classList.add("open-login-block");
+        bgDarken.classList.add("open-bg-darken");
+        dropdownBlock.classList.remove("open-dropdown-block");
+
+    } else {
+
+        localStorage.setItem("isLoggedIn", false);
+        localStorage.setItem("loggedInAs", null);
+        location.reload();
+
+    }
 }
 
 function closeLoginBlock() {
@@ -186,17 +195,37 @@ function themeDef() {
 
     }, false);
 
-    logInImg.addEventListener("mouseover", function () {
+    if(!localStorage.getItem("isLoggedIn") || localStorage.getItem("isLoggedIn") === "false") {
 
-        logInImg.style.backgroundImage = "url('images/LogInPurple.png')";
+        logInImg.addEventListener("mouseover", function () {
 
-    }, false);
+            logInImg.style.backgroundImage = "url('images/LogInPurple.png')";
+    
+        }, false);
+    
+        logInImg.addEventListener("mouseout", function () {
+    
+            logInImg.style.backgroundImage = "url('images/LogInOrange.png')";
+    
+        }, false);
 
-    logInImg.addEventListener("mouseout", function () {
+    } else {
 
-        logInImg.style.backgroundImage = "url('images/LogInOrange.png')";
+        logInImg.style.backgroundImage = "url('images/LogOutOrange.png')";
 
-    }, false);
+        logInImg.addEventListener("mouseover", function () {
+
+            logInImg.style.backgroundImage = "url('images/LogOutPurple.png')";
+    
+        }, false);
+    
+        logInImg.addEventListener("mouseout", function () {
+    
+            logInImg.style.backgroundImage = "url('images/LogOutOrange.png')";
+    
+        }, false);
+
+    }
 
     localStorage.setItem('theme', 'themeDef');
 
@@ -238,17 +267,37 @@ function themeOne() {
 
     }, false);
 
-    logInImg.addEventListener("mouseover", function () {
+    if(!localStorage.getItem("isLoggedIn") || localStorage.getItem("isLoggedIn") === "false") {
 
-        logInImg.style.backgroundImage = "url('images/LogInTeal.png')";
+        logInImg.addEventListener("mouseover", function () {
 
-    }, false);
+            logInImg.style.backgroundImage = "url('images/LogInWatermelonPink.png')";
+    
+        }, false);
+    
+        logInImg.addEventListener("mouseout", function () {
+    
+            logInImg.style.backgroundImage = "url('images/LogInTeal.png')";
+    
+        }, false);
 
-    logInImg.addEventListener("mouseout", function () {
+    } else {
 
-        logInImg.style.backgroundImage = "url('images/LogInWatermelonPink.png')";
+        logInImg.style.backgroundImage = "url('images/LogOutWatermelonPink.png')";
 
-    }, false);
+        logInImg.addEventListener("mouseover", function () {
+
+            logInImg.style.backgroundImage = "url('images/LogOutTeal.png')";
+    
+        }, false);
+    
+        logInImg.addEventListener("mouseout", function () {
+    
+            logInImg.style.backgroundImage = "url('images/LogOutWatermelonPink.png')";
+    
+        }, false);
+
+    }
 
     localStorage.setItem('theme', 'themeOne');
 
@@ -290,17 +339,37 @@ function themeTwo() {
 
     }, false);
 
-    logInImg.addEventListener("mouseover", function () {
+    if(!localStorage.getItem("isLoggedIn") || localStorage.getItem("isLoggedIn") === "false") {
 
-        logInImg.style.backgroundImage = "url('images/LogInDarkCyan.png')";
+        logInImg.addEventListener("mouseover", function () {
 
-    }, false);
+            logInImg.style.backgroundImage = "url('images/LogInDarkCyan.png')";
+    
+        }, false);
+    
+        logInImg.addEventListener("mouseout", function () {
+    
+            logInImg.style.backgroundImage = "url('images/LogInElectricBlue.png')";
+    
+        }, false);
 
-    logInImg.addEventListener("mouseout", function () {
+    } else {
 
-        logInImg.style.backgroundImage = "url('images/LogInElectricBlue.png')";
+        logInImg.style.backgroundImage = "url('images/LogOutElectricBlue.png')";
 
-    }, false);
+        logInImg.addEventListener("mouseover", function () {
+
+            logInImg.style.backgroundImage = "url('images/LogOutDarkCyan.png')";
+    
+        }, false);
+    
+        logInImg.addEventListener("mouseout", function () {
+    
+            logInImg.style.backgroundImage = "url('images/LogOutElectricBlue.png')";
+    
+        }, false);
+
+    }
 
     localStorage.setItem('theme', 'themeTwo');
 
@@ -350,6 +419,10 @@ window.onbeforeunload = function() {
 
     const finalContent = document.getElementById("content");
 
-    localStorage.setItem("saved", finalContent.innerHTML);
+    if(!localStorage.getItem("isLoggedIn") || localStorage.getItem("isLoggedIn") === "false") {
+
+        localStorage.setItem("saved", finalContent.innerHTML);
+
+    }
 
 }

@@ -146,8 +146,64 @@ async function sign_in_btn(e) {
 
                 } else if(html["Status Code"] == 200) {
 
+                    localStorage.setItem("isLoggedIn", true);
+                    localStorage.setItem("loggedInAs", email);
+
                     console.log(`Successfully Logged In as ${email}!`);
                     displaySuccessMsg(`Successfully Logged In as ${email}!`);
+
+                    const theme = localStorage.getItem("theme");
+
+                    console.log("test");
+                    if(theme === "themeDef") {
+
+                        logInImg.style.backgroundImage = "url('images/LogOutOrange.png')";
+
+                        logInImg.addEventListener("mouseover", function () {
+
+                            logInImg.style.backgroundImage = "url('images/LogOutPurple.png')";
+                    
+                        }, false);
+                    
+                        logInImg.addEventListener("mouseout", function () {
+                    
+                            logInImg.style.backgroundImage = "url('images/LogOutOrange.png')";
+                    
+                        }, false);
+
+                    } else if(theme === "themeOne") {
+
+                        logInImg.style.backgroundImage = "url('images/LogOutWatermelonPink.png')";
+
+                        logInImg.addEventListener("mouseover", function () {
+
+                            logInImg.style.backgroundImage = "url('images/LogOutTeal.png')";
+                    
+                        }, false);
+                    
+                        logInImg.addEventListener("mouseout", function () {
+                    
+                            logInImg.style.backgroundImage = "url('images/LogOutWatermelonPink.png')";
+                    
+                        }, false);
+
+                    } else {
+
+                        logInImg.style.backgroundImage = "url('images/LogOutElectricBlue.png')";
+
+                        logInImg.addEventListener("mouseover", function () {
+
+                            logInImg.style.backgroundImage = "url('images/LogOutDarkCyan.png')";
+                    
+                        }, false);
+                    
+                        logInImg.addEventListener("mouseout", function () {
+                    
+                            logInImg.style.backgroundImage = "url('images/LogOutElectricBlue.png')";
+                    
+                        }, false);
+
+                    }
                 
                     closeLoginBlock();
 
