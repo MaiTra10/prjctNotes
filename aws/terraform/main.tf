@@ -107,6 +107,20 @@ data "archive_file" "forgot-pass" {
   output_path = "fp-artifact.zip"
 
 }
+data "archive_file" "save" {
+
+  type = "zip"
+  source_file = "../functions/save/main.py"
+  output_path = "s-artifact.zip"
+
+}
+data "archive_file" "get-saved" {
+
+  type = "zip"
+  source_file = "../functions/get-saved/main.py"
+  output_path = "gs-artifact.zip"
+
+}
 # Creates a lambda function for sign-in
 resource "aws_lambda_function" "sign-in-prjctNotes" {
   
@@ -191,6 +205,62 @@ resource "aws_lambda_function_url" "fp-url-prjctNotes" {
 
   }
 }
+# Creates a lambda function for save
+resource "aws_lambda_function" "save-prjctNotes" {
+  
+  role = aws_iam_role.lambda.arn
+  function_name = "save-prjctNotes"
+  handler = "main.lambda_save"
+  timeout = 8
+  filename = "s-artifact.zip"
+  source_code_hash = data.archive_file.save.output_base64sha256
+  runtime = "python3.9"
+
+}
+# Creates a lambda function URL for save
+resource "aws_lambda_function_url" "s-url-prjctNotes" {
+  
+  function_name = aws_lambda_function.save-prjctNotes.function_name
+  authorization_type = "NONE"
+
+  cors {
+    
+    allow_credentials = true
+    allow_origins = ["*"]
+    allow_methods = ["POST"]
+    allow_headers = ["*"]
+    expose_headers = ["keep-alive", "date"]
+
+  }
+}
+# Creates a lambda function for get-saved
+resource "aws_lambda_function" "get-saved-prjctNotes" {
+  
+  role = aws_iam_role.lambda.arn
+  function_name = "get-saved-prjctNotes"
+  handler = "main.lambda_get_saved"
+  timeout = 8
+  filename = "gs-artifact.zip"
+  source_code_hash = data.archive_file.get-saved.output_base64sha256
+  runtime = "python3.9"
+
+}
+# Creates a lambda function URL for get-saved
+resource "aws_lambda_function_url" "gs-url-prjctNotes" {
+  
+  function_name = aws_lambda_function.get-saved-prjctNotes.function_name
+  authorization_type = "NONE"
+
+  cors {
+    
+    allow_credentials = true
+    allow_origins = ["*"]
+    allow_methods = ["GET"]
+    allow_headers = ["*"]
+    expose_headers = ["keep-alive", "date"]
+
+  }
+}
 # Outputs the URLs for the lambda functions for convenience 
 output "lambda-si-url" {
   value = aws_lambda_function_url.si-url-prjctNotes.function_url
@@ -200,4 +270,10 @@ output "lambda-su-url" {
 }
 output "lambda-fp-url" {
   value = aws_lambda_function_url.fp-url-prjctNotes.function_url
+}
+output "lambda-s-url" {
+  value = aws_lambda_function_url.s-url-prjctNotes.function_url
+}
+output "lambda-gs-url" {
+  value = aws_lambda_function_url.gs-url-prjctNotes.function_url
 }

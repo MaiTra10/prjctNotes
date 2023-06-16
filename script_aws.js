@@ -154,7 +154,6 @@ async function sign_in_btn(e) {
 
                     const theme = localStorage.getItem("theme");
 
-                    console.log("test");
                     if(theme === "themeDef") {
 
                         logInImg.style.backgroundImage = "url('images/LogOutOrange.png')";

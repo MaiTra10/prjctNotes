@@ -5,7 +5,7 @@ dynamoDB = boto3.resource("dynamodb")
 table_name = "prjctNotes-DB"
 table = dynamoDB.Table(table_name)
 
-def lambda_sign_up(event, ctx):
+def lambda_save(event, ctx):
 
     url_request_type = event["requestContext"]["http"]["method"]
     
@@ -15,18 +15,11 @@ def lambda_sign_up(event, ctx):
         
         email = data["email"].lower()
         
-        password = data["password"]
+        notes = data["notes"]
 
-        resp = table.get_item(TableName=table_name, Key={"email": email, "ctx": "password"})
-
-        if "Item" in resp:
-            
-            return {"Status Code": 409}
-            
-        else:
+        table.put_item(TableName=table_name, Item={"email": email, "ctx": "saved", "value": notes})
         
-            table.put_item(TableName=table_name, Item={"email": email, "ctx": "password", "value": password})
-            return {"Status Code": 200}
+        return {"Status Code": 200}
 
     else:
         

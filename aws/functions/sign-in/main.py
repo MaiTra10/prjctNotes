@@ -22,7 +22,7 @@ def lambda_sign_in(event, ctx):
         if "Item" in resp:
             
             emailDB = resp["Item"]["email"]
-            passDB = resp["Item"]["password"]
+            passDB = resp["Item"]["value"]
             
             if emailDB == email and passDB == password:
                 

@@ -6,7 +6,7 @@ let formSU = document.getElementById("formSU");
 let formFP = document.getElementById("formFP");
 let logo = document.getElementById("logo");
 
-window.onload = function() {
+window.onload = async function() {
     //!localStorage.getItem("isLoggedIn") for when 'isLoggedIn' has not been created yet
     //localStorage.getItem("isLoggedIn") === "false" for when 'isLoggedIn' has been created but user has logged out
     if(!localStorage.getItem("isLoggedIn") || localStorage.getItem("isLoggedIn") === "false") {
@@ -15,13 +15,31 @@ window.onload = function() {
 
             const content_to_update = document.getElementById("content");
             content_to_update.innerHTML = localStorage.getItem("saved");
-            console.log("Successfully Updated Notes!");
-            displaySuccessMsg("Successfully updated notes from local storage!");
+            console.log("Successfully loaded notes!");
+            displaySuccessMsg("Notes have been loaded from local storage!");
     
         }
 
-    }
+    } else {
 
+        fetch(`https://sdzg2qevbaq7y5dhm42ovbhdii0crwnk.lambda-url.us-west-2.on.aws/?email=${localStorage.getItem("loggedInAs")}`, {
+    
+            method : "GET",
+            headers: {
+                "Content-type": "application/json; charset=UTF-8",
+            }
+        }).then(
+            response => response.json()
+        ).then(
+            function(html) {
+
+                document.getElementById("content").innerHTML = html["saved"]
+                console.log("Successfully loaded notes!");
+                displaySuccessMsg("Notes have been loaded from the cloud!");
+
+            }
+        );
+    }
 }
 
 function openDropdownBlock() {
@@ -45,6 +63,23 @@ function openLoginBlock() {
         dropdownBlock.classList.remove("open-dropdown-block");
 
     } else {
+
+        const content = document.getElementById("content");
+
+        const data = {
+            email: localStorage.getItem("loggedInAs"),
+            notes: content.innerHTML
+        };
+
+        fetch("https://rtmun6jkifgcodydw5slaxepju0scagb.lambda-url.us-west-2.on.aws/", {
+    
+            method : "POST",
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            },
+            body : JSON.stringify(data)
+    
+        });
 
         localStorage.setItem("isLoggedIn", false);
         localStorage.setItem("loggedInAs", null);
@@ -415,7 +450,7 @@ elements.forEach(element => {
 
 });
 
-window.onbeforeunload = function() {
+window.onbeforeunload = async function() {
 
     const finalContent = document.getElementById("content");
 
@@ -423,6 +458,21 @@ window.onbeforeunload = function() {
 
         localStorage.setItem("saved", finalContent.innerHTML);
 
-    }
+    } else {
 
+        const data = {
+            email: localStorage.getItem("loggedInAs"),
+            notes: finalContent.innerHTML
+        };
+
+        fetch("https://rtmun6jkifgcodydw5slaxepju0scagb.lambda-url.us-west-2.on.aws/", {
+    
+            method : "POST",
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            },
+            body : JSON.stringify(data)
+    
+        })
+    }
 }
