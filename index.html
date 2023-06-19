@@ -8,6 +8,7 @@
         <script src="https://kit.fontawesome.com/3fabf18804.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+        <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1375.0.min.js"></script>
     </head>
     <body>
         <header>
@@ -30,22 +31,25 @@
                         </li>
                         <li>
                             <div class="log_in">
+                                <div class="logged_in_as" id="loggedInAs"><p>Logged in as</p></div>
                                 <div class="log_in_img" id="log_in_img" onclick="openLoginBlock()"></div>
                                 <div class="bg_darken" id="bgDarken"></div>
+                                <div class="success_msg message" id="success"><i class="bi bi-check2-circle"></i><p>Something Went Right</p></div>
+                                <div class="fail_msg message" id="fail"><i class="bi bi-x-circle"></i><p>Something Went Wrong</p></div>
                                 <div class="log_in_block" id="loginBlock">
                                     <div class="close_btn" onclick="closeLoginBlock()"><i class="fa-sharp fa-solid fa-xmark"></i></div>
                                     <form class="form1" id="formLI">
                                         <h2>Log In</h2>
                                         <div>
-                                            <label for="e-mail">E-Mail</label>
-                                            <input type="email" id="eMail" name="e-mail">
+                                            <label for="email">E-Mail</label>
+                                            <input type="email" id="eMail" name="email" class="input" oninput="checkEmailValid(this)" onfocusout="revertBorder(this)">
                                         </div>
                                         <div>
                                             <label for="pwd">Password</label>
-                                            <input type="password" id="pwd" name="pwd">
+                                            <input type="password" id="pwd" name="pwd" class="input">
                                         </div>
                                         <div class="forg_pwd"><a href="#" class="forg_pwd_a" onclick="openFrgPwdBlock()">Forgot Password?</a></div>
-                                        <div><button>Sign In</button></div>
+                                        <div class="button" onclick="sign_in_btn(this)">Sign In</div>
                                         <div class="sign_up_a">
                                             <h3>Don't have an account? <a href="#" class="sign_up_a" onclick="openSignUpBlock()">Sign Up!</a></h3>
                                         </div>
@@ -53,23 +57,24 @@
                                     <form class="form2" id="formSU">
                                         <h2>Sign Up</h2>
                                         <div>
-                                            <label for="e-mail">E-Mail</label>
-                                            <input type="email" id="eMailSu" name="e-mail">
+                                            <label for="email">E-Mail</label>
+                                            <input type="email" id="eMailSu" name="email" class="input" oninput="checkEmailValid(this)" onfocusout="revertBorder(this)">
                                         </div>
                                         <div>
-                                            <label for="pwdSu">Password</label>
-                                            <input type="password" id="pwdSu" name="pwd">
+                                            <label for="pwdSu">Password<i class="bi bi-info-circle" onmouseover="showReq()" onmouseout="hideReq()"></i></label>
+                                            <div class="pass_req" id="passReq"><p>Password must contain at least 8 characters, one capital letter, one number and one special character(!, @, etc.)</p></div>
+                                            <input type="password" id="pwdSu" name="pwd" class="input" oninput="checkPassValid(this)" onfocusout="revertBorder(this)">
                                         </div>
                                         <div><a href="#" class="back_to_log_in" onclick="closeSignUpBlock()"><i class="fas fa-arrow-alt-circle-right"></i></a></div>
-                                        <div><button>Sign Up</button></div>
+                                        <div class="button" onclick="sign_up_btn(this)">Sign Up</div>
                                     </form>
                                     <form class="form3" id="formFP">
                                         <h2>Account Recovery</h2>
                                         <div>
-                                            <label for="e-mail">E-Mail Associated with your Account</label>
-                                            <input type="email" id="eMailLg" name="e-mail">
+                                            <label for="email">E-Mail Associated with your Account</label>
+                                            <input type="email" id="eMailLg" name="email" class="input" oninput="checkEmailValid(this)" onfocusout="revertBorder(this)">
                                         </div>
-                                        <div><button>Submit</button></div>
+                                        <div class="button" onclick="forgot_pass_btn(this)">Submit</div>
                                         <div><a href="#" class="back_to_log_in" onclick="closeFrgPwdBlock()"><i class="fas fa-arrow-alt-circle-left"></i></a></div>
                                     </form>
                                 </div>
@@ -106,12 +111,13 @@
             </div>
             <div class="content" id="content">
                 <div class="note" id="note">
-                    <div class="note_title" contenteditable="True" placeholder="Title" spellcheck="False" onclick="caretEnd(this)"></div>
+                    <div class="note_title" contenteditable="True" placeholder="Title" spellcheck="False"></div>
                     <div class="note_close"><i class="fa-sharp fa-solid fa-xmark" onclick="removeNote(this)"></i></div>
                     <div class="note_content" contenteditable="True" placeholder="Take notes here..." spellcheck="False"></div>
                 </div>
             </div>
         </div>
         <script src="script.js"></script>
+        <script src="script_aws.js"></script>
     </body>
 </html>

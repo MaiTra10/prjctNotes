@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 aws/terraform/terraform.tfstate
 aws/terraform/.terraform.lock.hcl
 aws/terraform/.terraform/providers/registry.terraform.io/hashicorp/archive/2.4.0/windows_386/terraform-provider-archive_v2.4.0_x5.exe
@@ -6,3 +7,15 @@ aws/terraform/.terraform/providers/registry.terraform.io/hashicorp/aws/5.1.0/win
 aws/terraform/fp-artifact.zip
 aws/terraform/si-artifact.zip
 aws/terraform/su-artifact.zip
+=======
+aws/terraform/.terraform.lock.hcl
+aws/terraform/.terraform/providers/registry.terraform.io/hashicorp/archive/2.3.0/windows_386/terraform-provider-archive_v2.3.0_x5.exe
+aws/terraform/.terraform/providers/registry.terraform.io/hashicorp/aws/4.66.1/windows_386/terraform-provider-aws_v4.66.1_x5.exe
+aws/terraform/fp-artifact.zip
+aws/terraform/si-artifact.zip
+aws/terraform/su-artifact.zip
+aws/terraform/terraform.tfstate
+aws/terraform/terraform.tfstate.backup
+aws/terraform/.terraform/providers/registry.terraform.io/hashicorp/aws/5.1.0/windows_386/terraform-provider-aws_v5.1.0_x5.exe
+aws/terraform/.terraform/providers/registry.terraform.io/hashicorp/archive/2.4.0/windows_386/terraform-provider-archive_v2.4.0_x5.exe
+>>>>>>> 5ada00438eee180ccf2706550a3f728a6e74a32e
