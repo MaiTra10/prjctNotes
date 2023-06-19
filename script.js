@@ -6,22 +6,42 @@ let formSU = document.getElementById("formSU");
 let formFP = document.getElementById("formFP");
 let logo = document.getElementById("logo");
 
-window.onload = function() {
+window.onload = async function() {
+    //!localStorage.getItem("isLoggedIn") for when 'isLoggedIn' has not been created yet
+    //localStorage.getItem("isLoggedIn") === "false" for when 'isLoggedIn' has been created but user has logged out
+    if(!localStorage.getItem("isLoggedIn") || localStorage.getItem("isLoggedIn") === "false") {
 
-    const defaultContent = `<div class="note" id="note">
-                                <div class="note_title" contenteditable="True" placeholder="Title" spellcheck="False" onclick="caretEnd(this)"></div>
-                                <div class="note_close"><i class="fa-sharp fa-solid fa-xmark" onclick="removeNote(this)"></i></div>
-                                <div class="note_content" contenteditable="True" placeholder="Take notes here..." spellcheck="False"></div>
-                            </div>`;
+        if(localStorage.getItem("saved") != null) {
 
-    if(localStorage.getItem("saved") != null) {
+            const content_to_update = document.getElementById("content");
+            content_to_update.innerHTML = localStorage.getItem("saved");
+            console.log("Successfully loaded notes!");
+            displaySuccessMsg("Notes have been loaded from local storage!");
+    
+        }
 
-        console.log("Successfully Updated Notes!");
-        const content_to_update = document.getElementById("content");
-        content_to_update.innerHTML = localStorage.getItem("saved");
+    } else {
 
+        loggedInAs.getElementsByTagName("p")[0].innerHTML = `Logged in as ${localStorage.getItem("loggedInAs")}`;
+
+        fetch(`https://sdzg2qevbaq7y5dhm42ovbhdii0crwnk.lambda-url.us-west-2.on.aws/?ctx=note&email=${localStorage.getItem("loggedInAs")}`, {
+    
+            method : "GET",
+            headers: {
+                "Content-type": "application/json; charset=UTF-8",
+            }
+        }).then(
+            response => response.json()
+        ).then(
+            function(html) {
+
+                document.getElementById("content").innerHTML = html["saved"]
+                console.log("Successfully loaded notes!");
+                displaySuccessMsg("Notes have been loaded from the cloud!");
+
+            }
+        );
     }
-
 }
 
 function openDropdownBlock() {
@@ -38,10 +58,42 @@ function closeDropdownBlock() {
 
 function openLoginBlock() {
 
-    loginBlock.classList.add("open-login-block");
-    bgDarken.classList.add("open-bg-darken");
-    dropdownBlock.classList.remove("open-dropdown-block");
+    if(!localStorage.getItem("isLoggedIn") || localStorage.getItem("isLoggedIn") === "false") {
 
+        loginBlock.classList.add("open-login-block");
+        bgDarken.classList.add("open-bg-darken");
+        dropdownBlock.classList.remove("open-dropdown-block");
+
+    } else {
+
+        const content = document.getElementById("content");
+
+        const data = {
+            email: localStorage.getItem("loggedInAs"),
+            notes: content.innerHTML,
+            theme: localStorage.getItem("theme")
+        };
+
+        fetch("https://rtmun6jkifgcodydw5slaxepju0scagb.lambda-url.us-west-2.on.aws/", {
+    
+            method : "POST",
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            },
+            body : JSON.stringify(data)
+    
+        });
+
+        content.innerHTML = localStorage.getItem("saved");
+        console.log("Successfully loaded notes!");
+        displaySuccessMsg("Notes have been loaded from local storage!");
+
+        localStorage.setItem("isLoggedIn", false);
+        localStorage.setItem("loggedInAs", null);
+
+        location.reload();
+
+    }
 }
 
 function closeLoginBlock() {
@@ -58,6 +110,11 @@ function closeLoginBlock() {
     loginBlock.classList.remove("s-u-resize");
     loginBlock.classList.remove("f-p-resize");
     
+    formLI.reset();
+    formSU.reset();
+    formFP.reset();
+
+    invalidate();
 
 }
 
@@ -68,6 +125,10 @@ function openSignUpBlock() {
 
     loginBlock.classList.add("s-u-resize");
 
+    formLI.reset();
+
+    invalidate();
+
 }
 
 function closeSignUpBlock() {
@@ -76,6 +137,10 @@ function closeSignUpBlock() {
     formSU.classList.remove("slide-right");
 
     loginBlock.classList.remove("s-u-resize");
+
+    formSU.reset();
+
+    invalidate();
 
 }
 
@@ -86,6 +151,10 @@ function openFrgPwdBlock() {
 
     loginBlock.classList.add("f-p-resize");
 
+    formLI.reset();
+
+    invalidate();
+
 }
 
 function closeFrgPwdBlock() {
@@ -95,23 +164,77 @@ function closeFrgPwdBlock() {
 
     loginBlock.classList.remove("f-p-resize");
 
+    formFP.reset();
+
+    invalidate();
+
+}
+
+let passReq = document.getElementById("passReq");
+
+function showReq() {
+
+    passReq.classList.add("pass-req-show");
+
+}
+
+function hideReq() {
+
+    passReq.classList.remove("pass-req-show");
+
 }
 
 var css_var = document.querySelector(':root');
 let themesImg = document.getElementById("themes_img");
 let logInImg = document.getElementById("log_in_img");
+let loggedInAs = document.getElementById("loggedInAs");
 
-if(localStorage.getItem('theme') == 'themeDef' || localStorage.getItem('theme') == null) {
+if(!localStorage.getItem("isLoggedIn") || localStorage.getItem("isLoggedIn") === "false") {
 
-    themeDef();
+    if(localStorage.getItem('theme') == 'themeDef' || localStorage.getItem('theme') == null) {
 
-} else if (localStorage.getItem('theme') == 'themeOne') {
-
-    themeOne();
+        themeDef();
     
+    } else if (localStorage.getItem('theme') == 'themeOne') {
+    
+        themeOne();
+        
+    } else {
+    
+        themeTwo();
+    
+    }
 } else {
 
-    themeTwo();
+    fetch(`https://sdzg2qevbaq7y5dhm42ovbhdii0crwnk.lambda-url.us-west-2.on.aws/?ctx=theme&email=${localStorage.getItem("loggedInAs")}`, {
+    
+        method : "GET",
+        headers: {
+            "Content-type": "application/json; charset=UTF-8",
+        }
+    }).then(
+        response => response.json()
+    ).then(
+        function(html) {
+
+            theme = html["theme"]
+
+            if(theme == 'themeDef' || theme == null) {
+
+                themeDef();
+            
+            } else if (theme == 'themeOne') {
+            
+                themeOne();
+                
+            } else {
+            
+                themeTwo();
+            
+            }
+
+        }
+    );
 
 }
 
@@ -151,17 +274,39 @@ function themeDef() {
 
     }, false);
 
-    logInImg.addEventListener("mouseover", function () {
+    if(!localStorage.getItem("isLoggedIn") || localStorage.getItem("isLoggedIn") === "false") {
 
-        logInImg.style.backgroundImage = "url('images/LogInPurple.png')";
+        logInImg.addEventListener("mouseover", function () {
 
-    }, false);
+            logInImg.style.backgroundImage = "url('images/LogInPurple.png')";
+    
+        }, false);
+    
+        logInImg.addEventListener("mouseout", function () {
+    
+            logInImg.style.backgroundImage = "url('images/LogInOrange.png')";
+    
+        }, false);
 
-    logInImg.addEventListener("mouseout", function () {
+    } else {
 
-        logInImg.style.backgroundImage = "url('images/LogInOrange.png')";
+        logInImg.style.backgroundImage = "url('images/LogOutOrange.png')";
 
-    }, false);
+        logInImg.addEventListener("mouseover", function () {
+
+            logInImg.style.backgroundImage = "url('images/LogOutPurple.png')";
+            loggedInAs.classList.add("logged-in-as-transition");
+    
+        }, false);
+    
+        logInImg.addEventListener("mouseout", function () {
+    
+            logInImg.style.backgroundImage = "url('images/LogOutOrange.png')";
+            loggedInAs.classList.remove("logged-in-as-transition");
+    
+        }, false);
+
+    }
 
     localStorage.setItem('theme', 'themeDef');
 
@@ -203,17 +348,39 @@ function themeOne() {
 
     }, false);
 
-    logInImg.addEventListener("mouseover", function () {
+    if(!localStorage.getItem("isLoggedIn") || localStorage.getItem("isLoggedIn") === "false") {
 
-        logInImg.style.backgroundImage = "url('images/LogInTeal.png')";
+        logInImg.addEventListener("mouseover", function () {
 
-    }, false);
+            logInImg.style.backgroundImage = "url('images/LogInTeal.png')";
+    
+        }, false);
+    
+        logInImg.addEventListener("mouseout", function () {
+    
+            logInImg.style.backgroundImage = "url('images/LogInWatermelonPink.png')";
+    
+        }, false);
 
-    logInImg.addEventListener("mouseout", function () {
+    } else {
 
-        logInImg.style.backgroundImage = "url('images/LogInWatermelonPink.png')";
+        logInImg.style.backgroundImage = "url('images/LogOutWatermelonPink.png')";
 
-    }, false);
+        logInImg.addEventListener("mouseover", function () {
+
+            logInImg.style.backgroundImage = "url('images/LogOutTeal.png')";
+            loggedInAs.classList.add("logged-in-as-transition");
+    
+        }, false);
+    
+        logInImg.addEventListener("mouseout", function () {
+    
+            logInImg.style.backgroundImage = "url('images/LogOutWatermelonPink.png')";
+            loggedInAs.classList.remove("logged-in-as-transition");
+    
+        }, false);
+
+    }
 
     localStorage.setItem('theme', 'themeOne');
 
@@ -255,17 +422,39 @@ function themeTwo() {
 
     }, false);
 
-    logInImg.addEventListener("mouseover", function () {
+    if(!localStorage.getItem("isLoggedIn") || localStorage.getItem("isLoggedIn") === "false") {
 
-        logInImg.style.backgroundImage = "url('images/LogInDarkCyan.png')";
+        logInImg.addEventListener("mouseover", function () {
 
-    }, false);
+            logInImg.style.backgroundImage = "url('images/LogInDarkCyan.png')";
+    
+        }, false);
+    
+        logInImg.addEventListener("mouseout", function () {
+    
+            logInImg.style.backgroundImage = "url('images/LogInElectricBlue.png')";
+    
+        }, false);
 
-    logInImg.addEventListener("mouseout", function () {
+    } else {
 
-        logInImg.style.backgroundImage = "url('images/LogInElectricBlue.png')";
+        logInImg.style.backgroundImage = "url('images/LogOutElectricBlue.png')";
 
-    }, false);
+        logInImg.addEventListener("mouseover", function () {
+
+            logInImg.style.backgroundImage = "url('images/LogOutDarkCyan.png')";
+            loggedInAs.classList.add("logged-in-as-transition");
+    
+        }, false);
+    
+        logInImg.addEventListener("mouseout", function () {
+    
+            logInImg.style.backgroundImage = "url('images/LogOutElectricBlue.png')";
+            loggedInAs.classList.remove("logged-in-as-transition");
+    
+        }, false);
+
+    }
 
     localStorage.setItem('theme', 'themeTwo');
 
@@ -311,10 +500,30 @@ elements.forEach(element => {
 
 });
 
-window.onbeforeunload = function() {
+window.onbeforeunload = async function() {
 
     const finalContent = document.getElementById("content");
 
-    localStorage.setItem("saved", finalContent.innerHTML);
+    if(!localStorage.getItem("isLoggedIn") || localStorage.getItem("isLoggedIn") === "false") {
 
+        localStorage.setItem("saved", finalContent.innerHTML);
+
+    } else {
+
+        const data = {
+            email: localStorage.getItem("loggedInAs"),
+            notes: finalContent.innerHTML,
+            theme: localStorage.getItem("theme")
+        };
+
+        fetch("https://rtmun6jkifgcodydw5slaxepju0scagb.lambda-url.us-west-2.on.aws/", {
+    
+            method : "POST",
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            },
+            body : JSON.stringify(data)
+    
+        })
+    }
 }
