@@ -142,6 +142,37 @@ nav li{
     background-image: url(../images/LogInOrange.png);
 
 }
+
+.logged_in_as {
+
+    background-color: var(--msc);
+    color: var(--text_colour);
+    width: max-content;
+    position: absolute;
+    top: 1.25vw;
+    right: calc(10% + 1vw + min(11.5vw, 125px)/2);
+    transform: translateX(50%);
+    white-space: nowrap;
+    height: min(2vw, 22px);
+    border-radius: 1vw;
+    padding-inline: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1vw;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 250ms ease-in-out;
+
+}
+
+.logged-in-as-transition {
+
+    opacity: 1;
+    pointer-events: auto;
+
+}
 /*textbox styles
 .textbox {
 

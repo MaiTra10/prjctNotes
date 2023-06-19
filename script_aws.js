@@ -148,6 +148,7 @@ async function sign_in_btn(e) {
 
                     localStorage.setItem("isLoggedIn", true);
                     localStorage.setItem("loggedInAs", email);
+                    loggedInAs.getElementsByTagName("p")[0].innerHTML = `Logged in as ${email}`;
 
                     console.log(`Successfully Logged In as ${email}!`);
                     displaySuccessMsg(`Successfully Logged In as ${email}!`);

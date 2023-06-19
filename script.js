@@ -22,6 +22,8 @@ window.onload = async function() {
 
     } else {
 
+        loggedInAs.getElementsByTagName("p")[0].innerHTML = `Logged in as ${localStorage.getItem("loggedInAs")}`;
+
         fetch(`https://sdzg2qevbaq7y5dhm42ovbhdii0crwnk.lambda-url.us-west-2.on.aws/?ctx=note&email=${localStorage.getItem("loggedInAs")}`, {
     
             method : "GET",
@@ -185,6 +187,7 @@ function hideReq() {
 var css_var = document.querySelector(':root');
 let themesImg = document.getElementById("themes_img");
 let logInImg = document.getElementById("log_in_img");
+let loggedInAs = document.getElementById("loggedInAs");
 
 if(!localStorage.getItem("isLoggedIn") || localStorage.getItem("isLoggedIn") === "false") {
 
@@ -292,12 +295,14 @@ function themeDef() {
         logInImg.addEventListener("mouseover", function () {
 
             logInImg.style.backgroundImage = "url('images/LogOutPurple.png')";
+            loggedInAs.classList.add("logged-in-as-transition");
     
         }, false);
     
         logInImg.addEventListener("mouseout", function () {
     
             logInImg.style.backgroundImage = "url('images/LogOutOrange.png')";
+            loggedInAs.classList.remove("logged-in-as-transition");
     
         }, false);
 
@@ -364,12 +369,14 @@ function themeOne() {
         logInImg.addEventListener("mouseover", function () {
 
             logInImg.style.backgroundImage = "url('images/LogOutTeal.png')";
+            loggedInAs.classList.add("logged-in-as-transition");
     
         }, false);
     
         logInImg.addEventListener("mouseout", function () {
     
             logInImg.style.backgroundImage = "url('images/LogOutWatermelonPink.png')";
+            loggedInAs.classList.remove("logged-in-as-transition");
     
         }, false);
 
@@ -436,12 +443,14 @@ function themeTwo() {
         logInImg.addEventListener("mouseover", function () {
 
             logInImg.style.backgroundImage = "url('images/LogOutDarkCyan.png')";
+            loggedInAs.classList.add("logged-in-as-transition");
     
         }, false);
     
         logInImg.addEventListener("mouseout", function () {
     
             logInImg.style.backgroundImage = "url('images/LogOutElectricBlue.png')";
+            loggedInAs.classList.remove("logged-in-as-transition");
     
         }, false);
 
