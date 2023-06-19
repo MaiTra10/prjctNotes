@@ -281,7 +281,7 @@ nav li{
 
     content: attr(data-tooltip);
 
-    font-size: 1vw;
+    font-size: min(1vw, 16px);
     position: absolute;
     font-weight: bolder;
     text-align: center;
