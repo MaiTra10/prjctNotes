@@ -22,7 +22,7 @@ window.onload = async function() {
 
     } else {
 
-        fetch(`https://sdzg2qevbaq7y5dhm42ovbhdii0crwnk.lambda-url.us-west-2.on.aws/?email=${localStorage.getItem("loggedInAs")}`, {
+        fetch(`https://sdzg2qevbaq7y5dhm42ovbhdii0crwnk.lambda-url.us-west-2.on.aws/?ctx=note&email=${localStorage.getItem("loggedInAs")}`, {
     
             method : "GET",
             headers: {
@@ -68,7 +68,8 @@ function openLoginBlock() {
 
         const data = {
             email: localStorage.getItem("loggedInAs"),
-            notes: content.innerHTML
+            notes: content.innerHTML,
+            theme: localStorage.getItem("theme")
         };
 
         fetch("https://rtmun6jkifgcodydw5slaxepju0scagb.lambda-url.us-west-2.on.aws/", {
@@ -81,8 +82,13 @@ function openLoginBlock() {
     
         });
 
+        content.innerHTML = localStorage.getItem("saved");
+        console.log("Successfully loaded notes!");
+        displaySuccessMsg("Notes have been loaded from local storage!");
+
         localStorage.setItem("isLoggedIn", false);
         localStorage.setItem("loggedInAs", null);
+
         location.reload();
 
     }
@@ -180,17 +186,52 @@ var css_var = document.querySelector(':root');
 let themesImg = document.getElementById("themes_img");
 let logInImg = document.getElementById("log_in_img");
 
-if(localStorage.getItem('theme') == 'themeDef' || localStorage.getItem('theme') == null) {
+if(!localStorage.getItem("isLoggedIn") || localStorage.getItem("isLoggedIn") === "false") {
 
-    themeDef();
+    if(localStorage.getItem('theme') == 'themeDef' || localStorage.getItem('theme') == null) {
 
-} else if (localStorage.getItem('theme') == 'themeOne') {
-
-    themeOne();
+        themeDef();
     
+    } else if (localStorage.getItem('theme') == 'themeOne') {
+    
+        themeOne();
+        
+    } else {
+    
+        themeTwo();
+    
+    }
 } else {
 
-    themeTwo();
+    fetch(`https://sdzg2qevbaq7y5dhm42ovbhdii0crwnk.lambda-url.us-west-2.on.aws/?ctx=theme&email=${localStorage.getItem("loggedInAs")}`, {
+    
+        method : "GET",
+        headers: {
+            "Content-type": "application/json; charset=UTF-8",
+        }
+    }).then(
+        response => response.json()
+    ).then(
+        function(html) {
+
+            theme = html["theme"]
+
+            if(theme == 'themeDef' || theme == null) {
+
+                themeDef();
+            
+            } else if (theme == 'themeOne') {
+            
+                themeOne();
+                
+            } else {
+            
+                themeTwo();
+            
+            }
+
+        }
+    );
 
 }
 
@@ -462,7 +503,8 @@ window.onbeforeunload = async function() {
 
         const data = {
             email: localStorage.getItem("loggedInAs"),
-            notes: finalContent.innerHTML
+            notes: finalContent.innerHTML,
+            theme: localStorage.getItem("theme")
         };
 
         fetch("https://rtmun6jkifgcodydw5slaxepju0scagb.lambda-url.us-west-2.on.aws/", {

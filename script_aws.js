@@ -203,6 +203,57 @@ async function sign_in_btn(e) {
                         }, false);
 
                     }
+
+                    const content = document.getElementById("content");
+                    localStorage.setItem("saved", content.innerHTML);
+
+                    fetch(`https://sdzg2qevbaq7y5dhm42ovbhdii0crwnk.lambda-url.us-west-2.on.aws/?ctx=theme&email=${localStorage.getItem("loggedInAs")}`, {
+    
+                        method : "GET",
+                        headers: {
+                            "Content-type": "application/json; charset=UTF-8",
+                        }
+                    }).then(
+                        response => response.json()
+                    ).then(
+                        function(html) {
+
+                            const theme = html["theme"]
+
+                            if(theme == 'themeDef' || theme == null) {
+
+                                themeDef();
+                            
+                            } else if (theme == 'themeOne') {
+                            
+                                themeOne();
+                                
+                            } else {
+                            
+                                themeTwo();
+                            
+                            }
+
+                        }
+                    );
+
+                    fetch(`https://sdzg2qevbaq7y5dhm42ovbhdii0crwnk.lambda-url.us-west-2.on.aws/?ctx=note&email=${localStorage.getItem("loggedInAs")}`, {
+    
+                        method : "GET",
+                        headers: {
+                            "Content-type": "application/json; charset=UTF-8",
+                        }
+                    }).then(
+                        response => response.json()
+                    ).then(
+                        function(html) {
+            
+                            document.getElementById("content").innerHTML = html["saved"]
+                            console.log("Successfully loaded notes!");
+                            displaySuccessMsg("Notes have been loaded from the cloud!");
+            
+                        }
+                    );
                 
                     closeLoginBlock();
 
