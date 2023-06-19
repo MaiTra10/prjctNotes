@@ -10,7 +10,7 @@ table = dynamoDB.Table(table_name)
 ses = boto3.client("ses", region_name="us-west-2")
 
 def lambda_forgot_pass(event, ctx):
-        
+
     url_request_type = event["requestContext"]["http"]["method"]
     
     if url_request_type == "POST":
@@ -24,7 +24,7 @@ def lambda_forgot_pass(event, ctx):
         if "Item" in resp:
             
             receiver = resp["Item"]["email"]
-            passDB = resp["Item"]["password"]
+            passDB = resp["Item"]["value"]
             ssm = boto3.client("ssm", region_name="us-west-2")
     
             response = ssm.get_parameters(
