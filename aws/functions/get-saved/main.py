@@ -11,17 +11,32 @@ def lambda_get_saved(event, ctx):
     
     if url_request_type == "GET":
         
+        ctx = event["queryStringParameters"]["ctx"]
         email = event["queryStringParameters"]["email"]
         
-        resp = table.get_item(TableName=table_name, Key={"email": email, "ctx": "saved"})
-        
-        if "Item" in resp:
+        if ctx == "note":
             
-            return {"saved": resp["Item"]["value"]}
-        
+            resp = table.get_item(TableName=table_name, Key={"email": email, "ctx": "saved"})
+            
+            if "Item" in resp:
+                
+                return {"saved": resp["Item"]["value"]}
+            
+            else:
+                
+                return {"Status Code": 404}
+            
         else:
+    
+            resp = table.get_item(TableName=table_name, Key={"email": email, "ctx": "theme"})
             
-            return {"Status Code": 404}
+            if "Item" in resp:
+                
+                return {"theme": resp["Item"]["value"]}
+            
+            else:
+                
+                return {"Status Code": 404}
 
     else:
         

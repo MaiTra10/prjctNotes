@@ -16,8 +16,11 @@ def lambda_save(event, ctx):
         email = data["email"].lower()
         
         notes = data["notes"]
+        
+        theme = data["theme"]
 
         table.put_item(TableName=table_name, Item={"email": email, "ctx": "saved", "value": notes})
+        table.put_item(TableName=table_name, Item={"email": email, "ctx": "theme", "value": theme})
         
         return {"Status Code": 200}
 
