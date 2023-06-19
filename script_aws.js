@@ -113,8 +113,8 @@ async function sign_in_btn(e) {
 
     if(emailValid == false) {
 
-        console.log("Not A Valid E-mail!");
-        displayFailMsg("Not A Valid E-mail!");
+        console.log("Not a valid e-mail address!");
+        displayFailMsg("Not a valid e-mail address!");
 
     } else {
 
@@ -141,8 +141,8 @@ async function sign_in_btn(e) {
 
                 if(html["Status Code"] == 401) {
 
-                    console.log("E-mail or Password is Incorrect!");
-                    displayFailMsg("E-mail or Password is Incorrect!");
+                    console.log("E-mail or password is incorrect!");
+                    displayFailMsg("E-mail or password is incorrect!");
 
                 } else if(html["Status Code"] == 200) {
 
@@ -150,8 +150,8 @@ async function sign_in_btn(e) {
                     localStorage.setItem("loggedInAs", email);
                     loggedInAs.getElementsByTagName("p")[0].innerHTML = `Logged in as ${email}`;
 
-                    console.log(`Successfully Logged In as ${email}!`);
-                    displaySuccessMsg(`Successfully Logged In as ${email}!`);
+                    console.log(`Successfully logged in as ${email}!`);
+                    displaySuccessMsg(`Successfully logged in as ${email}!`);
 
                     const theme = localStorage.getItem("theme");
 
@@ -260,8 +260,8 @@ async function sign_in_btn(e) {
 
                 } else {
 
-                    console.log("Something Went Wrong! Try Again.");
-                    displayFailMsg("Something Went Wrong! Try Again.");
+                    console.log("Something went wrong! Try again.");
+                    displayFailMsg("Something went wrong! Try again.");
 
                 }
             }
@@ -273,8 +273,8 @@ async function sign_up_btn(e) {
 
     if(emailValid == false || passValid == false) {
 
-        console.log("E-mail or Password Format is Invalid!");
-        displayFailMsg("E-mail or Password Format is Invalid!");
+        console.log("E-mail or password format is invalid!");
+        displayFailMsg("E-mail or password format is invalid!");
 
     } else {
 
@@ -301,20 +301,20 @@ async function sign_up_btn(e) {
     
                 if(html["Status Code"] == 409) {
     
-                    console.log("Account Already Exists!");
-                    displayFailMsg("Account Already Exists!");
+                    console.log("Account already exists!");
+                    displayFailMsg("Account already exists!");
     
                 } else if(html["Status Code"] == 200) {
     
-                    console.log("Account Created!");
-                    displaySuccessMsg("Account Created!");
+                    console.log("Account created!");
+                    displaySuccessMsg("Account created!");
                 
                     closeSignUpBlock();
     
                 } else {
 
-                    console.log("Something Went Wrong! Try Again Later.");
-                    displayFailMsg("Something Went Wrong! Try Again Later.");
+                    console.log("Something went wrong! Try again later.");
+                    displayFailMsg("Something went wrong! Try again later.");
 
                 }
             }
@@ -326,8 +326,8 @@ async function forgot_pass_btn(e) {
 
     if(emailValid == false) {
 
-        console.log("E-mail Format is Invalid!");
-        displayFailMsg("E-mail Format is Invalid!");
+        console.log("E-mail format is invalid!");
+        displayFailMsg("E-mail format is invalid!");
 
     } else {
 
@@ -352,20 +352,20 @@ async function forgot_pass_btn(e) {
     
                 if(html["Status Code"] == 404) {
     
-                    console.log("Account With That E-mail Does Not Exist!");
-                    displayFailMsg("Account With That E-mail Does Not Exist!");
+                    console.log("Account with that e-mail does not exist!");
+                    displayFailMsg("Account with that e-mail does not exist!");
     
                 } else if(html["Status Code"] == 200) {
     
-                    console.log(`An E-mail Has Been Sent to ${email} about your password!`);
-                    displaySuccessMsg(`An E-mail Has Been Sent to ${email} about your password! <b>Make sure to check your spam folder</b>.`);
+                    console.log(`An e-mail has been eent to ${email} about your password!`);
+                    displaySuccessMsg(`An e-mail has been sent to ${email} about your password. <b>Make sure to check your spam folder</b>!`);
                 
                     closeFrgPwdBlock();
     
                 } else {
 
-                    console.log("Something Went Wrong! Try Again Later.");
-                    displayFailMsg("Something Went Wrong! Try Again Later.");
+                    console.log("Something went wrong! Try again later.");
+                    displayFailMsg("Something went wrong! Try again later.");
 
                 }
             }
