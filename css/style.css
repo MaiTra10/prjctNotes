@@ -149,7 +149,7 @@ nav li{
     color: var(--text_colour);
     width: max-content;
     position: absolute;
-    top: 1.25vw;
+    top: 1vh;
     right: calc(10% + 1vw + min(11.5vw, 125px)/2);
     transform: translateX(50%);
     white-space: nowrap;
