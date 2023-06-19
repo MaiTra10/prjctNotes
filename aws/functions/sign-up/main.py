@@ -26,6 +26,7 @@ def lambda_sign_up(event, ctx):
         else:
         
             table.put_item(TableName=table_name, Item={"email": email, "ctx": "password", "value": password})
+            table.put_item(TableName=table_name, Item={"email": email, "ctx": "saved", "value": ""})
             return {"Status Code": 200}
 
     else:

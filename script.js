@@ -91,6 +91,55 @@ function openLoginBlock() {
         localStorage.setItem("isLoggedIn", false);
         localStorage.setItem("loggedInAs", null);
 
+        currentTheme = localStorage.getItem("theme");
+
+        if(currentTheme == 'themeDef' || currentTheme == null) {
+
+            logInImg.addEventListener("mouseover", function () {
+
+                logInImg.style.backgroundImage = "url('images/LogInPurple.png')";
+                loggedInAs.classList.remove("logged-in-as-transition");
+        
+            }, false);
+        
+            logInImg.addEventListener("mouseout", function () {
+        
+                logInImg.style.backgroundImage = "url('images/LogInOrange.png')";
+        
+            }, false);
+        
+        } else if (currentTheme == 'themeOne') {
+        
+            logInImg.addEventListener("mouseover", function () {
+
+                logInImg.style.backgroundImage = "url('images/LogInTeal.png')";
+                loggedInAs.classList.remove("logged-in-as-transition");
+        
+            }, false);
+        
+            logInImg.addEventListener("mouseout", function () {
+        
+                logInImg.style.backgroundImage = "url('images/LogInWatermelonPink.png')";
+        
+            }, false);
+            
+        } else {
+        
+            logInImg.addEventListener("mouseover", function () {
+
+                logInImg.style.backgroundImage = "url('images/LogInDarkCyan.png')";
+                loggedInAs.classList.remove("logged-in-as-transition");
+        
+            }, false);
+        
+            logInImg.addEventListener("mouseout", function () {
+        
+                logInImg.style.backgroundImage = "url('images/LogInElectricBlue.png')";
+        
+            }, false);
+        
+        }
+
         location.reload();
 
     }

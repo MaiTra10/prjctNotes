@@ -160,7 +160,7 @@ nav li{
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 1vw;
+    font-size: min(1vw, 16px);
     opacity: 0;
     pointer-events: none;
     transition: all 250ms ease-in-out;
@@ -1055,7 +1055,7 @@ nav li{
 
 .message > p {
 
-    font-size: min(1vw, 22px);
+    font-size: min(1vw, 16px);
     line-height: 0px;
 
 }
