@@ -12,10 +12,14 @@ In the overview I while provide general descriptions and screenshots/GIFs of how
 When you go to a web page, the first thing your eyes are drawn to are the colours, the shapes and the overall design. I wanted to create an appealing design so for the first few days I spent just sketching ideas and coming up with colour schemes. The default colour scheme you see when you first load into the site is the one I finalized, and the other two choices came later in development.
 
 I created all the logos and buttons used on the site using Google Drawings and there was an extensive use of CSS and JavaScript to make the buttons and transitions behave exactly how I wanted them to.
-<div style="display:flex">
+<details>
+  <summary>Screenshot of Google Drive with the Logos and Buttons I Made</summary>
   <img src="screenshots/ss_1.png" alt="Image of the logos and buttons I created in Google Drive." height="450">
+</details>
+<details>
+  <summary>Log In Interface Transitions Demo</summary>
   <img src="screenshots/gif_1.gif" alt="A GIF of the 'log in' interface transitions." height="450">
-</div>
+</details>
 
 ### :hammer_and_wrench: Functionality
 
