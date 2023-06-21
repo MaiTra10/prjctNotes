@@ -58,6 +58,6 @@ Here I will dive a little deeper on what AWS services I used and how they were i
 
 - <img src="screenshots/aws-lambda.png" alt="AWS Lambda icon."  height="15"> AWS Lambda functions were used as the link between the frontend and the database. I created Lambda functions with function URLs and used the JavaScript Fetch API to communicate with these Lambda functions. All but one of the Lambda functions strictly worked with only the DynamoDB table and that function was the 'forgot password' function. The function checked if the e-mail existed in the database and if it did, it would utilize the Python smtplib module to send that e-mail information about the forgotten password.
 
-- <img src="screenshots/parameter-store.png" alt="AWS Parameter Store icon."  height="15"> AWS Parameter Store was used to securely save and retrieve the 16-digit app password for the Gmail that was being used by the smtplib package to send the e-mail.
+- <img src="screenshots/parameter-store.png" alt="AWS Parameter Store icon."  height="15"> AWS Parameter Store was used to securely save and retrieve the 16-digit app password for the Gmail that was being used by the smtplib module to send the e-mail.
 
 - <img src="screenshots/terraform.png" alt="Terraform by Hashicorp icon."  height="15"> Terraform was used to initialize and create AWS resources as well as assign IAM roles and policies to the necessary resources.
