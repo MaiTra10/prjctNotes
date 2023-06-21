@@ -52,7 +52,7 @@ The websites features a 'sign up', 'log in' and 'forgot password' interface, the
 
 ### :satellite: AWS
 
-Here I will dive a little deeper on what I actually used AWS for. 
+Here I will dive a little deeper on what AWS services I used and how they were implemented.
 
 - <img src="screenshots/aws-dynamodb.png" alt="AWS DynamoDB icon." height="15"> AWS DynamoDB was used to save user profiles with their saved notes and theme of choice. I used a hash key (their e-mail) and range key (the context of data ex. 'password', 'saved' and 'theme') to seperate and organize the entries by their context.
 
