@@ -23,7 +23,7 @@ I created all the logos and buttons used on the site using Google Drawings and t
 
 ### :hammer_and_wrench: Functionality
 
-The websites features a 'sign up', 'log in' and 'forgot password' interface, the ability to quickly change your desired theme, a rich text editor for your notes and lastly a local and cloud storage option for your notes and your chosen theme. I did not use any frameworks or extensions for the frontend as everything was written in VanillaJS, so for example, instead of using something like Quill for my rich text editor, it was custom made. 
+The website features a 'sign up', 'log in' and 'forgot password' interface, the ability to quickly change your desired theme, a rich text editor for your notes and lastly a local and cloud storage option for your notes and your chosen theme. I did not use any frameworks or extensions for the frontend as everything was written in VanillaJS, so for example, instead of using something like Quill for my rich text editor, it was custom made. 
 
 <details>
   <summary>Changing Themes Demo</summary>
