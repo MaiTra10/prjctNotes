@@ -890,6 +890,7 @@ nav li{
     background-color: var(--main);
     color: var(--bg);
     font-weight: bold;
+    font-size: 14px;
     cursor: pointer;
     border-width: 0px;
     border-radius: 5px;
