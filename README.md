@@ -1,7 +1,9 @@
 # :memo: [prjctNotes](https://prjctnotes.com/)
-Welcome to the github repository for prjctNotes. It is a note taking web application I developed through the use of AWS for the backend and HTML, CSS and JavaScript for the frontend.
+Welcome to the github repository for <b>prjctNotes</b>.
 
-While this may be just another note taking app in another portfolio, I started this as my first project and realized partway through that this may have been a generic/common project, but I felt it would be better to complete what I had started than to abandon it. In this project, I chose to focus on the backend functionality to further develop my understanding of AWS and get comfortable working with its services.
+<b>prjctNotes</b> is a full-stack web application I built completely from scratch as my first full-stack project. The front-end is created with HTML, CSS and Javascript while the backend utilizes an AWS ecosystem of services which includes Lambda Function URLs, DynamoDB and Parameter Store.
+
+The website allows you to add or remove notes as you please and also saves them even when you are not logged in! If you would like to take your notes across devices, there is a sign up and log in feature to let you do this, and in the case you forget your password, the 'forgot password' feature will help you recover your account.
 
 ## :globe_with_meridians: Overview
 
@@ -21,7 +23,7 @@ I created all the logos and buttons used on the site using Google Drawings and t
   <img src="screenshots/gif_1.gif" alt="A GIF of the 'log in' interface transitions." height="450">
 </details>
 
-### :hammer_and_wrench: Functionality
+### :hammer_and_wrench: Functionality and Demos
 
 The website features a 'sign up', 'log in' and 'forgot password' interface, the ability to quickly change your desired theme, a rich text editor for your notes and lastly a local and cloud storage option for your notes and your chosen theme. I did not use any frameworks or extensions for the frontend as everything was written in VanillaJS, so for example, instead of using something like Quill for my rich text editor, it was custom made. 
 
