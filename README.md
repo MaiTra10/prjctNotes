@@ -2,7 +2,7 @@
 
 <details>
   <summary>Tech Diagram</summary>
-  <img src="screenshots/prjctNotes_diagram.png" alt="" height="450">
+  <img src="screenshots/prjctNotes_diagram.png" alt="" height=100%>
 </details>
 
 Welcome to the github repository for <b>prjctNotes</b>.
