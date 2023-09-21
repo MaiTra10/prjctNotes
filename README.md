@@ -1,4 +1,10 @@
 # :memo: [prjctNotes](https://prjctnotes.com/)
+
+<details>
+  <summary>Tech Diagram</summary>
+  <img src="screenshots/prjctNotes_diagram.png" alt="" height="450">
+</details>
+
 Welcome to the github repository for <b>prjctNotes</b>.
 
 <b>prjctNotes</b> is a full-stack web application I built completely from scratch as my first full-stack project. The front-end is created with HTML, CSS and Javascript while the backend utilizes an AWS ecosystem of services which includes Lambda Function URLs, DynamoDB and Parameter Store.
